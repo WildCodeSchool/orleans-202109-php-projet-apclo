@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Handlee&display=swap');
+:root {
+    --primary-color:#f1cdb3;
+    --secondary-color:#dfa981;
+    --Third-color:#40332d;
+    --background-color:#FAFAFA;
+    --title-font:Handlee;
+    --text-font:Bellota;
+    --main-title-size:80px;
+    --title-size:30px;
+    --text-size:26px;
+
+
+}

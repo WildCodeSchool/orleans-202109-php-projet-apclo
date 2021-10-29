@@ -1,0 +1,6 @@
+<?php
+
+define('APP_DB_USER', 'weisgerber');
+define('APP_DB_PASSWORD', 'Tarwacki07@');
+define('APP_DB_HOST', 'localhost');
+define('APP_DB_NAME', 'simple-mvc');

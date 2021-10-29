@@ -21,3 +21,10 @@ h1 {
 h2 {
     font-size: var(--title-size);
 }
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--title-font);
+}

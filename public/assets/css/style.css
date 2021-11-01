@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Handlee&display=swap');
+@import url('ourCats.css');
 
 :root {
     --primary-color     : #f1cdb3;
     --secondary-color   : #dfa981;
     --third-color       : #40332d;
     --light-color       : #FAFAFA;
-    --intermediate-color: #CCCCCC;
+    --intermediate-color: #868686;
     --dark-color        : #111111;
     --title-font        : Handlee;
     --text-font         : Bellota;
     --main-title-size   : 80px;
     --title-size        : 30px;
     --text-size         : 26px;
+    --border-shadow:2px 2px 6px var(--intermediate-color);
 }
 
 h1 {
@@ -27,4 +29,9 @@ h2,
 h3,
 h4 {
     font-family: var(--title-font);
+}
+
+p, a, li {
+    font-family: var(--text-font);
+
 }

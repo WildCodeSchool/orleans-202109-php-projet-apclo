@@ -1,10 +1,37 @@
 .banner {
-    position: relative;
+    --width-background-image  : 100%;
+    --height-background-image: 400px;
     background-repeat: no-repeat;
-    width: 100vw;
     background-image: url(/assets/images/cat-g6928c8fae_1280.jpg);
-    aspect-ratio: 16 / 5;
-    background-size:cover;
+    background-size: cover;
     background-position: center 30%;
+    width: var(--width-background-image);
+    height: var(--height-background-image);
 }
 
+.title {
+    --width-background-color: 80%;
+    --spacing1: 10px;
+    --spacing2: 24px;
+    --spacing3: 40px;
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: var(--light-color);
+    opacity: 0.9;
+    width: var(--width-background-color);
+    margin: auto;
+    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing2))));    
+}
+
+.title h1 {
+    margin: var(--spacing2);
+}
+
+.title p {
+    color: var(--third-color);
+    text-indent: 10%;
+    font-size: var(--text-size);
+    font-family: var(--text-font);
+    margin: var(--spacing2);
+    padding-bottom: var(--spacing3);
+}

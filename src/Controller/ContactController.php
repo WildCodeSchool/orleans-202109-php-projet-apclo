@@ -16,4 +16,9 @@ class ContactController extends AbstractController
     {
         return $this->twig->render('Contact/index.html.twig');
     }
+
+    public function thanks()
+    {
+        return $this->twig->render('Contact/thanks.php');
+    }
 }

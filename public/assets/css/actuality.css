@@ -11,7 +11,7 @@
 
 .actuality-title {
     --width-background-color: 80%;
-    --spacing1: 10px;
+    --spacing1: 15px;
     --spacing2: 24px;
     --spacing3: 40px;
     background-color: var(--secondary-color);
@@ -25,6 +25,7 @@
 
 .actuality-title h2 {
     margin: var(--spacing2);
+    padding-top: var(--spacing1);
 }
 
 .actuality-title p {

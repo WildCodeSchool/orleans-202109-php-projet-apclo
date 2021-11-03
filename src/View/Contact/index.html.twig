@@ -1,0 +1,71 @@
+{# TODO : manage errors display #}
+<div class="container">
+	{% for error in errors %}
+		<div>
+			<p>class="text-danger alert _bootalert-danger"{{error}}</p>
+		</div>
+	{% endfor %}
+	<div class="container">
+		<div class="form">
+			<h2>Formulaire</h2>
+		</div>
+
+		<div class="coordinate">
+			<p>Vos coordonnées :</p>
+		</div>
+		<form method="POST" action="">
+			<div class="col">
+				<input type="hidden" value="{{ new.id }}" name="id">
+				<label for="lastname">Nom :</label>
+				<input type="text" name="lastname" value="{{ new.lastname }}" class="col" placeholder="Dupont" id="lastname" required/>
+			</div>
+
+			<div class="col">
+				<label for="firstname">Prénom :</label>
+				<input type="text" name="firstname" value="{{ new.firstname }}" class="col" placeholder="Eric" id="firstname" required/>
+			</div>
+
+			<div class="col">
+				<label for="phone">Numéro de Téléphone :</label>
+				<input type="tel" name="tel" value="{{ new.tel }}" class="col" placeholder="02 38 52 77 82" id="tel" required/>
+			</div>
+
+			<div class="col">
+				<label for="e-mail">Mail :</label>
+				<input type="email" name="e-mail" value="{{ new.email }}" class="col" placeholder="eric.dupont@gmail.com" id="email" required/>
+			</div>
+			<div class"message">
+				<p>Votre message :</p>
+			</div>
+			<div class="message_group">
+				<label for="subject">Choisir le sujet de votre message</label>
+				<select name="subject" id="subject" required>
+					<option value="une question">Une question</option>
+					<option value="un renseignement">Un renseignement</option>
+					<option value="une adoption">Une adoption</option>
+					<option value="une visite">Une visite</option>
+					<option value="un don">Un don</option>
+				</select>
+				<label for="comments">Message</label>
+				<textarea name="message" id="message" cols="30" rows="10" required></textarea>
+			</div>
+
+
+			<div class="our_coordinate">
+				<h2>Nos coordonnées</h2>
+			</div>
+			<div class="description">
+				<p>APCLO - Association pour le Protection des Chats Libres d'Orléans</p>
+				<p>44 Av. Roger Secrétain</p>
+				<p>45100 Orléans</p>
+				<p>06 72 56 18 41</p>
+				<p>Email :</p>
+			</div>
+			<div "map">
+				<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
+					<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N">Afficher une carte plus grande</a>
+				</small>
+			</div>
+		</div>
+	</form>
+</div>

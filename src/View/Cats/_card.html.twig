@@ -1,13 +1,21 @@
-<div class="card" style="width: 18rem;">
-	<img class="card-img-top" src="chat.jpg" alt="Card image cap">
-	<div class="card-body">
-		<h3 class="card-title">Card title</h3>
-		<div class="card-text">
-			<ul>
-				<li>Age</li>
-				<li>Sex</li>
-			</ul>
-			<a href="#" class="btn btn-primary">+</a>
-		</div>
+<div class="container-sm">
+	<div class="row">
+		{% for cat in cats %}
+			<div class="col-12 col-sm-6 col-lg-4">
+				<div class="card card-cat mb-3">
+					<img class="card-img-top" src="chat.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h3 class="card-title text-center"><img class="logo" src="/assets/images/paw-logo.png" alt="paw">{{cat.name}}</h3>
+						<div class="card-text description">
+							<ul>
+								<li><img class="logo" src="/assets/images/age-logo.png" alt="calendar">{{cat.birth_date}}</li>
+								<li><img class="logo" src="/assets/images/gender-logo.png" alt="gender">Gender</li>
+							</ul>
+							<a href="#" class="btn btn-circle btn-lg">+</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
 	</div>
 </div>

@@ -1,4 +1,4 @@
-.card-cat {    
+.card-cat {
     height          : 300px;
     border-radius   : 8px;
     background-color: var(--primary-color);
@@ -34,10 +34,10 @@
     font-size       : var(--title-size);
     box-shadow      : var(--border-shadow);
     font-weight     : bold;
-    border-radius: 50%;
-    width: 50px;
-    aspect-ratio: 1 / 1;
-    padding: 0;
+    border-radius   : 50%;
+    width           : 50px;
+    aspect-ratio    : 1 / 1;
+    padding         : 0;
 }
 
 .btn:hover {

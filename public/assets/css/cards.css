@@ -6,8 +6,8 @@
     box-shadow      : var(--border-shadow);
 }
 
-.card-cat .card-img-top {
-    height: 200px;
+.card-img-top {
+    height: var(--height-image-card);
 }
 
 .card-cat ul {

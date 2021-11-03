@@ -15,6 +15,8 @@
     --border-shadow     : 2px 2px 6px var(--intermediate-color);
     --spacing           : 8px;
     --spacing2          : calc(var(--spacing) * 2);
+    --height-card       : 300px;
+    --height-image-card: calc(var(--height-card) / 3 * 2)
 }
 
 body {

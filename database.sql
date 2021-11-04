@@ -17,3 +17,5 @@ ALTER TABLE `cat` ADD `gender_id` INT NOT NULL;
 CREATE TABLE `gender` ( `id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(100) NOT NULL, PRIMARY KEY (`id`));
 
 ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_gender` FOREIGN KEY(`gender_id`) REFERENCES `gender`(`id`);
+
+INSERT INTO `gender`(`name`) VALUES ('Mâle'), ('Femelle');

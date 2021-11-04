@@ -10,7 +10,7 @@
 				<p class="text-danger alert alert-danger">{{error}}</p>
 			</div>
 		{% endfor %}
-        
+
 		<div class="form_title">
 			<h2>Formulaire</h2>
 		</div>
@@ -19,8 +19,7 @@
 		<div class="coordinates">
 			<p>Vos coordonnées :</p>
 
-			<div class="card_01">
-
+			<div class="form_box">
 				<form action="thanks.php" method="POST">
 
 					<div class="row mb-2">
@@ -29,7 +28,7 @@
 								<div class="row mb-4">
 									<label for="lastname" class="form-label">Nom :</label>
 									<div class="col-sm-3">
-										<input type="text" id="lastname" class="form-control" name="lastname" placeholder="Dupont" required/>
+										<input type="text" id="lastname" class="form-control " name="lastname" placeholder="Dupont" required/>
 									</div>
 								</div>
 							</div>
@@ -70,11 +69,12 @@
 						</div>
 					</form>
 				</div>
-
-				<div class="form-group_message">
+			</div>
+			<div class="form-group_message">
+				<div class="col mt-4">
 					<p>Votre message :</p>
-
-
+				</div>
+				<div class="form_box">
 					<form action="thanks.php" method="POST">
 
 						<div class="card_02">
@@ -101,24 +101,26 @@
 						</form>
 					</div>
 				</div>
+			</div>
 
 
-				<div class="our_coordinates">
-					<h2>Nos coordonnées</h2>
+			<div class="our_coordinates">
+				<h2>Nos coordonnées</h2>
+			</div>
+			<div class="apclo_coordinates">
+				<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
+				<p>44 Av. Roger Secrétain</p>
+				<p>45100 Orléans</p>
+				<p>06 72 56 18 41</p>
+				<p>Email:</p>
+			</div>
+			<div class="row">
+				<div class="col ">
+					<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
+						<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N">Afficher une carte plus grande</a>
+					</small>
 				</div>
-				<div class="apclo_coordinates">
-					<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
-					<p>44 Av. Roger Secrétain</p>
-					<p>45100 Orléans</p>
-					<p>06 72 56 18 41</p>
-					<p>Email:</p>
-				</div>
-				<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
-					<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N">Afficher une carte plus grande</a>
-				</small>
-
-
-			</body>
-		</html>
-	</div>
-</body>
+			</div>
+		</body>
+	</html>
+</body></div></body>

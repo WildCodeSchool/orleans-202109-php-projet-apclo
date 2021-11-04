@@ -9,22 +9,28 @@ body {
     background-color: var(--background);
     border-radius: 8px;
 }
+
 .form_title{
     font-family: var(--title-font);
 }
+
 .coordinates{
     font-family: var(--title-font);
 }
+
 .form-group_message{
     font-family: var(--title-font);
 }
 
-form {
-    font-family: var(--text-font);
-    background-color: var(--form-color);
+.form_box{
+    width: 500px;   
     padding: 15px;
-    border-radius: 8px;
+    background-color: var(--form-color);
+    border-radius: 15px;
 }
+
+
+
 
 .our_coordinates {
     font-family: var(--title-font);
@@ -44,7 +50,4 @@ form {
     padding: 15px;
     margin-bottom: 15px;
     
-}
-
-.map {
 }

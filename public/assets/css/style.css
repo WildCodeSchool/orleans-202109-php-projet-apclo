@@ -16,8 +16,10 @@
     --spacing           : 8px;
     --spacing2          : calc(var(--spacing) * 2);
     --spacing3          : calc(var(--spacing) * 3);
+    --spacing4          : calc(var(--spacing) * 4);
     --height-card       : 350px;
     --height-image-card : calc(var(--height-card) / 2.1);
+    --border-radius     : 8px;
 }
 
 body {

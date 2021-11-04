@@ -1,29 +1,37 @@
-
-:root {
-    --primary-color     : #f1cdb3;
-    --secondary-color   : #dfa981;
-    --third-color       : #40332d;
-    --light-color       : #FAFAFA;
-    --intermediate-color: #CCCCCC;
-    --dark-color        : #111111;
-    --title-font        : Handlee;
-    --text-font         : Bellota;
-    --main-title-size   : 80px;
-    --title-size        : 30px;
-    --text-size         : 26px;
-}
-
-.navbar {
-    list-style-type: none;
+nav {
+    background-color: var(--third-color);
     font-family: var(--text-font);
-    color: var(--light-color);
-    background-color: var(--third-color);
 }
 
-.navbar-toggler {
-    background-color:var(--third-color);
+.logo {
+    --logo-size: 50px;
+    padding: 0.5rem;
+    width: var(--logo-size);
+    height: var(--logo-size);
 }
 
-.navbar-toggler-icon {
-    background-color: var(--third-color);
+.logo-below {
+    --logo-size: 100px;
+    margin-bottom: -50px;
+    padding: 1rem;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.catSvg {
+    height: 18px;
+}
+
+.mailSvg {
+    height: 18px;
+}
+
+.pawSvg {
+    height: 18px;
+}
+
+.catHouseSvg {
+    height: 18px;
 }

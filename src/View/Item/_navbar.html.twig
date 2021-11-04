@@ -1,26 +1,25 @@
-<nav class="navbar navbar-cat navbar-dark navbar-expand-lg">
+<nav class="navbar navbar-expand-md navbar-dark">
 	<div class="container-fluid">
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<a class="navbar-brand logo d-inline d-md-none" href="#">
+			<img src="assets/images/logo.png" alt="logo">
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-			<ul class="navbar-nav ">
-				<li class="nav-item">
-					<a class="nav-link" href="#">Accueil</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Chats</a>
-				</li>
-				<li class="nav-item">
-       				<a href="index.php"><img id="logo" src="assets/images/logo.png" alt="logo" class="logo" />
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Association</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Contact</a>
-				</li>
-			</ul>
+		<div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-link" href="#"><img id="catHouseSvg" src="assets/images/cathouse.png" class="catHouseSvg"/>
+					Accueil</a>
+				<a class="nav-link" href="#"><img id="catSvg" src="assets/images/catsit.png" class="catSvg"/>
+					Chats</a>
+				<a class="d-none d-md-inline logo logo-below mx-5" href="#">
+					<img src="assets/images/logo.png" alt="logo">
+				</a>
+				<a class="nav-link"><img id="pawSvg" src="assets/images/paw.png" class="pawSvg"/>
+					Association</a>
+				<a class="nav-link"><img id="mailSvg" src="assets/images/mail.png" class="mailSvg"/>
+					Contact</a>
+			</div>
 		</div>
 	</div>
 </nav>

@@ -1,0 +1,21 @@
+<div class="container-sm">
+	<div class="row">
+		{% for cat in cats %}
+			<div class="col-sm-6 col-lg-4">
+				<div class="card card-cat mb-3">
+					<img class="card-img-top float-top" src="chat.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h3 class="card-title text-center"><img class="logo paw" src="/assets/images/paw.svg" alt="paw">{{cat.name}}</h3>
+						<div class="card-text description">
+							<ul>
+								<li><img class="logo calendar" src="/assets/images/birth-day-logo.svg" alt="calendar">{{cat.birth_date}}</li>
+								<li><img class="logo" src="/assets/images/gender-logo.svg" alt="gender">Gender</li>
+							</ul>
+							<a href="#" class="btn btn-circle btn-lg">+</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

@@ -16,8 +16,8 @@ class CatController extends AbstractController
     public function show(int $id): string
     {
         $catManager = new CatManager();
-        $Cat = $catManager->selectOneById($id);
+        $cat = $catManager->selectOneById($id);
 
-        return $this->twig->render('Cat/show.html.twig', ['Cat' => $Cat]);
+        return $this->twig->render('Cat/show.html.twig', ['cat' => $cat]);
     }
 }

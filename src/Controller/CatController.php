@@ -13,7 +13,7 @@ class CatController extends AbstractController
 
         return $this->twig->render('Home/index.html.twig', ['adoptions' => $adoptions]);
     }
-    
+
     public function index(): string
     {
         $catManager = new CatManager();

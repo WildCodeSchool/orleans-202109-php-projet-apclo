@@ -25,8 +25,7 @@ class HomeController extends AbstractController
     {
         $actualityManager = new ActualityManager();
         $article = $actualityManager->showLastArticle();
-            
-        return $this->twig->render('Home/index.html.twig', ['article' => $article]);
 
+        return $this->twig->render('Home/index.html.twig', ['article' => $article]);
     }
 }

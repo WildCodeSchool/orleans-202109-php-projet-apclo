@@ -8,6 +8,7 @@
 
 .card-img-top {
     height: var(--height-image-card);
+    object-fit: cover;
 }
 
 .card-cat ul {
@@ -38,6 +39,7 @@
 
 .btn:hover {
     background-color: var(--third-color);
+    color:var(--primary-color);
 }
 
 .logo {

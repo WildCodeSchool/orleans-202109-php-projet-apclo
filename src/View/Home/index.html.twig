@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
-	<h1>Hello Wilder !</h1>
+	{% include '_banner.html.twig' %}
+	{% include 'Home/_latestAdoptions.html.twig' %}
 	{% include 'Home/_toAdopt.html.twig' %}
 {% endblock %}

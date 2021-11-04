@@ -9,7 +9,7 @@ class CatController extends AbstractController
     public function index(): string
     {
         $catManager = new CatManager();
-        $cats = $catManager->selectAll();
+        $cats = $catManager->selectAllCats();
         return $this->twig->render('Cats/index.html.twig', ['cats' => $cats]);
     }
 }

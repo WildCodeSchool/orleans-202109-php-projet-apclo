@@ -18,7 +18,7 @@ class CatManager extends AbstractManager
 
         return $statement->fetch();
     }
-  
+
     public function toAdopt()
     {
         $query = "SELECT * FROM " . self::TABLE . " WHERE adoption_date IS NULL ORDER BY id DESC LIMIT 3";

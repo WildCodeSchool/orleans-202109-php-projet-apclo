@@ -17,8 +17,6 @@ class CatController extends AbstractController
     {
         $catManager = new CatManager();
         $cat = $catManager->selectOneById($id);
-
         return $this->twig->render('Cat/show.html.twig', ['cat' => $cat]);
     }
-
 }

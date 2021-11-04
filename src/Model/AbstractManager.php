@@ -49,10 +49,14 @@ abstract class AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE id=:id");
+        
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        
         $statement->execute();
-
-        return $statement->fetch();
+        
+        $go = $statement->fetch();
+        var_dump($go);
+        
     }
 
     /**

@@ -5,7 +5,7 @@ namespace App\Model;
 class CatManager extends AbstractManager
 {
     public const TABLE = 'cat';
-    
+
     public function toAdopt()
     {
         $query = "SELECT * FROM " . self::TABLE . " WHERE adoption_date IS NULL ORDER BY id DESC LIMIT 3";

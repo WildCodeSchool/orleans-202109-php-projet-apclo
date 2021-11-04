@@ -20,4 +20,5 @@ class CatController extends AbstractController
 
         return $this->twig->render('Cat/show.html.twig', ['cat' => $cat]);
     }
+
 }

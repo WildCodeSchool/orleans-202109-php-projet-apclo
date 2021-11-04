@@ -9,6 +9,8 @@
 
 namespace App\Controller;
 
+use App\Model\ActualityManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -21,6 +23,10 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $actualityManager = new ActualityManager();
+        $article = $actualityManager->showLastArticle();
+            
+        return $this->twig->render('Home/index.html.twig', ['article' => $article]);
+
     }
 }

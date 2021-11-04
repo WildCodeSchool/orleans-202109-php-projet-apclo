@@ -10,54 +10,25 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+CREATE TABLE `cat` ( `id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(100) NOT NULL, `digital_chip` INT(15), `description` TEXT, `adoption_date` DATE, `birth_date` DATE, PRIMARY KEY (`id`);
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+ALTER TABLE `cat` ADD COLUMN `color_id` INT;
 
---
--- Base de données :  `simple-mvc`
---
+ALTER TABLE `cat` ADD COLUMN `color_id` INT;
 
--- --------------------------------------------------------
+ALTER TABLE `cat` ADD COLUMN `breed_id` INT;
 
---
--- Structure de la table `item`
---
+CREATE TABLE `color`( `id` int NOT NULL primary key AUTO_INCREMENT COMMENT 'Primary Key', `name` VARCHAR(100));
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `fur`( `id` int NOT NULL primary key AUTO_INCREMENT COMMENT 'Primary Key', `length` VARCHAR(100));
 
---
--- Contenu de la table `item`
---
+CREATE TABLE `breed`( `id` int NOT NULL primary key AUTO_INCREMENT COMMENT 'Primary Key', `name` VARCHAR(100));
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_color` FOREIGN KEY(`color_id`) REFERENCES `color`(`id`);
 
---
--- Index pour les tables exportées
---
+ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_breed` FOREIGN KEY(`breed_id`) REFERENCES `breed`(`id`);
 
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_fur` FOREIGN KEY(`fur_id`) REFERENCES `fur`(`id`);
 
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+"SELECT cat.name as name, image, birth_date, digital_chip, description, adoption_date, gender.name as gender, fur.length as length, color.name as color, breed.name as breed FROM " .
+        self::TABLE . " LEFT JOIN gender ON gender.id = cat.gender_id JOIN fur ON fur.id = cat.fur_id JOIN breed ON breed.id = cat.breed_id JOIN color ON color.id = cat.color_id WHERE cat.id=:id"

@@ -1,8 +1,8 @@
 .banner {
-    --width-background-image  : 100%;
-    --height-background-image: 400px;
+    --width-banner: 100%;
+    --height-banner: 400px;
     background-repeat: no-repeat;
-    background-image: url(/assets/images/cat-g6928c8fae_1280.jpg);
+    background-image: url(/assets/images/cat_banner.jpg);
     background-size: cover;
     background-position: center 30%;
     width: var(--width-background-image);
@@ -10,7 +10,7 @@
 }
 
 .title {
-    --width-background-color: 80%;
+    --width-banner-title: 80%;
     --spacing1: 10px;
     --spacing2: 24px;
     --spacing3: 40px;

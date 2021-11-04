@@ -6,7 +6,7 @@ use App\Model\CatManager;
 
 class CatController extends AbstractController
 {
-    public function index()
+    public function indexHome()
     {
         $catManager = new CatManager();
         $adoptions = $catManager->toAdopt();

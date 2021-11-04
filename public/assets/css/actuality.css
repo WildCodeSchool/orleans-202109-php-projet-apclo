@@ -1,16 +1,16 @@
 .actuality-banner {
-    --width-background-image  : 100%;
-    --height-background-image: 400px;
+    --width-banner: 100%;
+    --height-banner: 400px;
     background-repeat: no-repeat;
-    background-image: url(/assets/images/cat-g3aaadea10_1920.jpg);
+    background-image: url(/assets/images/cat_banner_actuality.jpg);
     background-size: cover;
     background-position: center;
-    width: var(--width-background-image);
-    height: var(--height-background-image);
+    width: var(--width-banner);
+    height: var(--height-banner);
 }
 
 .actuality-title {
-    --width-background-color: 80%;
+    --width-banner-title: 80%;
     --spacing1: 15px;
     --spacing2: 24px;
     --spacing3: 40px;
@@ -18,7 +18,7 @@
     text-align: center;
     color: var(--light-color);
     opacity: 0.9;
-    width: var(--width-background-color);
+    width: var(--width-banner-title);
     margin: auto;
     margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing2))));    
 }

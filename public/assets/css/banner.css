@@ -18,8 +18,10 @@
     color: var(--light-color);
     opacity: 0.9;
     width: var(--width-banner-title);
+    max-width: 1100px;
     margin: auto;
-    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing1))));    
+    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing1))));
+    border-radius: 8px;    
 }
 
 .title h1 {

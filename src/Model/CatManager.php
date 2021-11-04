@@ -6,6 +6,7 @@ class CatManager extends AbstractManager
 {
     public const TABLE = 'cat';
 
+
     public function selectOneById(int $id)
     {
         $statement = $this->pdo->prepare("SELECT cat.name as name, image, birth_date, digital_chip,
@@ -17,5 +18,12 @@ class CatManager extends AbstractManager
         $statement->execute();
 
         return $statement->fetch();
+    }
+
+    public function selectAllCats(): array
+    {
+        $query = "SELECT cat.name as name, image, birth_date, gender.name as gender FROM " .
+        self::TABLE . " JOIN gender ON gender.id = cat.gender_id";
+        return $this->pdo->query($query)->fetchAll();
     }
 }

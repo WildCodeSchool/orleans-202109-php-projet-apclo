@@ -12,6 +12,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cat` ( `id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(100) NOT NULL, `digital_chip` INT(15), `description` TEXT, `adoption_date` DATE, `birth_date` DATE, PRIMARY KEY (`id`);
 
+<<<<<<< HEAD
 ALTER TABLE `cat` ADD COLUMN `color_id` INT;
 
 ALTER TABLE `cat` ADD COLUMN `color_id` INT;
@@ -33,3 +34,12 @@ ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_fur` FOREIGN KEY(`fur_id`) REFERENCES `
 "SELECT cat.name as name, image, birth_date, digital_chip, description, adoption_date, gender.name as gender, fur.length as length, color.name as color, breed.name as breed FROM " .
         self::TABLE . " LEFT JOIN gender ON gender.id = cat.gender_id JOIN fur ON fur.id = cat.fur_id JOIN breed ON breed.id = cat.breed_id JOIN color ON color.id = cat.color_id WHERE cat.id=:id"
 
+=======
+ALTER TABLE `cat` ADD `gender_id` INT NOT NULL;
+
+CREATE TABLE `gender` ( `id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(100) NOT NULL, PRIMARY KEY (`id`));
+
+ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_gender` FOREIGN KEY(`gender_id`) REFERENCES `gender`(`id`);
+
+INSERT INTO `gender`(`name`) VALUES ('Mâle'), ('Femelle');
+>>>>>>> newdev2

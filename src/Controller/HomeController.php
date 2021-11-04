@@ -9,6 +9,8 @@
 
 namespace App\Controller;
 
+use App\Model\HomeManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -21,6 +23,9 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $homeManager = new HomeManager();
+        $adoptions = $homeManager->toAdopt();
+
+        return $this->twig->render('Home/index.html.twig', ['adoptions' => $adoptions]);
     }
 }

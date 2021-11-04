@@ -6,14 +6,6 @@ use App\Model\CatManager;
 
 class CatController extends AbstractController
 {
-    public function indexHome()
-    {
-        $catManager = new CatManager();
-        $adoptions = $catManager->toAdopt();
-
-        return $this->twig->render('Home/index.html.twig', ['adoptions' => $adoptions]);
-    }
-
     public function index(): string
     {
         $catManager = new CatManager();

@@ -1,0 +1,13 @@
+.card-cat{    
+    height: 515px;
+}
+
+.card-body {
+    width: 50%;
+    flex: none;
+}
+
+.card-img-top {
+    width: 40%;
+    height: 90%;
+}

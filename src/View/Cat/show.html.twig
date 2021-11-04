@@ -1,8 +1,10 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/cards.css"><link rel="stylesheet" href="/assets/css/large-card.css"><link rel="stylesheet" href="/assets/css/cats.css">
+{% endblock %}
+
 {% block content %}
-    <h1>{{ cat.name }}</h1>
-    <p>{{ cat.birth_date}}</p>
-    <p>{{ cat.digital_chip}}</p>
+
+    {% include 'Cat/_large-card.html.twig' %}
     
 {% endblock %}

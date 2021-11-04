@@ -199,20 +199,6 @@
       "file": "src/Controller/ItemController.php",
       "selection": {
         "start": {
-          "line": 24,
-          "character": 26
-        },
-        "end": {
-          "line": 24,
-          "character": 33
-        }
-      },
-      "description": "Cette fois la fonction attend un paramètre en entrée.\r\n\r\nEt bien c'est notre router qui lui fournira (dés lors qu'on a bien dit dans la route qu'un paramètre devait etre passé).\r\n\r\nDonc si l'URL [http://localhost:8000/items/show?id=1](http://localhost:8000/items/show?id=1) est appelée, la valeur de `$id` sera de `1`"
-    },
-    {
-      "file": "src/Controller/ItemController.php",
-      "selection": {
-        "start": {
           "line": 27,
           "character": 8
         },
@@ -222,6 +208,20 @@
         }
       },
       "description": "Ensuite on peut utiliser `$id` pour récupérer le bon item dans notre base de données à l'aide de notre `ItemManager`(qui appartient à la couche Modèle de notre MVC)"
+    },
+    {
+      "file": "src/Controller/ItemController.php",
+      "selection": {
+        "start": {
+          "line": 24,
+          "character": 26
+        },
+        "end": {
+          "line": 24,
+          "character": 33
+        }
+      },
+      "description": "Cette fois la fonction attend un paramètre en entrée.\r\n\r\nEt bien c'est notre router qui lui fournira (dés lors qu'on a bien dit dans la route qu'un paramètre devait etre passé).\r\n\r\nDonc si l'URL [http://localhost:8000/items/show?id=1](http://localhost:8000/items/show?id=1) est appelée, la valeur de `$id` sera de `1`"
     }
   ]
 }

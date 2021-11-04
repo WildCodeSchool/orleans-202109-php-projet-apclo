@@ -32,21 +32,6 @@
       "line": 9
     },
     {
-      "file": "public/index.php",
-      "description": "Fais bien attention à cette ligne : il s'agit du fichier qui contient les informations de connexion de l'application à ta base de données. Il est donc primordial de le personnaliser pour que l'application MVC fonctionne sur ton environnement.",
-      "line": 14,
-      "selection": {
-        "start": {
-          "line": 14,
-          "character": 1
-        },
-        "end": {
-          "line": 14,
-          "character": 48
-        }
-      }
-    },
-    {
       "file": "config/db.php.dist",
       "description": "Avant de débuter une application qui utilise le framework simple-mvc, pense bien à copier ce fichier pour créer ton propre `db.php`. Il te faudra ensuite remplacer les paramètres de connection à la BDD : \r\n- APP_DB_USER : L'identifiant de connexion à ta BDD\r\n- APP_DB_PASSWORD : Le mot de passe de connexion à ta DB\r\n- APP_DB_HOST : L'adresse de ton server de BDD\r\n- APP_DB_NAME : Le nom de la BDD à laquelle tu veux te connecter",
       "selection": {
@@ -60,6 +45,21 @@
         }
       },
       "line": 20
+    },
+    {
+      "file": "public/index.php",
+      "description": "Fais bien attention à cette ligne : il s'agit du fichier qui contient les informations de connexion de l'application à ta base de données. Il est donc primordial de le personnaliser pour que l'application MVC fonctionne sur ton environnement.",
+      "line": 14,
+      "selection": {
+        "start": {
+          "line": 14,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 48
+        }
+      }
     },
     {
       "file": "public/index.php",

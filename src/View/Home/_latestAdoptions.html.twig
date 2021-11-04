@@ -1,5 +1,2 @@
-{% for adoptedCat in adoptedCats %}
-	{{ adoptedCat.name }}
-	{{ adoptedCat.birth_date }}
-	<div>Gender</div>
-{% endfor %}
+<h2 class="container-sm">Nos derniers adoptés !</h2>
+{% include 'Home/_cardLatestAdopted.html.twig' %}

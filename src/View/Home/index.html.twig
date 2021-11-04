@@ -1,6 +1,10 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/cats.css"><link rel="stylesheet" href="/assets/css/cards.css">
+{% endblock %}
+
 {% block content %}
-	<h1>Hello Wilder !</h1>
+	{% include '_banner.html.twig' %}
 	{% include 'Home/_latestAdoptions.html.twig' %}
 {% endblock %}

@@ -24,7 +24,7 @@ class HomeController extends AbstractController
     public function index()
     {
         $catManager = new CatManager();
-      
+
         $adoptions = $catManager->toAdopt();
         $adoptedCats = $catManager->latestAdopted();
 

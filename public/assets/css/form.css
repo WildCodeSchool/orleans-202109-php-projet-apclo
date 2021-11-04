@@ -1,0 +1,50 @@
+:root {
+    --form-color: #E8c1a5;
+    --background: #e5e5e5;
+    --title-font: Handlee;
+    --text-font: Bellota;
+}
+
+body {
+    background-color: var(--background);
+    border-radius: 8px;
+}
+.form_title{
+    font-family: var(--title-font);
+}
+.coordinates{
+    font-family: var(--title-font);
+}
+.form-group_message{
+    font-family: var(--title-font);
+}
+
+form {
+    font-family: var(--text-font);
+    background-color: var(--form-color);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.our_coordinates {
+    font-family: var(--title-font);
+}
+
+.info {
+    font-family: var(--texte-font);
+    background-color: var(--form-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.apclo_coordinates{
+    background-color: var(--form-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    
+}
+
+.map {
+}

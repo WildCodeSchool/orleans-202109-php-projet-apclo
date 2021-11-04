@@ -5,26 +5,25 @@
     background-image: url(/assets/images/cat_banner.jpg);
     background-size: cover;
     background-position: center 30%;
-    width: var(--width-background-image);
-    height: var(--height-background-image);
+    width: var(--width-banner);
+    height: var(--height-banner);
 }
 
 .title {
     --width-banner-title: 80%;
-    --spacing1: 10px;
-    --spacing2: 24px;
-    --spacing3: 40px;
+    --spacing1: 24px;
+    --spacing2: 40px;
     background-color: var(--secondary-color);
     text-align: center;
     color: var(--light-color);
     opacity: 0.9;
-    width: var(--width-background-color);
+    width: var(--width-banner-title);
     margin: auto;
-    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing2))));    
+    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing1))));    
 }
 
 .title h1 {
-    margin: var(--spacing2);
+    margin: var(--spacing1);
 }
 
 .title p {
@@ -32,6 +31,6 @@
     text-indent: 10%;
     font-size: var(--text-size);
     font-family: var(--text-font);
-    margin: var(--spacing2);
-    padding-bottom: var(--spacing3);
+    margin: var(--spacing1);
+    padding-bottom: var(--spacing2);
 }

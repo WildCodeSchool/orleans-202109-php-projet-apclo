@@ -9,7 +9,7 @@
 
 namespace App\Controller;
 
-use App\Model\HomeManager;
+use App\Model\CatManager;
 
 class HomeController extends AbstractController
 {
@@ -23,8 +23,8 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $homeManager = new HomeManager();
-        $adoptedCats = $homeManager->latestAdopted();
+        $catManager = new CatManager();
+        $adoptedCats = $catManager->latestAdopted();
 
         return $this->twig->render('Home/index.html.twig', ['adoptedCats' => $adoptedCats]);
     }

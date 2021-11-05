@@ -1,5 +1,5 @@
 .card-cat{    
-    height: 650px;
+    height: auto;
 }
 
 .card-body {
@@ -52,15 +52,4 @@ img {
 .text-column {
     height: 650px;
 }
-
-@media screen and (max-width:766px) {
-
-    .card-cat {
-        height: auto;
-    }
-
-    .text-column {
-        height: auto;
-    }
-} 
   

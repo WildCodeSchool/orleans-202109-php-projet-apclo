@@ -1,0 +1,27 @@
+.actuality-banner {
+    background-image: url('../images/cat_banner_actuality.jpg');
+    background-position: center;
+}
+
+.actuality-title {
+    --spacing1: 10px;
+    --spacing2: 24px;  
+}
+
+.actuality-title p {
+    margin: var(--spacing2);
+}
+
+.actuality-title h2 {
+    margin: var(--spacing2);
+    padding-top: var(--spacing1);
+}
+
+.actuality-title .entity {
+    text-indent: 0;
+    padding-bottom: 0;
+}
+.actuality-title .date {
+    padding-bottom: var(--spacing2);
+    text-indent: 0;
+}

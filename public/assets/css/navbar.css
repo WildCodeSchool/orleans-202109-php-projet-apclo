@@ -1,0 +1,36 @@
+nav {
+    background-color: var(--third-color);
+    font-family: var(--text-font);
+}
+
+.logo {
+    --logo-size: 50px;
+    width: var(--logo-size);
+    height: var(--logo-size);
+}
+
+.logo-below {
+    --logo-size: 100px;
+    margin-bottom: -50px;
+    padding: 1rem;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.catSvg {
+    height: 18px;
+}
+
+.mailSvg {
+    height: 14px;
+}
+
+.pawSvg {
+    height: 14px;
+}
+
+.catHouseSvg {
+    height: 14px;
+}

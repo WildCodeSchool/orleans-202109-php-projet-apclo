@@ -20,94 +20,72 @@
 			<p>Vos coordonnées :</p>
 
 			<div class="form_box">
-				<form action="thanks.php" method="POST">
+				<form method="POST">
 
-					<div class="row mb-2">
-						<div class="col">
-							<div class="form-outline">
-								<div class="row mb-4">
-									<label for="lastname" class="form-label">Nom :</label>
-									<div class="col-sm-6">
-										<input type="text" id="lastname" class="form-control " name="lastname" placeholder="Dupont" required/>
-									</div>
-								</div>
-							</div>
 
-							<div class="col">
-								<div class="form-outline">
-									<div class="row mb-3">
-										<label for="firstname" class="form-label" class="form-label">Prénom :</label>
-										<div class="col-sm-6">
-											<input type="text" id="firstname" class="form-control" name="firstname" placeholder="Eric" required/>
-										</div>
-									</div>
-								</div>
-							</div>
+					<div class="form-group">
+						<label for="lastname" class="form-label">Nom :</label>
+						<input type="text" id="lastname" class="form-control " name="lastname" placeholder="Dupont" required/>
+					</div>
 
-							<div class="col">
-								<div class="form-outline">
-									<div class="row mb-3">
-										<label for="phone" class="form-label">Numéro de Téléphone :</label>
-										<div class="col-sm-6">
-											<input type="tel" id="tel" class="form-control" type="tel" name="tel" placeholder="02 38 52 77 82" required/>
-										</div>
-									</div>
-								</div>
-							</div>
 
-							<div class="col">
-								<div class="form-outline">
-									<div class="row mb-3">
-										<label for="e-mail" class="form-label">Mail :</label>
-										<div class="col-sm-6">
+					<div class="form-group">
+						<label for="firstname" class="form-label">Prénom :</label>
+						<input type="text" id="firstname" class="form-control" name="firstname" placeholder="Eric" required/>
+					</div>
 
-											<input type="email" id="e-mail" class="form-control" name="e-mail" placeholder="eric.dupont@gmail.com" required/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form>
+
+					<div class="form-group">
+						<label for="phone" class="form-label">Numéro de Téléphone :</label>
+						<input type="tel" id="tel" class="form-control" type="tel" name="tel" placeholder="02 38 52 77 82" required/>
+					</div>
+
+
+					<div class="form-group">
+
+						<label for="e-mail" class="form-label">Mail :</label>
+
+
+						<input type="email" id="e-mail" class="form-control" name="e-mail" placeholder="eric.dupont@gmail.com" required/>
+					</div>
+
 				</div>
+
 			</div>
+
+
 			<div class="form-group_message">
 				<div class="col mt-4">
 					<p>Votre message :</p>
 				</div>
 				<div class="form_box">
-					<form action="thanks.php" method="POST">
 
-						<div class="card_02">
+					<div class="card_02">
 
-
+						<div form="form-group">
 							<label class="col-sm-3 col-form-label" for="subject">Sujet :</label>
-							<div class="col-md-6">
+							<div class="col-md-6"></div>
+							<select id="subject" name="subject" class="form-control" required>
+								<option value="une question">Une question</option>
+								<option value="un renseignement">Un renseignement</option>
+								<option value="une adoption">Une adoption</option>
+								<option value="une visite">Une visite</option>
+							</select>
 
-								<select id="subject" name="subject" class="form-control" required>
-									<option value="une question">Une question</option>
-									<option value="un renseignement">Un renseignement</option>
-									<option value="une adoption">Une adoption</option>
-									<option value="une visite">Une visite</option>
-									<option value="un don">Un don</option>
-								</select>
-
-								<label for="comments" class="col mt-4 mb-2">Message :</label>
-								<textarea id="message" name="message" class="col mb-4" placeholder="Insérer votre message :" required></textarea>
-								<div class="button">
-									<button type="submit" class="btn btn-light">Envoyer</button>
-								</div>
+							<label for="comments" class="col mt-4 mb-2">Message :</label>
+							<textarea id="message" name="message" class="col mt-4" placeholder="Insérer votre message :" required></textarea>
+							<div class="button">
+								<button type="submit" class="btn btn-light">Envoyer</button>
 							</div>
-
-						</form>
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
-
-
-			<div class="our_coordinates col-4 mt-4">
+		</div>
+		<div class="col-6">
+			<div class="our_coordinates col-7 mt-4">
 				<h2>Nos coordonnées</h2>
 			</div>
-
 			<div class="apclo_coordinates">
 				<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
 				<p>44 Av. Roger Secrétain</p>
@@ -122,6 +100,6 @@
 					</small>
 				</div>
 			</div>
-		</body>
-	</html>
-</body></div></body>
+		</div>
+	</div>
+</body></html>

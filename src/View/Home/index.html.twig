@@ -1,6 +1,13 @@
 {% extends 'layout.html.twig' %}
 
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/form.css">{% endblock %}
-{% block content %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/cats.css">
+	<link rel="stylesheet" href="/assets/css/cards.css">
+	<link rel="stylesheet" href="/assets/css/form.css">
+{% endblock %}
 
+{% block content %}
+	{% include '_banner.html.twig' %}
+	{% include 'Home/_latestAdoptions.html.twig' %}
+	{% include 'Home/_toAdopt.html.twig' %}
 {% endblock %}

@@ -1,0 +1,13 @@
+footer {
+    background-color: var(--third-color);
+    font-family: var(--text-font);
+}
+
+.facebookLogo {
+    height: 20px;
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+} 

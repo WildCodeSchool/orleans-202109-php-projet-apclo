@@ -13,8 +13,8 @@
     --dark-color        : #111111;
     --title-font        : Handlee;
     --text-font         : Bellota;
+    --title-size        : 50px;
     --main-title-size   : 64px;
-    --title-size        : 30px;
     --text-size         : 26px;
     --border-shadow     : 2px 2px 6px var(--intermediate-color);
     --spacing           : 8px;

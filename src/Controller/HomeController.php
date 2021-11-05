@@ -10,6 +10,7 @@
 namespace App\Controller;
 
 use App\Model\ActualityManager;
+use App\Model\CatManager;
 
 class HomeController extends AbstractController
 {
@@ -26,6 +27,10 @@ class HomeController extends AbstractController
         $actualityManager = new ActualityManager();
         $article = $actualityManager->showLastArticle();
 
-        return $this->twig->render('Home/index.html.twig', ['article' => $article]);
+        $catManager = new CatManager();
+        $adoptions = $catManager->toAdopt();
+        $adoptedCats = $catManager->latestAdopted();
+
+        return $this->twig->render('Home/index.html.twig', ['adoptions' => $adoptions, 'adoptedCats' => $adoptedCats, 'article' => $article]);
     }
 }

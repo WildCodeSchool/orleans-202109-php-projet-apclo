@@ -1,32 +1,14 @@
 .actuality-banner {
-    --width-banner: 100%;
-    --height-banner: 400px;
-    background-repeat: no-repeat;
-    background-image: url(/assets/images/cat_banner_actuality.jpg);
-    background-size: cover;
+    background-image: url('../images/cat_banner_actuality.jpg');
     background-position: center;
-    width: var(--width-banner);
-    height: var(--height-banner);
 }
 
 .actuality-title {
-    --width-banner-title: 80%;
-    --spacing1: 15px;
-    --spacing2: 24px;
-    background-color: var(--secondary-color);
-    text-align: center;
-    color: var(--light-color);
-    opacity: 0.9;
-    width: var(--width-banner-title);
-    margin: auto;
-    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing2))));    
+    --spacing1: 10px;
+    --spacing2: 24px;  
 }
 
 .actuality-title p {
-    color: var(--third-color);
-    text-indent: 10%;
-    font-size: var(--text-size);
-    font-family: var(--text-font);
     margin: var(--spacing2);
 }
 
@@ -35,11 +17,11 @@
     padding-top: var(--spacing1);
 }
 
-.actuality-title h3 {
-    color: var(--third-color);
-    font-family: var(--text-font);
+.actuality-title .entity {
+    text-indent: 0;
+    padding-bottom: 0;
 }
-
-.actuality-title h4 {
+.actuality-title .date {
     padding-bottom: var(--spacing2);
+    text-indent: 0;
 }

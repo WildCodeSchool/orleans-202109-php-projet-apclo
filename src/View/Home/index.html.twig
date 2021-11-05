@@ -1,3 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}{% include '_ActualityBanner.html.twig' %}{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/actuality.css">
+{% endblock %}
+{% block content %}{% include 'Home/_actualityBanner.html.twig' %}{% endblock %}

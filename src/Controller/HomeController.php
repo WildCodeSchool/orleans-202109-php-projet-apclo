@@ -31,6 +31,10 @@ class HomeController extends AbstractController
         $adoptions = $catManager->toAdopt();
         $adoptedCats = $catManager->latestAdopted();
 
-        return $this->twig->render('Home/index.html.twig', ['adoptions' => $adoptions, 'adoptedCats' => $adoptedCats, 'article' => $article]);
+        return $this->twig->render('Home/index.html.twig', [
+            'adoptions' => $adoptions,
+            'adoptedCats' => $adoptedCats,
+            'article' => $article,
+        ]);
     }
 }

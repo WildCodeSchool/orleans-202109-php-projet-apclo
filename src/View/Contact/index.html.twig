@@ -16,7 +16,7 @@
 		</div>
 
 
-		<div class="coordinates">
+		<div class="coordinates absolute">
 			<p>Vos coordonnées :</p>
 
 			<div class="form_box">
@@ -25,28 +25,26 @@
 
 					<div class="form-group">
 						<label for="lastname" class="form-label">Nom :</label>
-						<input type="text" id="lastname" class="form-control " name="lastname" placeholder="Dupont" required/>
+						<input type="text" id="lastname" class="form-control" name="lastname" placeholder="Dupont" required/>
 					</div>
 
 
 					<div class="form-group">
-						<label for="firstname" class="form-label">Prénom :</label>
+						<label for="firstname" class="form-label mt-3">Prénom :</label>
 						<input type="text" id="firstname" class="form-control" name="firstname" placeholder="Eric" required/>
 					</div>
 
 
 					<div class="form-group">
-						<label for="phone" class="form-label">Numéro de Téléphone :</label>
+						<label for="phone" class="form-label mt-3">Numéro de Téléphone :</label>
 						<input type="tel" id="tel" class="form-control" type="tel" name="tel" placeholder="02 38 52 77 82" required/>
 					</div>
 
 
 					<div class="form-group">
 
-						<label for="e-mail" class="form-label">Mail :</label>
-
-
-						<input type="email" id="e-mail" class="form-control" name="e-mail" placeholder="eric.dupont@gmail.com" required/>
+						<label for="e-mail" class="form-label mt-3">Mail :</label>
+						<input type="email" id="e-mail" class="form-control mb-3" name="e-mail" placeholder="eric.dupont@gmail.com" required/>
 					</div>
 
 				</div>
@@ -62,8 +60,8 @@
 
 					<div class="card_02">
 
-						<div form="form-group">
-							<label class="col-sm-3 col-form-label" for="subject">Sujet :</label>
+						<div form="form-group_sbuject">
+							<label class="col-form-label mt-1" for="subject">Sujet :</label>
 							<div class="col-md-6"></div>
 							<select id="subject" name="subject" class="form-control" required>
 								<option value="une question">Une question</option>
@@ -72,34 +70,18 @@
 								<option value="une visite">Une visite</option>
 							</select>
 
-							<label for="comments" class="col mt-4 mb-2">Message :</label>
-							<textarea id="message" name="message" class="col mt-4" placeholder="Insérer votre message :" required></textarea>
+							<label for="comments" class="col mt-3">Message :</label>
+							<textarea id="message" name="message" class="col-10 mt-1 pr-2 pl-2" placeholder="Insérer votre message :" required></textarea>
 							<div class="button">
-								<button type="submit" class="btn btn-light">Envoyer</button>
+								<button type="submit" class="btn btn-light mt-4">Envoyer</button>
 							</div>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
-		<div class="col-6">
-			<div class="our_coordinates col-7 mt-4">
-				<h2>Nos coordonnées</h2>
-			</div>
-			<div class="apclo_coordinates">
-				<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
-				<p>44 Av. Roger Secrétain</p>
-				<p>45100 Orléans</p>
-				<p>06 72 56 18 41</p>
-				<p>Email:</p>
-			</div>
-			<div class="row">
-				<div class="col ">
-					<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
-						<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N">Afficher une carte plus grande</a>
-					</small>
-				</div>
-			</div>
-		</div>
 	</div>
+	
+
+
 </body></html>

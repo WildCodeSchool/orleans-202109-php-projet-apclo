@@ -10,28 +10,25 @@ body {
     border-radius: 8px;
 }
 
-.form_title{
+.form_title {
     font-family: var(--title-font);
 }
 
-.coordinates{
+.coordinates {
     font-family: var(--title-font);
 }
 
-.form-group_message{
+.form-group_message {
     font-family: var(--title-font);
 }
 
-.form_box{
-    width: 543px;
-    height: 375px;   
-    padding: 15px;
+.form_box {
+    width: 500px;
+    height: 360px;
     background-color: var(--form-color);
-    border-radius: 15px;
+    border-radius: 8px;
+    padding: 15px;
 }
-
-
-
 
 .our_coordinates {
     font-family: var(--title-font);
@@ -44,12 +41,14 @@ body {
     border-radius: 8px;
     margin-bottom: 25px;
 }
+.coordinates_block{
+    position: absolute;
+}
+.apclo_coordinates {
 
-.apclo_coordinates{
-    width: 378px;
+    width: 325px;
     background-color: var(--form-color);
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
-    
 }

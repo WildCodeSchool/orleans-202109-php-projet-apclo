@@ -11,12 +11,12 @@
 			</div>
 		{% endfor %}
 
-		<div class="form_coordinates_title">
+		<div class="form_coordinates_title mt-4 align-center">
 			<h2>Formulaire</h2>
 		</div>
 
 
-		<div class="coordinates">
+		<div class="form_coordinates_title">
 			<p>Vos coordonnées :</p>
 
 			<div class="form_box">
@@ -53,7 +53,7 @@
 
 
 			<div class="form-group_message">
-				<div class="col mt-4">
+				<div class="form_coordinates_title col mt-4">
 					<p>Votre message :</p>
 				</div>
 				<div class="form_box">
@@ -61,8 +61,7 @@
 					<div class="card_02">
 
 						<div form="form-group_sbuject">
-							<label class="col-form-label mt-1" for="subject">Sujet :</label>
-							<div class="col-md-6"></div>
+							<label class="col-form mb-2" for="subject">Sujet :</label>
 							<select id="subject" name="subject" class="form-control" required>
 								<option value="une question">Une question</option>
 								<option value="un renseignement">Un renseignement</option>
@@ -70,7 +69,7 @@
 								<option value="une visite">Une visite</option>
 							</select>
 
-							<label for="comments" class="col mt-3">Message :</label>
+							<label for="message" class="col-form">Message :</label>
 							<textarea id="message" name="message" class="col-10 mt-1 pr-2 pl-2" placeholder="Insérer votre message :" required></textarea>
 							<div class="button">
 								<button type="submit" class="btn btn-light mt-4">Envoyer</button>
@@ -81,12 +80,11 @@
 			</form>
 
 		</div>
-
 		<div class="container offset-7 ">
-			<div class="form_coordinates_title">
+			<div class="form_coordinates_title mx-5">
 				<h2>Nos coordonnées</h2>
 			</div>
-			<div class="apclo_coordinates ">
+			<div class="apclo_coordinates mb-5">
 				<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
 				<p>44 Av. Roger Secrétain</p>
 				<p>45100 Orléans</p>

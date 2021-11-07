@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Handlee&display=swap');
+
 :root {
     --form-color: #E8c1a5;
     --background: #e5e5e5;
@@ -10,46 +12,26 @@ body {
     border-radius: 8px;
 }
 
-.form_title{
+.form_coordinates_title {
     font-family: var(--title-font);
 }
 
-.coordinates{
-    font-family: var(--title-font);
-}
-
-.form-group_message{
-    font-family: var(--title-font);
-}
-
-.form_box{
-    width: 543px;
-    height: 375px;   
-    padding: 15px;
+.form_box {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    width: 500px;
+    height: 360px;
     background-color: var(--form-color);
-    border-radius: 15px;
-}
-
-
-
-
-.our_coordinates {
-    font-family: var(--title-font);
-}
-
-.info {
-    font-family: var(--texte-font);
-    background-color: var(--form-color);
-    padding: 15px;
     border-radius: 8px;
-    margin-bottom: 25px;
+    padding: 15px;
 }
 
-.apclo_coordinates{
-    width: 378px;
+.apclo_coordinates {
+    font-family: var(--text-font);
+    width: 325px;
     background-color: var(--form-color);
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
-    
 }

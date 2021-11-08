@@ -1,0 +1,24 @@
+<div class="container-sm">
+	<div class="card card-cat mb-3">
+		<div class="row">
+			<div class="col-md-6 d-flex justify-content-center align-items-center">
+				<img class="card-img-top" src="/uploads/{{cat.image}}" alt="Card image cap">
+			</div>
+			<div class="col-md-6 text-column">
+				<div class="card-body">
+					<h3 class="card-title text-center"><img class="logo paw" src="/assets/images/paw.svg" alt="paw">{{cat.name}}</h3>
+					<div class="card-text description d-flex flex-column justify-content-start align-items-center">
+						<ul class="d-flex flex-row flex-wrap justify-content-around">
+							<li>{{cat.birth_date}}</li>
+							<li>{{cat.gender}}</li>
+							<li>{{cat.color}}</li>
+							<li>{{cat.breed}}</li>
+							<li>{{cat.fur}}</li>
+						</ul>
+						<p>{{cat.description}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

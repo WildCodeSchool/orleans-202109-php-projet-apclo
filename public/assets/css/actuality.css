@@ -24,3 +24,7 @@
     padding-bottom: var(--spacing2);
     text-indent: 0;
 }
+
+.btn-outline-light {
+    align-self: flex-end;
+}

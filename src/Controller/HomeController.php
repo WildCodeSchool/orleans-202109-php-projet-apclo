@@ -24,8 +24,8 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-       /* $actualityManager = new ActualityManager();
-        $article = $actualityManager->showLastArticle();*/
+        $actualityManager = new ActualityManager();
+        $article = $actualityManager->showLastArticle();
 
         $catManager = new CatManager();
         $adoptions = $catManager->toAdopt();
@@ -34,7 +34,7 @@ class HomeController extends AbstractController
         return $this->twig->render('Home/index.html.twig', [
             'adoptions' => $adoptions,
             'adoptedCats' => $adoptedCats,
-            /*'article' => $article,*/
+            'article' => $article,
         ]);
     }
 }

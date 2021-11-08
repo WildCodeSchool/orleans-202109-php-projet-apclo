@@ -14,5 +14,4 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'contact' => ['ContactController', 'index',],
-    'safe' => ['ContactController', 'safe',],
 ];

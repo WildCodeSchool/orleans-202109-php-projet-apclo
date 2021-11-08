@@ -15,4 +15,5 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'contact' => ['ContactController', 'index',],
     'chats' => ['CatController', 'index'],
+    'association' => ['AssociationController', 'index'],
 ];

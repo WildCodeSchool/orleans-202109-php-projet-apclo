@@ -1,0 +1,38 @@
+.banner {
+    --width-banner: 100%;
+    --height-banner: 400px;
+    background-repeat: no-repeat;
+    background-image: url(/assets/images/cat_banner.jpg);
+    background-size: cover;
+    background-position: center 30%;
+    width: var(--width-banner);
+    height: var(--height-banner);
+}
+
+.title {
+    --width-banner-title: 80%;
+    --spacing1: 24px;
+    --spacing2: 40px;
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: var(--light-color);
+    opacity: 0.9;
+    width: var(--width-banner-title); 
+    max-width: 1100px;
+    margin: auto;
+    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing1))));
+    border-radius: 8px;    
+}
+
+.title h1 {
+    margin: var(--spacing1);
+}
+
+.title p {
+    color: var(--third-color);
+    text-indent: 10%;
+    font-size: var(--text-size);
+    font-family: var(--text-font);
+    margin: var(--spacing1);
+    padding-bottom: var(--spacing2);
+}

@@ -202,7 +202,7 @@ VALUES
     "Adhésion",
     "La cotisation annuelle, d'un minimum de 10€, donne droit à une déduction fiscale : 
     66% des sommes versée, dans la limite de 20% du revenu imposable.",
-    '2021-11-01',
+    '2021-11-01'
   ),
   (
     "Reprise d'activité",

@@ -2,6 +2,7 @@
 
 :root {
     --primary-color     : #f1cdb3;
+    --secondary-color   : #dfa981;
     --form-color        : #E8c1a5;
     --background        : #e5e5e5;
     --title-font        : Handlee;
@@ -13,7 +14,9 @@ body{
 }
 
 .banniere_asso{
-    background-color: var(--primary-color);
+    height: 435px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
 }
 
 .title {
@@ -25,8 +28,11 @@ body{
 }
 
 .member {
+    height: 228px;
     background-color: var(--form-color);
     font-family: var(--text-font);
+    border-radius: 8px;
+    
 }
 
 .job {

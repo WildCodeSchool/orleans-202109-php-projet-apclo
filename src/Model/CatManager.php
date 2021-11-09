@@ -8,7 +8,7 @@ class CatManager extends AbstractManager
 
     public function selectOneById(int $id)
     {
-        $statement = $this->pdo->prepare("SELECT cat.name name, image, ROUND((DATEDIFF(NOW(), birth_date) / 365)) age,
+        $statement = $this->pdo->prepare("SELECT cat.name name, image, TIMESTAMPDIFF(YEAR, birth_date, NOW()) as age,
         digital_chip, description, adoption_date, gender.name gender, fur.length length,
         color.name color, breed.name breed 
         FROM " . self::TABLE .

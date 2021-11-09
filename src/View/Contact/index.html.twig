@@ -5,12 +5,16 @@
 </head>
 <body>
 	<div class="container d-flex align-items-start flex-column px-5 mt-2">
-		{% for error in errors %}
-			<div>
-				<p class="text-danger alert alert-danger">{{error}}</p>
+		{% if errors is not empty %}
+			<div class="alert alert-danger">
+				{% for error in errors %}
+					<div>
+						<p class="text-danger alert alert-danger">{{error}}</p>
+					</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
-
+		{% endif %}
+		
 		<div class="form_coordinates_title">
 			<h2>Formulaire</h2>
 		</div>
@@ -25,26 +29,26 @@
 
 					<div class="form-group">
 						<label for="lastname" class="form-label">Nom :</label>
-						<input type="text" id="lastname" class="form-control" name="lastname" placeholder="Dupont" required/>
+						<input type="text" value="{{ stamp.lastname }}" id="lastname" class="form-control" name="lastname" placeholder="Dupont" required/>
 					</div>
 
 
 					<div class="form-group">
 						<label for="firstname" class="form-label mt-3">Prénom :</label>
-						<input type="text" id="firstname" class="form-control" name="firstname" placeholder="Eric" required/>
+						<input type="text" value="{{ stamp.firstname }}" id="firstname" class="form-control" name="firstname" placeholder="Eric" required/>
 					</div>
 
 
 					<div class="form-group">
 						<label for="phone" class="form-label mt-3">Numéro de Téléphone :</label>
-						<input type="tel" id="tel" class="form-control" type="tel" name="tel" placeholder="02 38 52 77 82" required/>
+						<input type="tel" value="{{ stamp.tel }}" id="tel" class="form-control" type="tel" name="tel" placeholder="02 38 52 77 82" required/>
 					</div>
 
 
 					<div class="form-group">
 
 						<label for="email" class="form-label mt-3">Mail :</label>
-						<input type="email" id="email" class="form-control mb-3" name="e-mail" placeholder="eric.dupont@gmail.com" required/>
+						<input type="email" value="{{ stamp.email }}" id="email" class="form-control mb-3" name="e-mail" placeholder="eric.dupont@gmail.com" required/>
 					</div>
 
 				</div>
@@ -73,7 +77,7 @@
 							<label for="message" class="col-form">Message :</label>
 							<textarea id="message" name="message" class="col-10 mt-2 pr-2 pl-2" placeholder="Insérer votre message :" required></textarea>
 							<div class="button d-flex align-items-end flex-column mx-4">
-								<button type="submit" class="btn btn-light mt-4">Envoyer</button>
+								<button class="btn btn-light mt-4">Envoyer</button>
 							</div>
 						</div>
 					</div>

@@ -1,0 +1,29 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/banner.css">
+{% endblock %}
+
+{% block content %}
+    <div class="banner"></div>
+    <div class="title">
+        <h1>Admin / Actualités</h1>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for actuality in actualities %}
+                <tr>
+                    <td>{{ actuality.title }}</td>
+                    <td>{{ actuality.date }}</td>
+                </tr>
+{% endfor %}
+        </tbody>
+        </table>
+{% endblock %}

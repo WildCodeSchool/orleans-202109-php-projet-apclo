@@ -15,4 +15,5 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'chats/show' => ['CatController','show', ['id']],
     'chats' => ['CatController', 'index'],
+    'actualities' => ['ActualityController', 'index'],
 ];

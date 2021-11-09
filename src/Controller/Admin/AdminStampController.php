@@ -1,5 +1,6 @@
 <?php
 
+/*
 namespace App\Controller;
 
 use App\Model\Stampmanager;
@@ -9,7 +10,7 @@ class AdminStampController extends AbstractController
     /**
      * List stamp
      */
-    public function index(): string
+   /* public function index(): string
     {
         $stampManager = new Stampmanager();
         $stamps = $stampManager->selectAll();
@@ -71,8 +72,8 @@ class AdminStampController extends AbstractController
             // if validation is ok, update and redirection
             //$itemManager->update($item);
             //header('Location: /items/show?id=' . $id);
-        }
 
-        return $this->twig->render('Contact/Controller/index.html.twig', ['errors' => $errors]);
+        /*return $this->twig->render('Contact/Controller/index.html.twig', ['errors' => $errors]);
     }
 }
+*/

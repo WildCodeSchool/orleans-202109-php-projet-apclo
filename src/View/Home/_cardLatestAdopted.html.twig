@@ -1,11 +1,11 @@
 <div class="container-sm">
-	<div class="row">
+	<div class="row gap-3">
 		{% for adoptedCat in adoptedCats %}
-			<div class="col-sm-6 col-lg-4">
+			<div class="col-sm-6 col-lg-4 column">
 				<div class="card card-cat mb-3">
 					<img class="card-img-top float-top" src="/uploads/{{adoptedCat.image}}" alt="Card image cap">
 					<div class="card-body">
-						<h3 class="card-title text-center"><img class="logo paw" src="/assets/images/paw.svg" alt="paw">{{adoptedCat.name}}</h3>
+						<h3 class="card-title text-center">{{adoptedCat.name}}</h3>
 						<div class="card-text description">
 							<ul>
 								<li><img class="logo calendar" src="/assets/images/birth-day-logo.svg" alt="calendar">{{adoptedCat.birth_date}}</li>

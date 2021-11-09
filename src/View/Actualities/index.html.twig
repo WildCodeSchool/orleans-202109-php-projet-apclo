@@ -12,8 +12,10 @@
 </div>
 
 {% for actuality in actualities %}
-<div>
-        <img src="assets/images/separator.svg" alt="separator cats paws">
+<div class="separator d-flex justify-content-center">
+<img src="assets/images/separator.svg" alt="separator cats paws">
+</div>
+<div class="text">
         <p class="entity">{{ actuality.title }}</p>
         <p>{{ actuality.description }}</p>
         <p class="date">{{ actuality.date }}</p>

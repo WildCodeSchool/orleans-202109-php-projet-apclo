@@ -1,8 +1,10 @@
 <div class="banner actuality-banner"></div>
 <div class="title actuality-title">
         <h2>Dernière actualité</h2>
-        <p class="entity">{{ article.title }}</p>
+        <p class="text-light fs-3">{{ article.title }}</p>
         <p>{{ article.description }}</p>
-        <p class="date">{{ article.date }}</p>
-        <a href="actualities" class="btn btn-outline-light btn-lg">Plus d'actualités</a>
+        <div>{{ article.date }}</div>
+        <div class="d-flex justify-content-end">
+                <a href="actualities" class="m-3 btn btn-ban btn-outline-light btn-lg">+ d'actualités</a>
+        </div>
 </div>

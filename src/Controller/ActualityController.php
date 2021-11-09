@@ -10,7 +10,7 @@ class ActualityController extends AbstractController
     {
         $actualityManager = new ActualityManager();
         $actualities = $actualityManager->selectAll("date", "DESC");
-        
+
         return $this->twig->render('Actualities/index.html.twig', ['actualities' => $actualities]);
     }
 }

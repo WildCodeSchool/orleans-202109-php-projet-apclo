@@ -10,8 +10,8 @@
 }
 
 .card-img-top {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
   }
 
 ul.d-flex {
@@ -50,5 +50,5 @@ img {
 }
 
 .text-column {
-    height: 650px;
-}
+    height: auto;
+}  

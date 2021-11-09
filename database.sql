@@ -39,6 +39,13 @@ CREATE TABLE gender (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(100) NOT NULL
   );
+CREATE TABLE article (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    `description` TEXT NOT NULL,
+    `date` DATE,
+    `image` CHAR(255)
+  );
 INSERT INTO
   gender (`name`)
 VALUES
@@ -178,7 +185,7 @@ VALUES
     'Opium',
     '250268743803005',
     "Opium fait partie d\'une fratrie de 4 chatons qui s\'étaient installés dans le jardin de leur famille d\'accueil. 
-    C\'est la plus petite de la fratrie, elle est très vive et très joueuse. 
+    C'est la plus petite de la fratrie, elle est très vive et très joueuse. 
     Elle continue d\'apprendre en observant son environnement. 
     Opium, sa soeur Opale et son frère Oscar recherchent leur famille pour la vie. 
     Leur frère Othello est déjà réservé.",
@@ -187,6 +194,37 @@ VALUES
     'Nebraska.jpg',
     2,
     1
+  );
+INSERT INTO
+  article (title, `description`, `date`)
+VALUES
+  (
+    "Adhésion",
+    "La cotisation annuelle, d'un minimum de 10€, donne droit à une déduction fiscale : 
+    66% des sommes versée, dans la limite de 20% du revenu imposable.",
+    '2021-11-01',
+  ),
+  (
+    "Reprise d'activité",
+    'Nous reprenons notre activité "chats errants" à compter de ce jour. 
+    Les demandes en provenance d\'Orléans et Meung sur Loire seront prioritaires, 
+    ces communes ayant passé un accord avec l\'association. 
+    Seront ensuite privilégiées les personnes s\'engageant à régler la totalité des frais. 
+    En cette fin d\'année, nous devons tenir compte, plus que jamais, de nos possibilités financières.',
+    '2021-10-23'
+  ),
+  (
+    "Fondation de l'APCLO",
+    "L'Association pour la Protection des Chats Libres d'Orléans est fondée, 
+    en accord avec la Direction de l'Environnement et de la Santé de la commune d'Orléans.",
+    '1999-08-03'
+  ),
+  (
+    "Quelle conduite tenir si un chat qui n’a pas l’habitude de sortir s’échappe de votre logement ?",
+    "Si vous habitez en pavillon ou en rez de jardin, laissez ouvert toute la nuit par là où le chat est sorti 
+    et réitérez plusieurs nuits de suite si nécessaire. Mettez un tout petit peu de nourriture devant la porte 
+    ou la fenêtre ouverte et davantage à l’intérieur.",
+    '2021-11-03'
   );
 ALTER TABLE
   cat

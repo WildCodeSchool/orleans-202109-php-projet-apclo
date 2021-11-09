@@ -57,6 +57,7 @@
     height          : 30px;
     margin-block-end: var(--spacing);
 }
+
 .column {
     width: calc((100% - 2em) / 3);
 }

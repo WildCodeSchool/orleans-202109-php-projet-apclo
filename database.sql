@@ -12,6 +12,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cat` ( `id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(100) NOT NULL, `digital_chip` INT(15), `description` TEXT, `adoption_date` DATE, `birth_date` DATE, PRIMARY KEY (`id`));
 
+ALTER TABLE `cat` ADD COLUMN `color_id` INT;
+
+ALTER TABLE `cat` ADD COLUMN `breed_id` INT;
+
+CREATE TABLE `color`( `id` int NOT NULL primary key AUTO_INCREMENT COMMENT 'Primary Key', `name` VARCHAR(100));
+
+CREATE TABLE `fur`( `id` int NOT NULL primary key AUTO_INCREMENT COMMENT 'Primary Key', `length` VARCHAR(100));
+
+CREATE TABLE `breed`( `id` int NOT NULL primary key AUTO_INCREMENT COMMENT 'Primary Key', `name` VARCHAR(100));
+
+ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_color` FOREIGN KEY(`color_id`) REFERENCES `color`(`id`);
+
+ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_breed` FOREIGN KEY(`breed_id`) REFERENCES `breed`(`id`);
+
+ALTER TABLE `cat` ADD CONSTRAINT `fk_cat_fur` FOREIGN KEY(`fur_id`) REFERENCES `fur`(`id`);
+
 ALTER TABLE `cat` ADD `gender_id` INT NOT NULL;
 
 CREATE TABLE `gender` ( `id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(100) NOT NULL, PRIMARY KEY (`id`));

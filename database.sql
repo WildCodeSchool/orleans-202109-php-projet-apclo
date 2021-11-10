@@ -52,11 +52,52 @@ VALUES
   ('Mâle'),
   ('Femelle');
 INSERT INTO
+  color (`name`)
+VALUES
+  ('Noir'),
+  ('Marron'),
+  ('Beige'),
+  ('Roux'),
+  ('Gris'),
+  ('Blanc'),
+  ('Bicolore'),
+  ('Tricolore'),
+  ('Tigré'),
+  ('Tâcheté');
+INSERT INTO
   furr (`length`)
 VALUES
   ('court'),
   ('mi-long'),
   ('long');
+INSERT INTO
+  breed (`name`)
+VALUES
+  ('Abyssin'),
+  ('Shorthair'),
+  ('Angora'),
+  ('Bengale'),
+  ('Bleu Russe'),
+  ('Bombay'),
+  ('Burmilla'),
+  ('Ceylan'),
+  ('Chartreux'),
+  ('Chausie'),
+  ('Européen'),
+  ('Javanais'),
+  ('Korat'),
+  ('Maine Coon'),
+  ('Mau Égyptien'),
+  ('Norvégien'),
+  ('Persan'),
+  ('Ragdoll'),
+  ('Sacré de Birmanie'),
+  ('Savannah'),
+  ('Siamois'),
+  ('Sibérien'),
+  ('Sphynx'),
+  ('Turc de Van'),
+  ('Angora Turc');
 INSERT INTO
   cat (
     `name`,

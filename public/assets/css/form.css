@@ -12,6 +12,14 @@ body {
     border-radius: 8px;
 }
 
+.h1{
+    font-family: var(--title-font);
+}
+
+.banner{
+    font-family: var(--text-font);
+}
+
 .form_coordinates_title {
     font-family: var(--title-font);
 }
@@ -31,8 +39,8 @@ body {
     display: inline-block;
     vertical-align: middle;
     float: none;
-    width: 500px;
-    height: 260px;
+   /* width: 500px;
+    height: 260px;*/
     font-family: var(--text-font);
     background-color: var(--form-color);
     border-radius: 8px;

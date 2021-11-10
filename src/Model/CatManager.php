@@ -44,10 +44,9 @@ class CatManager extends AbstractManager
 
     public function latestAdopted()
     {
-        $query = "SELECT c.*, g.name gender FROM " . self::TABLE . " c
-        LEFT JOIN gender g ON g.id=c.gender_id
-        WHERE adoption_date IS NOT NULL 
-        ORDER BY adoption_date DESC LIMIT 3";
+        $query = "SELECT * FROM " . self::TABLE .
+            " WHERE adoption_date IS NOT NULL 
+            ORDER BY adoption_date DESC LIMIT 3";
 
         return $this->pdo->query($query)->fetchAll();
     }

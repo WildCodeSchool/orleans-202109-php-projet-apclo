@@ -12,7 +12,7 @@ class CatManager extends AbstractManager
         digital_chip, description, adoption_date, gender.name gender, fur.length length,
         color.name color, breed.name breed 
         FROM " . self::TABLE .
-        "   LEFT JOIN gender ON gender.id = cat.gender_id 
+            "   LEFT JOIN gender ON gender.id = cat.gender_id 
             LEFT JOIN fur ON fur.id = cat.fur_id
             LEFT JOIN breed ON breed.id = cat.breed_id 
             LEFT JOIN color ON color.id = cat.color_id 
@@ -25,7 +25,10 @@ class CatManager extends AbstractManager
 
     public function toAdopt()
     {
-        $query = "SELECT * FROM " . self::TABLE . " WHERE adoption_date IS NULL ORDER BY id DESC LIMIT 3";
+        $query = "SELECT c.*, g.name gender FROM " . self::TABLE . " c
+        JOIN gender g ON g.id=c.gender_id
+        WHERE adoption_date IS NULL 
+        ORDER BY c.id DESC LIMIT 3";
 
         return $this->pdo->query($query)->fetchAll();
     }
@@ -33,7 +36,7 @@ class CatManager extends AbstractManager
     public function selectAllCats(): array
     {
         $query = "SELECT cat.name as name, image, birth_date, gender.name as gender, cat.id as id FROM " .
-        self::TABLE . " JOIN gender ON gender.id = cat.gender_id";
+            self::TABLE . " JOIN gender ON gender.id = cat.gender_id";
 
         return $this->pdo->query($query)->fetchAll();
     }

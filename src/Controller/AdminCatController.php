@@ -6,7 +6,7 @@ use App\Model\CatManager;
 
 class AdminCatController extends AbstractController
 {
-   /* public function edit(int $id): string
+    /*public function edit(int $id): string
     {
         $error = $cat = [];
         /*$catManager = new catManager();

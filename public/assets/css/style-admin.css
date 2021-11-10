@@ -1,0 +1,8 @@
+:root {
+    --primary-color: #BCE5A9;
+    --secondary-color:#7DCEBF;
+}
+
+.banner {
+    background-color: var(--primary-color);
+}

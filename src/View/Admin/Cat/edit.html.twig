@@ -1,7 +1,12 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block content %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/style-admin.css">
+	<link rel="stylesheet" href="/assets/css/edit-admin.css">
+{% endblock %}
 
-    {% include 'Admin/Cat/_form.html.twig' %}
+{% block content %}
+    {% include 'Admin/Cat/_banner.html.twig' %}
+	{% include 'Admin/Cat/_form.html.twig' %}
 
 {% endblock %}

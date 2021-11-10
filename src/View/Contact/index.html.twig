@@ -1,129 +1,128 @@
-{# TODO : manage errors display #}
 {% extends 'layout.html.twig' %}
 
-<head>
-	<link rel="stylesheet" href="/assets/css/form.css" type="text/css">
-</head>
 {% block content %}
-<body>
-	<div class="h1 text-center">
-		<h1>Contactez-nous !</h1>
-	</div>
-	<div class="banner text-center">
-		<p>Sur rendez-vous en semaine. Nous ne faisons pas d'adoptions le dimanche.
-							
-							 
-							
-							Sans rendez-vous tous les samedis de 15h00 à 18h00 (sauf pour les problèmes de chats errants)
-							
-							Pour les chats en famille d'accueil, merci d'appeler les numéros de téléphone affichés dans les annonces</p>
+	<head>
+		<link rel="stylesheet" href="/assets/css/form.css" type="text/css">
+	</head>
 
-	</div>
-	<div class="container">
-		{% for error in errors %}
-			<div>
-				<p class="text-danger alert alert-danger">{{error}}</p>
+	<body>
+		<div class="banner_general">
+			<div class="h1 text-center">
+				<h1>Contactez-nous !</h1>
 			</div>
-		{% endfor %}
-		<div class="row">
-			<div class="col-md-6">
-				<div class="form_coordinates_title">
-					<h2>Formulaire</h2>
+			<div class="banner text-center">
+				<p>Sur rendez-vous en semaine. Nous ne faisons pas d'adoptions le dimanche.</p>
+
+				<p>Sans rendez-vous tous les samedis de 15h00 à 18h00 (sauf pour les problèmes de chats errants)</p>
+
+				<p>Pour les chats en famille d'accueil, merci d'appeler les numéros de téléphone affichés dans les annonces</p>
+			</div>
+		</div>
+		<div class="container">
+			{% for error in errors %}
+				<div>
+					<p class="text-danger alert alert-danger">{{error}}</p>
 				</div>
-
-
-				<div class="form_coordinates_title">
-					<p>Vos coordonnées :</p>
-
-					<div class="form_box col-md-10">
-						<form method="POST">
-
-
-							<div class="form-group">
-								<label for="lastname" class="form-label">Nom :</label>
-								<input type="text" id="lastname" class="form-control" name="lastname" placeholder="Dupont" required/>
-							</div>
-
-
-							<div class="form-group">
-								<label for="firstname" class="form-label mt-3">Prénom :</label>
-								<input type="text" id="firstname" class="form-control" name="firstname" placeholder="Eric" required/>
-							</div>
-
-
-							<div class="form-group">
-								<label for="phone" class="form-label mt-3">Numéro de Téléphone :</label>
-								<input type="tel" id="tel" class="form-control" type="tel" name="tel" placeholder="02 38 52 77 82" required/>
-							</div>
-
-
-							<div class="form-group">
-
-								<label for="e-mail" class="form-label mt-3">Mail :</label>
-								<input type="email" id="e-mail" class="form-control mb-3" name="e-mail" placeholder="eric.dupont@gmail.com" required/>
-							</div>
-
-						</div>
-
+			{% endfor %}
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form_coordinates_title mt-5">
+						<h2>Formulaire</h2>
 					</div>
 
 
-					<div class="form-group_message">
-						<div class="form_coordinates_title col mt-4">
-							<p>Votre message :</p>
+					<div class="form_coordinates_title">
+						<p>Vos coordonnées :</p>
+
+						<div class="form_box col-md-10">
+							<form method="POST">
+
+
+								<div class="form-group">
+									<label for="lastname" class="form-label">Nom :</label>
+									<input type="text" id="lastname" class="form-control" name="lastname" placeholder="Dupont" required/>
+								</div>
+
+
+								<div class="form-group">
+									<label for="firstname" class="form-label mt-3">Prénom :</label>
+									<input type="text" id="firstname" class="form-control" name="firstname" placeholder="Eric" required/>
+								</div>
+
+
+								<div class="form-group">
+									<label for="phone" class="form-label mt-3">Numéro de Téléphone :</label>
+									<input type="tel" id="tel" class="form-control" type="tel" name="tel" placeholder="02 38 52 77 82" required/>
+								</div>
+
+
+								<div class="form-group">
+
+									<label for="e-mail" class="form-label mt-3">Mail :</label>
+									<input type="email" id="e-mail" class="form-control mb-3" name="e-mail" placeholder="eric.dupont@gmail.com" required/>
+								</div>
+
+							</div>
+
 						</div>
-						<div class="form_subject col-md-10">
 
-							<div class="card_02">
 
-								<div form="form-group_subject">
-									<label class="col-form mb-2" for="subject">Sujet :</label>
-									<select id="subject" name="subject" class="form-control" required>
-										<option value="subject" disabled selected>-- Choisir un champ --</option>
-										<option value="une question">Une question</option>
-										<option value="un renseignement">Un renseignement</option>
-										<option value="une adoption">Une adoption</option>
-										<option value="une visite">Une visite</option>
-									</select>
+						<div class="form-group_message">
+							<div class="form_coordinates_title col mt-4">
+								<p>Votre message :</p>
+							</div>
+							<div class="form_subject col-md-10">
 
-									<label for="message" class="col-form">Message :</label>
-									<textarea id="message" name="message" class="col-10 mt-1 pr-2 pl-2" placeholder="Insérer votre message :" required></textarea>
-									<div class="button d-flex align-items-end flex-column mx-4">
-										<button type="submit" class="btn btn-light mt-4">Envoyer</button>
+								<div class="card_02">
+
+									<div form="form-group_subject">
+										<label class="col-form mb-2" for="subject">Sujet :</label>
+										<select id="subject" name="subject" class="form-control" required>
+											<option value="subject" disabled selected>-- Choisir un champ --</option>
+											<option value="une question">Une question</option>
+											<option value="un renseignement">Un renseignement</option>
+											<option value="une adoption">Une adoption</option>
+											<option value="une visite">Une visite</option>
+										</select>
+
+										<label for="message" class="col-form">Message :</label>
+										<textarea id="message" name="message" class="col-10 mt-1 pr-2 pl-2" placeholder="Insérer votre message :" required></textarea>
+										<div class="button d-flex align-items-end flex-column mx-4">
+											<button type="submit" class="btn btn-light mt-4">Envoyer</button>
+										</div>
 									</div>
 								</div>
 							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<img class="separator mt-5" src="/assets/images/separator2.svg" alt="separator">
+				</div>
+
+				<div class="coordinates col-md-4">
+					<div class="form_coordinates_title mt-5 mb-5">
+						<h2>Nos coordonnées</h2>
+					</div>
+					<div class="apclo_coordinates mb-5">
+						<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
+						<p>44 Av. Roger Secrétain</p>
+						<p>45100 Orléans</p>
+						<p>06 72 56 18 41</p>
+						<p>Email :</p>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
+								<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N">Afficher une carte plus grande</a>
+							</small>
 						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="separator col-md-2">
-				<img src="/assets/images/separator2.svg" alt="separator">
-			</div>
-
-			<div class="coordinates col-md-4">
-				<div class="form_coordinates_title mx-5">
-					<h2>Nos coordonnées</h2>
-				</div>
-				<div class="apclo_coordinates mb-5">
-					<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
-					<p>44 Av. Roger Secrétain</p>
-					<p>45100 Orléans</p>
-					<p>06 72 56 18 41</p>
-					<p>Email :</p>
-				</div>
-				<div class="row">
-					<div class="col-md-5">
-						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
-							<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N">Afficher une carte plus grande</a>
-						</small>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 
-</body></html>
-{% endblock %}
+	</body>
+</html>{% endblock %}

@@ -4,11 +4,14 @@ body{
     background-color: var(--background);
 }
 
-.banniere_asso{
-    height: 225px;
-    
+.banner_asso{
+    height: 250px;
     background-color: var(--secondary-color);
     border-radius: var(--spacing);
+    opacity: .9;
+    margin: auto;
+    
+
 }
 
 .title {

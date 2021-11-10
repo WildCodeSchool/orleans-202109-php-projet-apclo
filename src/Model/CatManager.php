@@ -9,11 +9,11 @@ class CatManager extends AbstractManager
     public function selectOneById(int $id)
     {
         $statement = $this->pdo->prepare("SELECT cat.name name, image, TIMESTAMPDIFF(YEAR, birth_date, NOW()) as age,
-        digital_chip, description, adoption_date, gender.name gender, fur.length length,
+        digital_chip, description, adoption_date, gender.name gender, furr.length length,
         color.name color, breed.name breed 
         FROM " . self::TABLE .
         "   LEFT JOIN gender ON gender.id = cat.gender_id 
-            LEFT JOIN fur ON fur.id = cat.fur_id
+            LEFT JOIN furr ON furr.id = cat.furr_id
             LEFT JOIN breed ON breed.id = cat.breed_id 
             LEFT JOIN color ON color.id = cat.color_id 
         WHERE cat.id=:id");

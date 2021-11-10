@@ -107,7 +107,9 @@ INSERT INTO
     birth_date,
     `image`,
     gender_id,
-    furr_id
+    furr_id,
+    breed_id,
+    color_id
   )
 VALUES
   (
@@ -120,7 +122,9 @@ VALUES
     '2018-03-25',
     'Arthus.jpg',
     1,
-    1
+    1,
+    2,
+    9
   ),
   (
     'Boris',
@@ -136,6 +140,8 @@ VALUES
     '2016-05-01',
     'Boris.jpg',
     1,
+    1,
+    6,
     1
   ),
   (
@@ -148,7 +154,9 @@ VALUES
     '2019-05-12',
     'Bulle.jpg',
     2,
-    1
+    1,
+    2,
+    9
   ),
   (
     'Carlos',
@@ -162,7 +170,9 @@ VALUES
     '2019-03-01',
     'Carlos.jpg',
     1,
-    1
+    1,
+    2,
+    7
   ),
   (
     'Charlot',
@@ -178,6 +188,8 @@ VALUES
     '2016-05-01',
     'Charlot.jpg',
     1,
+    1,
+    6,
     1
   ),
   (
@@ -191,7 +203,9 @@ VALUES
     '2021-04-10',
     'Pierrot.jpg',
     1,
-    1
+    1,
+    8,
+    7
   ),
   (
     'Mireille',
@@ -207,7 +221,9 @@ VALUES
     '2018-05-01',
     'Mireille.jpg',
     2,
-    1
+    1,
+    8,
+    7
   ),
   (
     'Nebraska',
@@ -220,7 +236,9 @@ VALUES
     '2021-04-28',
     'Nebraska.jpg',
     2,
-    1
+    1,
+    2,
+    9
   ),
   (
     'Opium',
@@ -232,9 +250,11 @@ VALUES
     Leur frère Othello est déjà réservé.",
     '2021-07-15',
     '2021-04-25',
-    'Nebraska.jpg',
+    'Opium.jpg',
     2,
-    1
+    1,
+    2,
+    7
   );
 INSERT INTO
   article (title, `description`, `date`)

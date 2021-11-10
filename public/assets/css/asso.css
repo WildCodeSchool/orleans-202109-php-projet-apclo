@@ -1,13 +1,14 @@
-
+@import url('style.css');
 
 body{
     background-color: var(--background);
 }
 
 .banniere_asso{
-    height: 435px;
+    height: 225px;
+    
     background-color: var(--secondary-color);
-    border-radius: 8px;
+    border-radius: var(--spacing);
 }
 
 .title {
@@ -16,16 +17,4 @@ body{
 
 .asso_text{
     font-family: var(--text-font);
-}
-
-.member {
-    height: 228px;
-    background-color: var(--form-color);
-    font-family: var(--text-font);
-    border-radius: 8px;
-    
-}
-
-.job {
-    color: rgb(255, 255, 255);
 }

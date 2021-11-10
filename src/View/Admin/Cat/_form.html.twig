@@ -1,0 +1,89 @@
+{% if errors is not empty %}
+	<div class="alert alert-danger">
+		{% for error in errors %}
+			<div>{{error}}</div>
+		{% endfor %}
+	</div>
+{% endif %}
+
+<form method="post" class="container">
+
+	<div class="form-group mb-3">
+		<label for="name" class="form-label">Nom</label>
+		<input type="text" value="{{ cat.name }}" name="name" id="name" class="form-control" required>
+	</div>
+	<div class="form-group mb-3">
+		<label for="birth_date" class="form-label">Date de naissance</label>
+		<input type="date" value="{{ cat.birth_date }}" name="birth_date" id="birth_date" class="form-control">
+	</div>
+	<div class="form-group mb-3">
+		<label for="gender" class="form-label">Genre</label>
+		<select name="gender" id="gender" class="form-control">
+			<option value="{{ cat.gender }}">{{ cat.gender }}</option>
+			<option value="Mâle">Mâle</option>
+			<option value="Femelle">Femelle</option>
+		</select>
+	</div>
+
+	<div class="form-group mb-3">
+		<label for="color" class="form-label">Couleur</label>
+		<select name="color" id="color" class="form-control">
+			<option value="{{ cat.color }}">{{ cat.color }}</option>
+			<option value="Noir">Noir</option>
+			<option value="Marron">Marron</option>
+			<option value="Beige">Beige</option>
+			<option value="Roux">Roux</option>
+			<option value="Gris">Gris</option>
+			<option value="Blanc">Blanc</option>
+			<option value="Bicolor">Bicolor</option>
+			<option value="Tricolor">Tricolor</option>
+			<option value="Trigré">Tigré</option>
+			<option value="Tacheté">Tacheté</option>
+		</select>
+	</div>
+	
+	<div class="form-group mb-3">
+		<label for="breed" class="form-label">Race</label>
+		<select name="breed" id="breed" class="form-control">
+			<option value="{{ cat.breed }}">{{ cat.breed }}</option>
+			<option value="Angora">Angora</option>
+			<option value="Chartreux">Chartreux</option>
+			<option value="Européen">Européen</option>
+			<option value="Javanais">Javanais</option>
+			<option value="Korat">Korat</option>
+			<option value="Maine Coon">Maine Coon</option>
+			<option value="Norvégien">Norvégien</option>
+			<option value="Persan">Persan</option>
+			<option value="Ragdoll">Ragdoll</option>
+			<option value="Sacré de Birmanie">Sacré de Birmanie</option>
+			<option value="Siamois">Siamois</option>
+			<option value="Sibérien">Sibérien</option>
+			<option value="Sphynx">Sphynx</option>
+			<option value="Siamois">Siamois</option>
+			<option value="Sibérien">Sibérien</option>
+			<option value="Sphynx">Sphynx</option>
+		</select>
+	</div>
+
+	<div class="form-group mb-3">
+		<label for="fur" class="form-label">Poil</label>
+		<select name="fur" id="fur" class="form-control">
+			<option value="{{ cat.fur }}">{{ cat.fur }}</option>
+			<option value="Long">Long</option>
+			<option value="Mi-long">Mi-long</option>
+			<option value="Court">Court</option>
+		</select>
+	</div>
+
+	<div class="form-group mb-3">
+		<label for="adoption_date" class="form-label">Date d'adoption (le cas échéant)</label>
+		<input type="date" value="{{ cat.adoption_date }}" name="adoption_date" id="adoption_date" class="form-control">
+	</div>
+
+	<div class="form-group mb-3">
+		<label for="description" class="form-label">Description</label>
+		<textarea name="description" id="description" class="form-control"></textarea>
+	</div>
+
+	<button class="btn btn-success">Editer</button>
+</form>

@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Handlee&display=swap');
 
-:root {
-    --primary-color     : #f1cdb3;
-    --secondary-color   : #dfa981;
-    --form-color        : #E8c1a5;
-    --background        : #e5e5e5;
-    --title-font        : Handlee;
-    --text-font         : Bellota;
-}
 
 body{
     background-color: var(--background);

@@ -26,7 +26,7 @@ class CatManager extends AbstractManager
     public function toAdopt()
     {
         $query = "SELECT c.*, g.name gender FROM " . self::TABLE . " c
-        JOIN gender g ON g.id=c.gender_id
+        LEFT JOIN gender g ON g.id=c.gender_id
         WHERE adoption_date IS NULL 
         ORDER BY c.id DESC LIMIT 3";
 
@@ -36,7 +36,8 @@ class CatManager extends AbstractManager
     public function selectAllCats(): array
     {
         $query = "SELECT cat.name as name, image, birth_date, gender.name as gender, cat.id as id FROM " .
-            self::TABLE . " JOIN gender ON gender.id = cat.gender_id";
+            self::TABLE . " 
+            LEFT JOIN gender ON gender.id = cat.gender_id";
 
         return $this->pdo->query($query)->fetchAll();
     }

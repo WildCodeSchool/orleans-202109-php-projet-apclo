@@ -22,7 +22,6 @@ class AdminCatController extends AbstractController
 
             $errors = $this->catValidate($cat);
 
-
             if (empty($errors)) {
                 $catManager->update($cat);
                 header('Location: /chats/show?id=' . $id);
@@ -40,7 +39,6 @@ class AdminCatController extends AbstractController
 
         $adminGenderManager = new AdminGenderManager();
         $genders = $adminGenderManager->selectAll();
-
 
         return $this->twig->render('Admin/Cat/edit.html.twig', [
             'errors' => $errors, 'cat' => $cat,

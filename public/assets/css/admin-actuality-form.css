@@ -1,0 +1,18 @@
+.container-sm {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    font-size: var(--text-size);
+    max-width: 1100px;
+    border-radius: 8px;
+}
+
+form {
+    width: 75%;
+}
+
+.button-actuality-form {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 8px;
+}

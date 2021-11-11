@@ -1,5 +1,24 @@
-<select id="age" name="age">
-	{% for gender in genders %}
-		<option value="{{gender.gender}}">{{gender.gender}}</option>
-	{% endfor %}
-</select>
+<form action="">
+	<select id="catGender" name="catGender">
+		<option value="selectGender" disabled selected>Choisir un sexe</option>
+		<option value="female">Femelle</option>
+		<option value="male">Mâle</option>
+	</select>
+	<select id="catAge" name="catAge">
+		<option value="selectAge" disabled selected>Choisir un âge</option>
+		<option value="adultCat">Adulte</option>
+		<option value="kitten">Chaton</option>
+	</select>
+
+	<button class="catsFilter">Filtrer</button>
+</form>
+{# {% for gender in genders %}
+	<option value="{{gender.gender}}">{{gender.gender}}</option>
+{% endfor %}
+{% for age in ages %}
+	{% if age.ecart > 365 %}
+		<option value="adult">Adulte</option>
+	{% else %}
+		<option value="kitten">Chaton</option>
+	{% endif %}
+{% endfor %} #}

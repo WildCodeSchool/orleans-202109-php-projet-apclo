@@ -11,10 +11,12 @@ class CatController extends AbstractController
         $catManager = new CatManager();
         $cats = $catManager->selectAllCats();
         $genders = $catManager->selectAllGenders();
+        $ages = $catManager->kittenOrCat();
 
         return $this->twig->render('Cats/index.html.twig', [
             'cats' => $cats,
-            'genders' => $genders
+            'genders' => $genders,
+            'ages' => $ages
         ]);
     }
 

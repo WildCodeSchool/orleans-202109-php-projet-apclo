@@ -59,4 +59,11 @@ class CatManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function kittenOrCat(): array
+    {
+        $query = "SELECT DATEDIFF(CURDATE(), 'birth_date') ecart FROM " . self::TABLE;
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }

@@ -50,4 +50,13 @@ class CatManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function selectAllGenders(): array
+    {
+        $query = "SELECT DISTINCT g.name gender FROM " .
+            self::TABLE . " c
+            LEFT JOIN gender g ON g.id = c.gender_id";
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }

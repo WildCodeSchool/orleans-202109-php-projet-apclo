@@ -1,28 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Handlee&display=swap');
+@import url(style.css);
 
-:root {
-    --form-color: #E8c1a5;
-    --secondary-color: #dfa981;
-    --background: #e5e5e5;
-    --title-font: Handlee;
-    --text-font: Bellota;
-}
-
-body {
-    background-color: var(--background);
-    border-radius: var(--border-radius);
-}
-
-.banner_general{
-    background-color: var(--secondary-color);
-    border-radius: var(--border-radius);
-   /* height: 250px;
-    width: 150px;*/
-}
-
-.h1{
-    font-family: var(--title-font);
-}
 
 .banner{
     font-family: var(--text-font);
@@ -38,7 +16,7 @@ body {
     float: none;
     width: 500px;
     height: 360px;
-    background-color: var(--form-color);
+    background-color: var(--primary-color);
     border-radius: var(--border-radius);
     padding: var(--spacing);
 }
@@ -48,7 +26,7 @@ body {
     vertical-align: middle;
     float: none;
     font-family: var(--text-font);
-    background-color: var(--form-color);
+    background-color: var(--primary-color);
     border-radius: var(--border-radius);
     padding: var(--spacing);
 }
@@ -60,7 +38,7 @@ body {
 .apclo_coordinates {
     font-family: var(--text-font);
     width: 325px;
-    background-color: var(--form-color);
+    background-color: var(--primary-color);
     border-radius: var(--border-radius);
     padding: var(--spacing);
     margin-bottom: var(--spacing);

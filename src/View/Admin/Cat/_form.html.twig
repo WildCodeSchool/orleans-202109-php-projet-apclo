@@ -21,59 +21,36 @@
 		<div class="form-group mb-3">
 			<label for="gender" class="form-label">Genre</label>
 			<select name="gender" id="gender" class="form-control">
-				<option value="{{ cat.gender }}">{{ cat.gender }}</option>
-				<option value="Mâle">Mâle</option>
-				<option value="Femelle">Femelle</option>
+				{% for gender in genders %}
+					<option value="{{ gender.name }}">{{ gender.name }}</option>
+				{% endfor %}
 			</select>
 		</div>
 
 		<div class="form-group mb-3">
 			<label for="color" class="form-label">Couleur</label>
 			<select name="color" id="color" class="form-control">
-				<option value="{{ cat.color }}">{{ cat.color }}</option>
-				<option value="Noir">Noir</option>
-				<option value="Marron">Marron</option>
-				<option value="Beige">Beige</option>
-				<option value="Roux">Roux</option>
-				<option value="Gris">Gris</option>
-				<option value="Blanc">Blanc</option>
-				<option value="Bicolor">Bicolor</option>
-				<option value="Tricolor">Tricolor</option>
-				<option value="Trigré">Tigré</option>
-				<option value="Tacheté">Tacheté</option>
+				{% for color in colors %}
+					<option value="{{ color.name }}">{{ color.name }}</option>
+				{% endfor %}
 			</select>
 		</div>
 
 		<div class="form-group mb-3">
 			<label for="breed" class="form-label">Race</label>
 			<select name="breed" id="breed" class="form-control">
-				<option value="{{ cat.breed }}">{{ cat.breed }}</option>
-				<option value="Angora">Angora</option>
-				<option value="Chartreux">Chartreux</option>
-				<option value="Européen">Européen</option>
-				<option value="Javanais">Javanais</option>
-				<option value="Korat">Korat</option>
-				<option value="Maine Coon">Maine Coon</option>
-				<option value="Norvégien">Norvégien</option>
-				<option value="Persan">Persan</option>
-				<option value="Ragdoll">Ragdoll</option>
-				<option value="Sacré de Birmanie">Sacré de Birmanie</option>
-				<option value="Siamois">Siamois</option>
-				<option value="Sibérien">Sibérien</option>
-				<option value="Sphynx">Sphynx</option>
-				<option value="Siamois">Siamois</option>
-				<option value="Sibérien">Sibérien</option>
-				<option value="Sphynx">Sphynx</option>
+				{% for breed in breeds %}
+					<option value="{{ breed.name }}">{{ breed.name }}</option>
+				{% endfor %}
 			</select>
 		</div>
 
 		<div class="form-group mb-3">
 			<label for="fur" class="form-label">Poil</label>
 			<select name="fur" id="fur" class="form-control">
-				<option value="{{ cat.fur }}">{{ cat.fur }}</option>
-				<option value="Long">Long</option>
-				<option value="Mi-long">Mi-long</option>
-				<option value="Court">Court</option>
+				{% for furr in furrs %}
+					<option value="{{ furr.length}}">{{ furr.length }}</option>
+				{% endfor %}
 			</select>
 		</div>
 
@@ -88,7 +65,7 @@
 		</div>
 
 		<div class="d-flex justify-content-center m-5">
-		<button class="btn btn-lg btn-success button-form px-5">Ajouter</button>
+			<button class="btn btn-lg btn-success button-form px-5">Ajouter</button>
 		</div>
 	</form>
 </div>

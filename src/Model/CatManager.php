@@ -47,4 +47,24 @@ class CatManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function update(array $cat): bool
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
+        " SET `name` = :name, `birth_date` = :birth_date,`adoption_date` = :adoption_date,
+        `description` = :description, `gender_id` = :gender_id, `color_id` = :color_id,
+        `furr_id` = :furr_id, `breed_id` = :breed_id WHERE id=:id");
+
+        $statement->bindValue('id', $cat['id'], \PDO::PARAM_INT);
+        $statement->bindValue('name', $cat['name'], \PDO::PARAM_STR);
+        $statement->bindValue('birth_date', $cat['birth_date'], \PDO::PARAM_STR);
+        $statement->bindValue('adoption_date', $cat['adoption_date'], \PDO::PARAM_STR);
+        $statement->bindValue('description', $cat['description'], \PDO::PARAM_STR);
+        $statement->bindValue('gender_id', $cat['gender_id'], \PDO::PARAM_INT);
+        $statement->bindValue('color_id', $cat['color_id'], \PDO::PARAM_INT);
+        $statement->bindValue('furr_id', $cat['furr_id'], \PDO::PARAM_INT);
+        $statement->bindValue('breed_id', $cat['breed_id'], \PDO::PARAM_INT);
+
+        return $statement->execute();
+    }
 }

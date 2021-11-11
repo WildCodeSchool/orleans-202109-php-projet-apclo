@@ -12,20 +12,22 @@ class AdminCatController extends AbstractController
 {
     public function edit(int $id): string
     {
-        $error = $cat = [];
+        $errors = $cat = [];
         $catManager = new catManager();
         $cat = $catManager->selectOneById($id);
 
-        /*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $item = array_map('trim', $_POST);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $cat = array_map('trim', $_POST);
+            $cat['id'] = $id;
 
-            // TODO validations (length, format...)
+            $errors = $this->catValidate($cat);
 
-            // if validation is ok, update and redirection
-            $itemManager->update($item);
-            header('Location: /items/show?id=' . $id);
-        }*/
+            if (empty($errors)) {
+                $catManager->update($cat);
+                header('Location: /chats/show?id=' . $id);
+            }
+        }
+
         $adminBreedManager = new AdminBreedManager();
         $breeds = $adminBreedManager->selectAll();
 
@@ -40,8 +42,35 @@ class AdminCatController extends AbstractController
 
 
         return $this->twig->render('Admin/Cat/edit.html.twig', [
-            'error' => $error, 'cat' => $cat,
+            'errors' => $errors, 'cat' => $cat,
             'breeds' => $breeds, 'colors' => $colors, 'furrs' => $furrs, 'genders' => $genders,
         ]);
+    }
+
+    private function catValidate(array $cat): array
+    {
+        $errors = [];
+        if (empty($cat['name'])) {
+            $errors[] = "Le champ nom est obligatoire";
+        }
+
+        $maxNameLength = 100;
+        if (strlen($cat['name']) > $maxNameLength) {
+            $errors[] = "Le nom dépasse les 100 caractères";
+        }
+
+        if (empty($cat['birth_date'])) {
+            $errors[] = "Le champ date de naissance est obligatoire";
+        }
+
+        if (empty($cat['gender_id'])) {
+            $errors[] = "Le champ genre est obligatoire";
+        }
+
+        if (empty($cat['description'])) {
+            $errors[] = "Le champ description est obligatoire";
+        }
+
+        return $errors;
     }
 }

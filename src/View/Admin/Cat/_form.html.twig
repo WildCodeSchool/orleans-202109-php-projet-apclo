@@ -16,16 +16,16 @@
 		</div>
 		<div class="form-group mb-3">
 			<label for="birth_date" class="form-label">Date de naissance</label>
-			<input type="date" value="{{ cat.date }}" name="birth_date" id="birth_date" class="form-control">
+			<input type="date" value="{{ cat.birth_date }}" name="birth_date" id="birth_date" class="form-control">
 		</div>
 		<div class="form-group mb-3">
-			<label for="gender" class="form-label">Genre</label>
-			<select name="gender" id="gender" class="form-control">
+			<label for="gender_id" class="form-label">Genre</label>
+			<select name="gender_id" id="gender_id" class="form-control">
 				{% for gender in genders %}
 					{% if gender.name == cat.gender %}
-						<option value="{{ gender.name }}" selected="selected">{{ gender.name }}</option>
+						<option value="{{ gender.id }}" selected="selected">{{ gender.name }}</option>
 					{% else %}
-						<option value="{{ gender.name }}">{{ gender.name }}</option>
+						<option value="{{ gender.id }}">{{ gender.name }}</option>
 					{% endif %}
 				{% endfor %}
 			</select>
@@ -33,12 +33,12 @@
 
 		<div class="form-group mb-3">
 			<label for="color" class="form-label">Couleur</label>
-			<select name="color" id="color" class="form-control">
+			<select name="color_id" id="color" class="form-control">
 				{% for color in colors %}
 					{% if color.name == cat.color %}
-						<option value="{{ color.name }}" selected="selected">{{ color.name }}</option>
+						<option value="{{ color.id }}" selected="selected">{{ color.name }}</option>
 					{% else %}
-						<option value="{{ color.name }}">{{ color.name }}</option>
+						<option value="{{ color.id }}">{{ color.name }}</option>
 					{% endif %}
 				{% endfor %}
 			</select>
@@ -46,25 +46,25 @@
 
 		<div class="form-group mb-3">
 			<label for="breed" class="form-label">Race</label>
-			<select name="breed" id="breed" class="form-control">
+			<select name="breed_id" id="breed" class="form-control">
 				{% for breed in breeds %}
 					{% if breed.name == cat.breed %}
-						<option value="{{ breed.name }}" selected="selected">{{ breed.name }}</option>
+						<option value="{{ breed.id }}" selected="selected">{{ breed.name }}</option>
 					{% else %}
-						<option value="{{ breed.name }}">{{ breed.name }}</option>
+						<option value="{{ breed.id }}">{{ breed.name }}</option>
 					{% endif %}
 				{% endfor %}
 			</select>
 		</div>
 
 		<div class="form-group mb-3">
-			<label for="fur" class="form-label">Poil</label>
-			<select name="fur" id="fur" class="form-control">
+			<label for="furr" class="form-label">Poil</label>
+			<select name="furr_id" id="furr" class="form-control">
 				{% for furr in furrs %}
 					{% if furr.length == cat.furr %}
-						<option value="{{ furr.length }}" selected="selected">{{ furr.length }}</option>
+						<option value="{{ furr.id }}" selected="selected">{{ furr.length }}</option>
 					{% else %}
-						<option value="{{ furr.length }}">{{ furr.length }}</option>
+						<option value="{{ furr.id}}">{{ furr.length }}</option>
 					{% endif %}
 				{% endfor %}
 			</select>

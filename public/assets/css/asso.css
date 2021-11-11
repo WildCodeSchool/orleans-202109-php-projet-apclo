@@ -11,8 +11,6 @@ body{
     opacity: .9;
     margin: auto;
     box-shadow: var(--border-shadow);
-    
-
 }
 
 .title {

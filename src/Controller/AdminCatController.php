@@ -22,6 +22,7 @@ class AdminCatController extends AbstractController
 
             $errors = $this->catValidate($cat);
 
+
             if (empty($errors)) {
                 $catManager->update($cat);
                 header('Location: /chats/show?id=' . $id);
@@ -63,14 +64,9 @@ class AdminCatController extends AbstractController
             $errors[] = "Le champ date de naissance est obligatoire";
         }
 
-        if (empty($cat['gender_id'])) {
-            $errors[] = "Le champ genre est obligatoire";
-        }
-
         if (empty($cat['description'])) {
             $errors[] = "Le champ description est obligatoire";
         }
-
         return $errors;
     }
 }

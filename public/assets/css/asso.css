@@ -10,6 +10,7 @@ body{
     border-radius: var(--spacing);
     opacity: .9;
     margin: auto;
+    box-shadow: var(--border-shadow);
     
 
 }

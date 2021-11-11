@@ -2,11 +2,7 @@
     width: 80px;
 }
 
-.container {
-    --spacing1: 24px;
-    --spacing2: 60px;
-    --radius-button: 50%;
-    width: 80%;
+.container-sm {
     max-width: 1100px;
     padding: 0;
 }
@@ -35,33 +31,4 @@
 .card-title-actuality, .card-date {
     color: var(--light-color);
     font-size: var(--text-size);
-}
-
-.btn-admin-actuality {
-    border-radius: var(--spacing1);
-    background-color: var(--light-color);
-    color: var(--secondary-color);
-    border: none;
-}
-
-.btn-entity {
-    height: var(--spacing2);
-    border-radius: var(--radius-button);
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    font-weight: bold;
-}
-
-.btn:hover {
-    background-color: var(--third-color);
-    color: var(--primary-color);
-}
-
-.btn-edit {
-    border-radius: var(--radius-button);
-    background-color: var(--light-color);
-    color: var(--secondary-color);
-    border: none;
-    height: var(--spacing2);
-    width: var(--spacing2);
 }

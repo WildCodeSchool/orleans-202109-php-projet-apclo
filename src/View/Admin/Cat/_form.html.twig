@@ -16,13 +16,17 @@
 		</div>
 		<div class="form-group mb-3">
 			<label for="birth_date" class="form-label">Date de naissance</label>
-			<input type="date" value="{{ cat.birth_date }}" name="birth_date" id="birth_date" class="form-control">
+			<input type="date" value="{{ cat.date }}" name="birth_date" id="birth_date" class="form-control">
 		</div>
 		<div class="form-group mb-3">
 			<label for="gender" class="form-label">Genre</label>
 			<select name="gender" id="gender" class="form-control">
 				{% for gender in genders %}
-					<option value="{{ gender.name }}">{{ gender.name }}</option>
+					{% if gender.name == cat.gender %}
+						<option value="{{ gender.name }}" selected="selected">{{ gender.name }}</option>
+					{% else %}
+						<option value="{{ gender.name }}">{{ gender.name }}</option>
+					{% endif %}
 				{% endfor %}
 			</select>
 		</div>
@@ -31,7 +35,11 @@
 			<label for="color" class="form-label">Couleur</label>
 			<select name="color" id="color" class="form-control">
 				{% for color in colors %}
-					<option value="{{ color.name }}">{{ color.name }}</option>
+					{% if color.name == cat.color %}
+						<option value="{{ color.name }}" selected="selected">{{ color.name }}</option>
+					{% else %}
+						<option value="{{ color.name }}">{{ color.name }}</option>
+					{% endif %}
 				{% endfor %}
 			</select>
 		</div>
@@ -40,7 +48,11 @@
 			<label for="breed" class="form-label">Race</label>
 			<select name="breed" id="breed" class="form-control">
 				{% for breed in breeds %}
-					<option value="{{ breed.name }}">{{ breed.name }}</option>
+					{% if breed.name == cat.breed %}
+						<option value="{{ breed.name }}" selected="selected">{{ breed.name }}</option>
+					{% else %}
+						<option value="{{ breed.name }}">{{ breed.name }}</option>
+					{% endif %}
 				{% endfor %}
 			</select>
 		</div>
@@ -49,7 +61,11 @@
 			<label for="fur" class="form-label">Poil</label>
 			<select name="fur" id="fur" class="form-control">
 				{% for furr in furrs %}
-					<option value="{{ furr.length}}">{{ furr.length }}</option>
+					{% if furr.length == cat.furr %}
+						<option value="{{ furr.length }}" selected="selected">{{ furr.length }}</option>
+					{% else %}
+						<option value="{{ furr.length }}">{{ furr.length }}</option>
+					{% endif %}
 				{% endfor %}
 			</select>
 		</div>
@@ -60,12 +76,12 @@
 		</div>
 
 		<div class="form-group mb-3">
-			<label for="description" class="form-label">Description</label>
-			<textarea name="description" id="description" class="form-control"></textarea>
+			<label for="description" class="form-label"></label>
+			<textarea name="description" id="description" class="form-control">{{ cat.description }}</textarea>
 		</div>
 
 		<div class="d-flex justify-content-center m-5">
-			<button class="btn btn-lg btn-success button-form px-5">Ajouter</button>
+			<button class="btn btn-lg btn-success button-form px-5">{{ button_name|default('Ajouter')}}</button>
 		</div>
 	</form>
 </div>

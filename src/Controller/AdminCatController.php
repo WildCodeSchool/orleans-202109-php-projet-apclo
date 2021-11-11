@@ -10,13 +10,13 @@ use App\Model\AdminGenderManager;
 
 class AdminCatController extends AbstractController
 {
-   /* public function edit(int $id): string
+    public function edit(int $id): string
     {
         $error = $cat = [];
-        /*$catManager = new catManager();
-        $item = $Manager->selectOneById($id);
+        $catManager = new catManager();
+        $cat = $catManager->selectOneById($id);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        /*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $item = array_map('trim', $_POST);
 
@@ -25,7 +25,7 @@ class AdminCatController extends AbstractController
             // if validation is ok, update and redirection
             $itemManager->update($item);
             header('Location: /items/show?id=' . $id);
-        }
+        }*/
         $adminBreedManager = new AdminBreedManager();
         $breeds = $adminBreedManager->selectAll();
 
@@ -39,8 +39,9 @@ class AdminCatController extends AbstractController
         $genders = $adminGenderManager->selectAll();
 
 
-        return $this->twig->render('Admin/Cat/edit.html.twig', [ 'error' => $error,
+        return $this->twig->render('Admin/Cat/edit.html.twig', [
+            'error' => $error, 'cat' => $cat,
             'breeds' => $breeds, 'colors' => $colors, 'furrs' => $furrs, 'genders' => $genders,
         ]);
-    }*/
+    }
 }

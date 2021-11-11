@@ -7,6 +7,6 @@
 
 {% block content %}
     {% include 'Admin/Cat/_banner.html.twig' %}
-	{% include 'Admin/Cat/_form.html.twig' %}
+	{% include 'Admin/Cat/_form.html.twig' with {'button_name' : 'Éditer'} %}
 
 {% endblock %}

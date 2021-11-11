@@ -1,16 +1,23 @@
-<form action="">
-	<select id="catGender" name="catGender">
-		<option value="selectGender" disabled selected>Choisir un sexe</option>
-		<option value="female">Femelle</option>
-		<option value="male">Mâle</option>
-	</select>
-	<select id="catAge" name="catAge">
-		<option value="selectAge" disabled selected>Choisir un âge</option>
-		<option value="adultCat">Adulte</option>
-		<option value="kitten">Chaton</option>
-	</select>
+<form action="" class="catsFilter container-sm form-group p-4 my-4">
+	<h3 class="filterTitle">Filtrer votre recherche</h3>
+	<div class="row d-flex justify-content-around">
+		<div class="col-5">
+			<select class="catGender form-select form-select-mb px-4" id="catGender" name="catGender">
+				<option value="selectGender" disabled selected>Choisir un sexe</option>
+				<option value="female">Femelle</option>
+				<option value="male">Mâle</option>
+			</select>
+		</div>
+		<div class="col-5">
+			<select class="catAge form-select form-select-mb px-4" id="catAge" name="catAge">
+				<option value="selectAge" disabled selected>Choisir un âge</option>
+				<option value="adultCat">Adulte</option>
+				<option value="kitten">Chaton</option>
+			</select>
+		</div>
+		<button class="col-1 catsFilterBtn btn btn-mb">Filtrer</button>
+	</div>
 
-	<button class="catsFilter">Filtrer</button>
 </form>
 {# {% for gender in genders %}
 	<option value="{{gender.gender}}">{{gender.gender}}</option>

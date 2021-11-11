@@ -1,0 +1,26 @@
+.catsFilter {
+    font-family: var(--text-font);
+}
+
+.catsFilterBtn {
+    background-color: var(--third-color);
+    color           : var(--light-color);
+    border-radius   : var(--spacing);
+    box-shadow      : var(--border-shadow);
+}
+
+.catsFilterBtn:hover {
+    background-color: var(--secondary-color);
+    color           : var(--third-color);
+}
+
+.catAge,
+.catGender {
+    background-color: var(--secondary-color);
+    border-radius   : var(--spacing);
+    color           : var(--third-color);
+}
+
+select:hover {
+    box-shadow: var(--border-shadow);
+}

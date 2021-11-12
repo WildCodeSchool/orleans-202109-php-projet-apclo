@@ -1,19 +1,20 @@
-:root{
-    --card-height   : 400px;
+:root {
+    --card-height: 400px;
 }
 
 
-.card-cat {    
+.card-cat {
     height          : var(--card-height);
-    border-radius   : 8px;
+    border-radius   : var(--spacing);
     background-color: var(--primary-color);
     border          : none;
     box-shadow      : var(--border-shadow);
 }
 
 .card-img-top {
-    object-fit: cover;
-    height: calc( 100% * 2 / 3);
+    border-radius: var(--spacing);
+    object-fit   : cover;
+    height       : calc(100% * 2 / 3);
 }
 
 .card-cat ul {
@@ -64,5 +65,4 @@
 
 .cat-card-body {
     height: 33%;
-    
 }

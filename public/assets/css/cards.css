@@ -1,5 +1,9 @@
-.card-cat {
-    --card-height:400px;
+:root{
+    --card-height   : 400px;
+}
+
+
+.card-cat {    
     height          : var(--card-height);
     border-radius   : 8px;
     background-color: var(--primary-color);
@@ -8,8 +12,8 @@
 }
 
 .card-img-top {
-    height    : calc(var(--height-image-card) * 62.5%);
     object-fit: cover;
+    height: calc( 100% * 2 / 3);
 }
 
 .card-cat ul {
@@ -58,6 +62,7 @@
     margin-block-end: var(--spacing);
 }
 
-.column {
-    width: calc((100% - 2em) / 3);
+.cat-card-body {
+    height: 33%;
+    
 }

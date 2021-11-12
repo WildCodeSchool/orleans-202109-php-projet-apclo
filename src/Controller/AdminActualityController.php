@@ -30,7 +30,7 @@ class AdminActualityController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/Actuality/add.html.twig', ['errors'=> $errors, 'actuality' => $actuality]);
+        return $this->twig->render('Admin/Actuality/add.html.twig', ['errors' => $errors, 'actuality' => $actuality]);
     }
 
     public function edit(int $id): string
@@ -52,7 +52,7 @@ class AdminActualityController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/Actuality/edit.html.twig', ['errors'=> $errors, 'actuality' => $actuality]);
+        return $this->twig->render('Admin/Actuality/edit.html.twig', ['errors' => $errors, 'actuality' => $actuality]);
     }
 
     private function actualityValidate(array $actuality): array

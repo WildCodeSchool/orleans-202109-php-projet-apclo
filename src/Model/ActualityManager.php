@@ -16,8 +16,8 @@ class ActualityManager extends AbstractManager
     public function insert(array $actuality): int
     {
         $statement = $this->pdo->prepare(
-        "INSERT INTO " . self::TABLE . " (`title`, `date`, `description`)
-        VALUES (:title, :date, :description)"
+            "INSERT INTO " . self::TABLE . " (`title`, `date`, `description`)
+            VALUES (:title, :date, :description)"
         );
         $statement->bindValue('title', $actuality['title'], \PDO::PARAM_STR);
         $statement->bindValue('date', $actuality['date']);
@@ -31,7 +31,7 @@ class ActualityManager extends AbstractManager
     public function update(array $actuality): bool
     {
         $statement = $this->pdo->prepare(
-        "UPDATE " . self::TABLE . " SET `title` = :title, `date` = :date, `description` = :description WHERE id=:id"
+            "UPDATE " . self::TABLE . " SET `title` = :title, `date` = :date, `description` = :description WHERE id=:id"
         );
         $statement->bindValue('id', $actuality['id'], \PDO::PARAM_INT);
         $statement->bindValue('title', $actuality['title'], \PDO::PARAM_STR);

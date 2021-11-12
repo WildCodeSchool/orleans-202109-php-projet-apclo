@@ -23,7 +23,7 @@ class AdminActualityController extends AbstractController
 
             $errors = $this->actualityValidate($actuality);
 
-            if(empty($errors)) {
+            if (empty($errors)) {
                 $actualityManager = new ActualityManager();
                 $actualityManager->insert($actuality);
                 header('Location:/admin/actualités/index');
@@ -46,9 +46,9 @@ class AdminActualityController extends AbstractController
 
             $errors = $this->actualityValidate($actuality);
 
-            if(empty($errors)) {
-            $actualityManager->update($actuality);
-            header('Location: /admin/actualités/index');
+            if (empty($errors)) {
+                $actualityManager->update($actuality);
+                header('Location: /admin/actualités/index');
             }
         }
 
@@ -70,7 +70,7 @@ class AdminActualityController extends AbstractController
             $errors[] = 'Le champs date est obligatoire';
         }
         if (empty($actuality['description'])) {
-            $errors[] = 'La description est obligatoire'; 
+            $errors[] = 'La description est obligatoire';
         }
 
         return $errors;

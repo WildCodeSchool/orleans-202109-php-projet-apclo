@@ -11,7 +11,7 @@ return [
     'items' => ['ItemController', 'index',],
     'admin/actualités/index' => ['AdminActualityController', 'index',],
     'admin/actualités/ajouter' => ['AdminActualityController', 'add',],
-    'admin/actualités/éditer' => ['AdminActualityController', 'edit',],
+    'admin/actualités/éditer' => ['AdminActualityController', 'edit', ['id']],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],

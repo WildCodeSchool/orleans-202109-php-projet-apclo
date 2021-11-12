@@ -21,27 +21,27 @@ class AdminActualityController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $actuality = array_map('trim', $_POST);
 
-            if(empty($actuality['title'])) {
+            if (empty($actuality['title'])) {
                 $errors[] = 'Le champs titre est obligatoire';
             }
             $maxTitleLength = 255;
-            if(strlen($actuality['title']) > $maxTitleLength) {
+            if (strlen($actuality['title']) > $maxTitleLength) {
                 $errors[] = 'Le titre doit faire moins de' . $maxTitleLength . 'caractères.';
             }
-            if(empty($actuality['date'])) {
+            if (empty($actuality['date'])) {
                 $errors[] = 'Le champs date est obligatoire';
             }
-            if(empty($actuality['description'])) {
-                $errors[] = 'La description est obligatoire'; 
+            if (empty($actuality['description'])) {
+                $errors[] = 'La description est obligatoire';
             }
 
-            if(empty($errors)) {
-            $actualityManager = new ActualityManager();
-            $actualityManager->insert($actuality);
-            header('Location:/admin/actualités/index');
+            if (empty($errors)) {
+                $actualityManager = new ActualityManager();
+                $actualityManager->insert($actuality);
+                header('Location:/admin/actualités/index');
             }
         }
 
-        return $this->twig->render('Admin/Actuality/add.html.twig', ['errors'=>$errors, 'actuality' => $actuality]);
+        return $this->twig->render('Admin/Actuality/add.html.twig', ['errors' => $errors, 'actuality' => $actuality]);
     }
 }

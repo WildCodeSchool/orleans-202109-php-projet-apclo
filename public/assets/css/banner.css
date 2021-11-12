@@ -36,3 +36,10 @@
     margin: var(--spacing1);
     padding-bottom: var(--spacing2);
 }
+
+.text p {
+    --spacing1: 24px;
+    --spacing2: 40px;
+    font-size: var(--spacing1);
+    margin: var(--spacing2);
+}

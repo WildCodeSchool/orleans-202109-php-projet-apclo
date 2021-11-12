@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Handlee&display=swap');
-@import url("banner.css");
-@import url("asso.css");
+@import url('banner.css');
+@import "navbar.css";
+@import "footer.css";
 
 :root {
     --primary-color     : #f1cdb3;
@@ -11,12 +12,14 @@
     --dark-color        : #111111;
     --title-font        : Handlee;
     --text-font         : Bellota;
+    --title-size        : 50px;
     --main-title-size   : 64px;
-    --title-size        : 30px;
     --text-size         : 26px;
     --border-shadow     : 2px 2px 6px var(--intermediate-color);
     --spacing           : 8px;
     --spacing2          : calc(var(--spacing) * 2);
+    --spacing3          : calc(var(--spacing) * 3);
+    --spacing4          : calc(var(--spacing) * 4);
     --height-card       : 350px;
     --height-image-card : calc(var(--height-card) / 2.1);
     --border-radius     : 8px;

@@ -16,4 +16,6 @@ return [
     'contact' => ['ContactController', 'index',],
     'chats' => ['CatController', 'index'],
     'association' => ['AssociationController', 'index'],
+    'chats/show' => ['CatController','show', ['id']],
+    'actualities' => ['ActualityController', 'index'],
 ];

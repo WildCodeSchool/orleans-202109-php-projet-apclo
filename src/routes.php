@@ -14,5 +14,7 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'contact' => ['ContactController', 'index',],
+    'chats/show' => ['CatController','show', ['id']],
     'chats' => ['CatController', 'index'],
+    'actualities' => ['ActualityController', 'index'],
 ];

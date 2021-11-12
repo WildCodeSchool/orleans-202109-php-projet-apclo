@@ -13,6 +13,6 @@
                 <h1>Éditer une actualité</h1>
         </div>
             <main class="container-fluid">
-                {% include 'Admin/Actuality/_form.html.twig' %}
+                {% include 'Admin/Actuality/_form.html.twig' with {'button_name' :'Éditer'} %}
             </main>
 {% endblock %}

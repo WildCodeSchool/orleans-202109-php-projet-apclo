@@ -15,6 +15,7 @@ form {
 
 .button-actuality-form {
     background-color: var(--primary-color);
+    color: var(--light-color);
     border: none;
     border-radius: 30px;
     box-shadow: var(--spacing1);

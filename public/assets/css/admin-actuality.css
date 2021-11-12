@@ -50,5 +50,5 @@
 }
 
 .btn-close {
-    height: 8px;
+    height: var(--spacing);
 }

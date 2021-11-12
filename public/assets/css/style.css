@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Handlee&display=swap');
+@import url("asso.css");
 @import url('banner.css');
 @import "navbar.css";
 @import "footer.css";
+
 
 :root {
     --primary-color     : #f1cdb3;

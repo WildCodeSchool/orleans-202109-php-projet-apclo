@@ -60,14 +60,14 @@ class AdminActualityController extends AbstractController
         $errors = [];
 
         if (empty($actuality['title'])) {
-            $errors[] = 'Le champs titre est obligatoire';
+            $errors[] = 'Le champ titre est obligatoire';
         }
         $maxTitleLength = 255;
         if (strlen($actuality['title']) > $maxTitleLength) {
-            $errors[] = 'Le titre doit faire moins de' . $maxTitleLength . 'caractères.';
+            $errors[] = 'Le titre doit faire moins de ' . $maxTitleLength . ' caractères.';
         }
         if (empty($actuality['date'])) {
-            $errors[] = 'Le champs date est obligatoire';
+            $errors[] = 'Le champ date est obligatoire';
         }
         if (empty($actuality['description'])) {
             $errors[] = 'La description est obligatoire';

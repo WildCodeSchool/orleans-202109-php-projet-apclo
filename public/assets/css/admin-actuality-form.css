@@ -1,5 +1,4 @@
 .container-sm {
-    --spacing1: 8px;
     --spacing2: 150px;
     background-color: var(--secondary-color);
     color: var(--light-color);
@@ -18,7 +17,7 @@ form {
     color: var(--light-color);
     border: none;
     border-radius: 30px;
-    box-shadow: var(--spacing1);
+    box-shadow: var(--border-shadow);
 }
 
 textarea {

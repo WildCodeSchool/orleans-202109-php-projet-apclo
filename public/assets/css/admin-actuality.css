@@ -2,10 +2,9 @@
     width: 80px;
 }
 
-.container {
-    --spacing1: 24px;
+.container-sm, .alert-danger {
     --spacing2: 60px;
-    --radius-button: 50%;
+    --radius-button-circle: 50%;
     width: 80%;
     max-width: 1100px;
     padding: 0;
@@ -37,16 +36,9 @@
     font-size: var(--text-size);
 }
 
-.btn-admin-actuality {
-    border-radius: var(--spacing1);
-    background-color: var(--light-color);
-    color: var(--secondary-color);
-    border: none;
-}
-
 .btn-entity {
     height: var(--spacing2);
-    border-radius: var(--radius-button);
+    border-radius: var(--radius-button-circle);
     background-color: var(--primary-color);
     color: var(--light-color);
     font-weight: bold;
@@ -57,11 +49,6 @@
     color: var(--primary-color);
 }
 
-.btn-edit {
-    border-radius: var(--radius-button);
-    background-color: var(--light-color);
-    color: var(--secondary-color);
-    border: none;
-    height: var(--spacing2);
-    width: var(--spacing2);
+.btn-close {
+    height: 8px;
 }

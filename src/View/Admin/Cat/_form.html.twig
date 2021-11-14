@@ -14,9 +14,9 @@
 	</div>
 {% endif %}
 
-<div class="container justify-content-center d-flex mb-4 mt-5">
+<div class="container align-items-center d-flex flex-column mb-4 mt-5">
 
-	<form method="post" enctype="multipart/form-data">
+	<form method="post" enctype="multipart/form-data" class="edit">
 
 		<div class="form-group mb-3 pt-3">
 			<label for="name" class="form-label">Nom</label>
@@ -96,6 +96,13 @@
 		<div class="d-flex justify-content-center m-5">
 			<a href="/admin/chats" class="link-secondary"><img src="/assets/images/return.svg" alt="return">Retour</a>
 			<button class="btn btn-lg btn-success button-form mx-5 px-5">{{ button_name|default('Ajouter')}}</button>
+
+
 		</div>
 	</form>
+	<form method="POST" action="/admin/chat/supprimer">
+		<input type="hidden" name="id" value="{{ cat.id }}">
+		<button class="btn btn-sm btn-danger px-3 delete-button mb-5">Supprimer</button>
+	</form>
+
 </div>

@@ -11,6 +11,7 @@ return [
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'admin/chat/editer' => ['AdminCatController', 'edit', ['id']],
+    'admin/chat/supprimer' => ['AdminCatController', 'delete'],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],

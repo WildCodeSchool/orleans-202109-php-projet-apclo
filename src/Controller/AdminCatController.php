@@ -16,7 +16,6 @@ class AdminCatController extends AbstractController
 
         $catManager = new catManager();
         $cat = $catManager->selectOneById($id);
-
         $previousImage = $cat['image'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -99,5 +98,15 @@ class AdminCatController extends AbstractController
             $errors[] = 'Problème d\'upload';
         }
         return $errors;
+    }
+
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $catManager = new catManager();
+            $catManager->delete((int)$id);
+            header('Location:/admin/chats/index');
+        }
     }
 }

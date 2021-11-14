@@ -2,6 +2,7 @@
 @import url('banner.css');
 @import "navbar.css";
 @import "footer.css";
+@import "member.css";
 
 :root {
     --primary-color     : #f1cdb3;

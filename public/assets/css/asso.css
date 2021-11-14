@@ -1,0 +1,13 @@
+.member {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    margin: var(--spacing);
+}
+
+.member-name {
+    font-size: var(--text-size) / 2;
+}
+
+.member-job {
+    font-size: 12px;
+}

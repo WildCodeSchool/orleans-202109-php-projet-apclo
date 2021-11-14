@@ -12,17 +12,28 @@ class AdminCatController extends AbstractController
 {
     public function edit(int $id): string
     {
-        $errors = $cat = [];
+        $errors = $uploadedErrors = $cat = [];
+
         $catManager = new catManager();
         $cat = $catManager->selectOneById($id);
 
+        $previousImage = $cat['image'];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $uploadedErrors = $this->uploadValidate();
+
             $cat = array_map('trim', $_POST);
             $cat['id'] = $id;
+            $cat['image'] = $previousImage;
+            if (!empty($_FILES['image']) && empty($uploadedErrors)) {
+                $fileName = uniqid() . '_' . $_FILES['image']['name'];
+                move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
+                $cat['image'] = $fileName;
+            }
 
             $errors = $this->catValidate($cat);
 
-            if (empty($errors)) {
+            if (empty($errors) && empty($uploadedErrors)) {
                 $catManager->update($cat);
                 header('Location: /chats/show?id=' . $id);
             }
@@ -41,6 +52,7 @@ class AdminCatController extends AbstractController
         $genders = $adminGenderManager->selectAll();
 
         return $this->twig->render('Admin/Cat/edit.html.twig', [
+            'uploadedErrors' => $uploadedErrors,
             'errors' => $errors, 'cat' => $cat,
             'breeds' => $breeds, 'colors' => $colors, 'furrs' => $furrs, 'genders' => $genders,
         ]);
@@ -64,6 +76,27 @@ class AdminCatController extends AbstractController
 
         if (empty($cat['description'])) {
             $errors[] = "Le champ description est obligatoire";
+        }
+        return $errors;
+    }
+
+    private function uploadValidate(): array
+    {
+        $errors = [];
+
+        if (is_uploaded_file($_FILES['image']['tmp_name'])) {
+            $maxFileSize = '2000000';
+            if ($_FILES['image']['size'] > $maxFileSize) {
+                $errors[] = 'Le fichier doit faire moins de ' . $maxFileSize / 1000000 . 'M';
+            }
+
+            $authorizesMimes = ['image/jpeg', 'image/png'];
+            $fileMime = mime_content_type($_FILES['image']['tmp_name']);
+            if (!in_array($fileMime, $authorizesMimes)) {
+                $errors[] = 'Le type de mime doit être parmi : ' . implode(',', $authorizesMimes);
+            }
+        } else {
+            $errors[] = 'Problème d\'upload';
         }
         return $errors;
     }

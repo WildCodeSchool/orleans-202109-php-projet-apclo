@@ -4,6 +4,9 @@
 
 .container-sm, .alert-danger {
     width: 80%;
+}
+
+.container-sm {
     max-width: 1100px;
     padding: 0;
 }

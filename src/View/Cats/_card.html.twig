@@ -1,10 +1,10 @@
 <div class="container-sm">
-	<div class="row gap-3">
+	<div class="row g-5">
 		{% for cat in cats %}
 			<div class="col-sm-6 col-lg-4 column">
 				<div class="card card-cat mb-3">
 					<img class="card-img-top float-top" src="/uploads/{{cat.image}}" alt="Card image cap">
-					<div class="card-body">
+					<div class="card-body cat-card-body">
 						<h3 class="card-title text-center">{{cat.name}}</h3>
 						<div class="card-text description">
 							<ul>

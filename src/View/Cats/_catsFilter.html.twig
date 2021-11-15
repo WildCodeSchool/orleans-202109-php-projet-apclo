@@ -1,31 +1,20 @@
-<form action="" class="catsFilter container-sm form-group p-4 my-4">
+<form action="" method="GET" class="catsFilter container-sm form-group p-4 my-4">
 	<h3 class="filterTitle">Filtrer votre recherche</h3>
 	<div class="row d-flex justify-content-around">
-		<div class="col-5">
+		<div class="col-lg-5 col-md-6 col-11 my-2">
 			<select class="catGender form-select form-select-mb px-4" id="catGender" name="catGender">
 				<option value="selectGender" disabled selected>Choisir un sexe</option>
-				<option value="female">Femelle</option>
-				<option value="male">Mâle</option>
+				<option value="Femelle">Femelle</option>
+				<option value="Mâle">Mâle</option>
 			</select>
 		</div>
-		<div class="col-5">
+		<div class="col-lg-5 col-md-6 col-11 my-2">
 			<select class="catAge form-select form-select-mb px-4" id="catAge" name="catAge">
 				<option value="selectAge" disabled selected>Choisir un âge</option>
-				<option value="adultCat">Adulte</option>
-				<option value="kitten">Chaton</option>
+				<option value=">">Adulte</option>
+				<option value="<=">Chaton</option>
 			</select>
 		</div>
-		<button class="col-1 catsFilterBtn btn btn-mb">Filtrer</button>
+		<button class="catsFilterBtn btn col-lg-1 col-md-2 col-2 my-2">Filtrer</button>
 	</div>
-
 </form>
-{# {% for gender in genders %}
-	<option value="{{gender.gender}}">{{gender.gender}}</option>
-{% endfor %}
-{% for age in ages %}
-	{% if age.ecart > 365 %}
-		<option value="adult">Adulte</option>
-	{% else %}
-		<option value="kitten">Chaton</option>
-	{% endif %}
-{% endfor %} #}

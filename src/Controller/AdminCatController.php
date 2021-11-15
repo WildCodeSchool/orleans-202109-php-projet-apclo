@@ -19,11 +19,12 @@ class AdminCatController extends AbstractController
         $previousImage = $cat['image'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $uploadedErrors = $this->uploadValidate();
+            $uploadedErrors = $this->uploadValidate($cat);
 
             $cat = array_map('trim', $_POST);
             $cat['id'] = $id;
             $cat['image'] = $previousImage;
+
             if (!empty($_FILES['image']) && empty($uploadedErrors)) {
                 $fileName = uniqid() . '_' . $_FILES['image']['name'];
                 move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
@@ -79,7 +80,7 @@ class AdminCatController extends AbstractController
         return $errors;
     }
 
-    private function uploadValidate(): array
+    private function uploadValidate(array $cat): array
     {
         $errors = [];
 
@@ -91,10 +92,11 @@ class AdminCatController extends AbstractController
 
             $authorizesMimes = ['image/jpeg', 'image/png'];
             $fileMime = mime_content_type($_FILES['image']['tmp_name']);
+
             if (!in_array($fileMime, $authorizesMimes)) {
                 $errors[] = 'Le type de mime doit être parmi : ' . implode(',', $authorizesMimes);
             }
-        } else {
+        } elseif (!is_uploaded_file($_FILES['image']['tmp_name']) && empty($cat['image'])) {
             $errors[] = 'Problème d\'upload';
         }
         return $errors;

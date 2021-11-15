@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Controller;
+
 class AssociationController extends AbstractController
 {
     public function index()

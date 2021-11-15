@@ -10,40 +10,40 @@ class ContactController extends AbstractController
     }
     public function add(): string
     {
-        $errors = $stamp = [];
+        $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $stamp = array_map('trim', $_POST);
+            $cat = array_map('trim', $_POST);
 
-            if (empty($stamp['lastname'])) {
+            if (empty($cat['lastname'])) {
                 $errors[] = "Le nom est obligatoire";
             }
 
             $maxNameLength = 100;
-            if (strlen($stamp['lastname']) > $maxNameLength) {
+            if (strlen($cat['lastname']) > $maxNameLength) {
                 $errors[] = "Le nom doit faire moins de " . $maxNameLength;
             }
 
 
-            if (empty($stamp['firstname'])) {
+            if (empty($cat['firstname'])) {
                 $errors[] = "Le prénom est obligatoire";
             }
 
             $maxNameLength = 100;
-            if (strlen($stamp['firstname']) > $maxNameLength) {
+            if (strlen($cat['firstname']) > $maxNameLength) {
                 $errors[] = "Le prénom doit faire moins de " . $maxNameLength;
             }
 
 
 
-            if (empty($stamp['tel'])) {
+            if (empty($cat['tel'])) {
                 $errors[] = "Le numéro de téléphone est obligatoire";
             }
 
-            if (empty($stamp['email'])) {
+            if (empty($cat['email'])) {
                 $errors[] = "L'adresse mail est obligatoire";
             }
         }
-        return $this->twig->render('Contact/Controller/index.html.twig', ['errors' => $errors, 'stamp' => $stamp]);
+        return $this->twig->render('Contact/Controller/index.html.twig', ['errors' => $errors, 'cat' => $cat]);
     }
 }

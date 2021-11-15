@@ -2,8 +2,6 @@
 
 namespace App\Model;
 
-use OndraM\CiDetector\Ci\AbstractCi;
-
 class StampManager extends AbstractManager
 {
     public const TABLE = 'cat';

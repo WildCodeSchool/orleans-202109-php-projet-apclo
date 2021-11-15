@@ -32,7 +32,7 @@ class AdminActualityController extends AbstractController
                 $errors[] = 'Le champ date est obligatoire';
             }
             $dateInfos = explode("-", $actuality['date']);
-            if (!checkdate($dateInfos[1], $dateInfos[2], $dateInfos[0])) {
+            if (!checkdate((int)$dateInfos[1], (int)$dateInfos[2], (int)$dateInfos[0])) {
                 $errors[] = 'Le format date n\'est pas valide';
             }
             if (empty($actuality['description'])) {

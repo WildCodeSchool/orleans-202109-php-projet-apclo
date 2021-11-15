@@ -46,10 +46,10 @@ class AdminCatController extends AbstractController
         ]);
     }
 
-   /* private function catValidate(array $cat, array $genders, array $colors, array $furrs, array $breeds): array
+    /*private function catValidate(array $cat, array $genders, array $colors, array $furrs, array $breeds): array
     {
-        $errors = [];
-        /*if (empty($cat['name'])) {
+        /*$errors = [];
+        if (empty($cat['name'])) {
             $errors[] = "Le champ nom est obligatoire";
         }
 

@@ -35,8 +35,8 @@
 }
 
 .btn-entity {
-    height: var(--height-button);
-    width: var(--width-button);
+    height: var(--height-button-icon);
+    width: var(--width-button-icon);
     border-radius: var(--radius-button-circle);
     background-color: var(--primary-color);
     color: var(--light-color);

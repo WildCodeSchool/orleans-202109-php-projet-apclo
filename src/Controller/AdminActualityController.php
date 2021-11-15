@@ -31,6 +31,10 @@ class AdminActualityController extends AbstractController
             if (empty($actuality['date'])) {
                 $errors[] = 'Le champ date est obligatoire';
             }
+            $dateInfos = explode("-", $actuality['date']);
+            if (!checkdate($dateInfos[1], $dateInfos[2], $dateInfos[0])) {
+                $errors[]= 'Le format date n\'est pas valide';
+            }
             if (empty($actuality['description'])) {
                 $errors[] = 'La description est obligatoire';
             }

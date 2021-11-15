@@ -12,10 +12,15 @@ form {
 }
 
 .button-actuality-form {
+    width: var(--width-button);
     background-color: var(--primary-color);
     border: none;
     border-radius: 30px;
     box-shadow: var(--border-shadow);
+}
+
+.btn-link {
+    width: var(--width-button);
 }
 
 textarea {

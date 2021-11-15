@@ -21,6 +21,7 @@ form {
 
 .btn-link {
     width: var(--width-button);
+    
 }
 
 textarea {

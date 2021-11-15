@@ -10,7 +10,6 @@ class ContactController extends AbstractController
     }
     public function add(): string
     {
-
         $errors = $stamp = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -20,9 +19,22 @@ class ContactController extends AbstractController
                 $errors[] = "Le nom est obligatoire";
             }
 
+            $maxNameLength = 100;
+            if (strlen($stamp['lastname']) > $maxNameLength) {
+                $errors[] = "Le nom doit faire moins de " . $maxNameLength;
+            }
+
+
             if (empty($stamp['firstname'])) {
                 $errors[] = "Le prénom est obligatoire";
             }
+
+            $maxNameLength = 100;
+            if (strlen($stamp['firstname']) > $maxNameLength) {
+                $errors[] = "Le prénom doit faire moins de " . $maxNameLength;
+            }
+
+
 
             if (empty($stamp['tel'])) {
                 $errors[] = "Le numéro de téléphone est obligatoire";

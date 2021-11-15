@@ -1,15 +1,10 @@
-@import url('style.css');
-
 body{
     background-color: var(--background);
 }
 
 .banner_asso{
-    height: 250px;
     background-color: var(--secondary-color);
-    border-radius: var(--border-radius);
     opacity: .9;
-    margin: auto;
     box-shadow: var(--border-shadow);
 }
 

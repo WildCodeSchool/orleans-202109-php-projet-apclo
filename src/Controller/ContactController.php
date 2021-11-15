@@ -44,6 +44,6 @@ class ContactController extends AbstractController
                 $errors[] = "L'adresse mail est obligatoire";
             }
         }
-        return $this->twig->render('Contact/Controller/index.html.twig', ['errors' => $errors, 'cat' => $cat]);
+        return $this->twig->render('Contact/Controller/index.html.twig', ['errors' => $errors, 'cat']);
     }
 }

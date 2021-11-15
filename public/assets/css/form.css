@@ -1,4 +1,4 @@
-.banner{
+.banner {
     font-family: var(--text-font);
 }
 
@@ -16,11 +16,17 @@
     padding: var(--spacing);
 }
 
-.separator{
+.separator {
     height: 750px;
 }
 
 .apclo_coordinates {
     background-color: var(--primary-color);
     padding: var(--spacing);
+}
+
+@media (max-width: 766px) {
+    .separator {
+    display: none;
+    }
 }

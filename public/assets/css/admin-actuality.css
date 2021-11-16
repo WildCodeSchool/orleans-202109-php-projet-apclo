@@ -1,24 +1,21 @@
 .icon-newspaper {
     width: 80px;
 }
-
+    
 .container-sm, .alert-danger {
     width: 80%;
-}
-
-.container-sm {
     max-width: 1100px;
     padding: 0;
 }
-
+    
 .title {
     background-color: var(--primary-color);
 }
-
+    
 .title h1 {
     margin-bottom: 150px;
 }
-
+    
 .card-entity, .btn-entity {
     color: var(--light-color);
     font-size: 40px;
@@ -50,7 +47,20 @@
     background-color: var(--third-color);
     color: var(--primary-color);
 }
-
+    
 .btn-close {
     height: var(--spacing);
+}
+
+.btn-edit {
+    border-radius: var(--radius-button-circle);
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+    border: none;
+    height: var(--height-button-icon);
+    width: var(--width-button-icon);
+}
+
+.card-date {
+    width:150px;
 }

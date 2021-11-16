@@ -9,11 +9,16 @@
 return [
     '' => ['HomeController', 'index',],
     'items' => ['ItemController', 'index',],
+    'admin/actualités/index' => ['AdminActualityController', 'index',],
+    'admin/actualités/ajouter' => ['AdminActualityController', 'add',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'admin/chat/editer' => ['AdminCatController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'chats/show' => ['CatController','show', ['id']],
+    'contact' => ['ContactController', 'index',],
     'chats' => ['CatController', 'index'],
+    'association' => ['AssociationController', 'index'],
+    'chats/show' => ['CatController','show', ['id']],
+    'actualities' => ['ActualityController', 'index'],
 ];

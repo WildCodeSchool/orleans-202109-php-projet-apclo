@@ -3,16 +3,13 @@ nav {
     font-family: var(--text-font);
 }
 
-.logo {
-    --logo-size: 50px;
+nav .logo {
+    --logo-size: 100px;
     width: var(--logo-size);
     height: var(--logo-size);
-}
-
-.logo-below {
-    --logo-size: 100px;
     margin-bottom: -50px;
-    padding: 1rem;
+    opacity: 100%;
+    z-index: 1;
 }
 
 .logo img {

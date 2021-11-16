@@ -1,6 +1,10 @@
 :root {
     --primary-color: #BCE5A9;
-    --secondary-color:#7DCEBF;
+    --secondary-color: #7DCEBF;
+    --radius-button-circle: 50%;
+    --height-button-icon: 70px;
+    --width-button-icon: 70px;
+    --width-button: 200px;
 }
 
 .banner {

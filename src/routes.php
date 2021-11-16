@@ -9,9 +9,10 @@
 return [
     '' => ['HomeController', 'index',],
     'items' => ['ItemController', 'index',],
-    'admin/actualités/index' => ['AdminActualityController', 'index',],
-    'admin/actualités/ajouter' => ['AdminActualityController', 'add',],
-    'admin/actualités/éditer' => ['AdminActualityController', 'edit', ['id']],
+    'admin/actualites/index' => ['AdminActualityController', 'index',],
+    'admin/actualites/ajouter' => ['AdminActualityController', 'add',],
+    'admin/actualites/editer' => ['AdminActualityController', 'edit', ['id']],
+    'admin/actualités/supprimer' => ['AdminActualityController', 'delete',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'admin/chat/editer' => ['AdminCatController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],

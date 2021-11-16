@@ -74,6 +74,7 @@ class CatManager extends AbstractManager
         $statement->bindValue('breed_id', $cat['breed_id'], \PDO::PARAM_INT);
 
         return $statement->execute();
+    }
 
     public function insert(array $contact): int
     {

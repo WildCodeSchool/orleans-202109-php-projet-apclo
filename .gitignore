@@ -4,4 +4,4 @@
 *.cache
 db.php
 .idea
-public/uploads
+public/uploads/*

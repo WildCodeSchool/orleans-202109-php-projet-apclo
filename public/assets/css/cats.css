@@ -1,3 +1,7 @@
 .container-sm {
     max-width: 1100px;
 }
+
+.last-adoption {
+    margin-bottom: 100px;
+}

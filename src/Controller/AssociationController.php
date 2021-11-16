@@ -11,6 +11,6 @@ class AssociationController extends AbstractController
         $memberManager = new MemberManager();
         $members = $memberManager->selectAll();
 
-        return $this->twig->render('Association/index.html.twig', ['members'=>$members]);
+        return $this->twig->render('Association/index.html.twig', ['members' => $members]);
     }
 }

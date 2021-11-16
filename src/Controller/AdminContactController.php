@@ -21,7 +21,7 @@ class ContactManagerAdmin extends AbstractController
     }
 
     /**
-     * @SuppressWarnings(PHPMD)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     private function validate(array $contact): array
     {

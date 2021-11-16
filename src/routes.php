@@ -20,7 +20,6 @@ return [
     'contact' => ['ContactController', 'index',],
     'chats/show' => ['CatController','show', ['id']],
     'chats' => ['CatController', 'index'],
-    'association' => ['AssociationController', 'index'],
     'actualities' => ['ActualityController', 'index'],
     'association' => ['AssociationController', 'index'],
 ];

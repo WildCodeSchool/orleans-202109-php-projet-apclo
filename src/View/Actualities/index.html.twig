@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/banner.css">
+{% endblock %}
+
+{% block content %}
+    <div class="banner"></div>
+<div class="title">
+        <h1>Actualités</h1>
+        <p class="entity-actuality mb-0">Retrouvez ci-dessous, les actualités de l'association, nos conseils et toutes nos astuces afin de vous tenir informés de notre activité et de vous aider à vous occuper de vos compagnons à quatre pattes."</p>
+</div>
+    {% for actuality in actualities %}
+        <div class="separator d-flex justify-content-center">
+            <img src="assets/images/separator.svg" alt="separator cats paws">
+        </div>
+            <div class="container-sm container-actuality">
+                <div class="text">
+                    <div class="entity text-light fw-bold p-4 fs-3">{{ actuality.title }}</div>
+                    <p class="descrition-actuality mb-4 mt-4">{{ actuality.description }}</p>
+                    <div class="date text-light d-flex justify-content-end fs-5 fw-bold p-4 mb-0">{{ actuality.date }}</div>
+                </div>
+            </div>
+                    <div class="add-spacing mb-5"></div>
+    {% endfor %}
+
+{% endblock %}

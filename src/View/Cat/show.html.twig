@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/cards.css">
+	<link rel="stylesheet" href="/assets/css/large-card.css">
+	<link rel="stylesheet" href="/assets/css/cats.css">
+{% endblock %}
+
+{% block content %}
+	{% include 'Cat/_cat-banner.html.twig' %}
+	{% include 'Cat/_large-card.html.twig' %}
+
+{% endblock %}

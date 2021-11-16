@@ -9,9 +9,15 @@
 return [
     '' => ['HomeController', 'index',],
     'items' => ['ItemController', 'index',],
+    'admin/actualités/index' => ['AdminActualityController', 'index',],
+    'admin/actualités/ajouter' => ['AdminActualityController', 'add',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'contact' => ['ContactController', 'index',],
+    'chats/show' => ['CatController','show', ['id']],
     'chats' => ['CatController', 'index'],
+    'association' => ['AssociationController', 'index'],
+    'actualities' => ['ActualityController', 'index'],
 ];

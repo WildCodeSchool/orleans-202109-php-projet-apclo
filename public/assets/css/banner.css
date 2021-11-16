@@ -29,10 +29,24 @@
 }
 
 .title p {
-    color: var(--third-color);
     text-indent: 10%;
     font-size: var(--text-size);
     font-family: var(--text-font);
     margin: var(--spacing1);
     padding-bottom: var(--spacing2);
+}
+
+.text p {
+    --spacing1: 24px;
+    --spacing2: 40px;
+    font-size: var(--spacing1);
+    margin: var(--spacing2);
+    text-indent: 10%;
+}
+
+.container-actuality {
+    background-color: var(--primary-color);
+    max-width: 1100px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--border-shadow);
 }

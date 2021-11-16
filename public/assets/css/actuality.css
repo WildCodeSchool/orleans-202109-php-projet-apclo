@@ -14,13 +14,13 @@
 
 .actuality-title h2 {
     margin: var(--spacing2);
-    padding-top: var(--spacing1);
 }
 
-.actuality-title .entity {
+.actuality-title .text-light {
     text-indent: 0;
     padding-bottom: 0;
 }
+
 .actuality-title .date {
     padding-bottom: var(--spacing2);
     text-indent: 0;

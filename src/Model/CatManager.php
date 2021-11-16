@@ -8,12 +8,11 @@ class CatManager extends AbstractManager
 
     public function selectOneById(int $id)
     {
-        $statement = $this->pdo->prepare("SELECT cat.name name, image, TIMESTAMPDIFF(YEAR, birth_date, NOW()) as age,
-        digital_chip, description, adoption_date, gender.name gender, fur.length length,
-        color.name color, breed.name breed 
-        FROM " . self::TABLE . " 
-            LEFT JOIN gender ON gender.id = cat.gender_id 
-            LEFT JOIN fur ON fur.id = cat.fur_id
+        $statement = $this->pdo->prepare("SELECT cat.*, TIMESTAMPDIFF(YEAR, birth_date, NOW()) as age,
+        gender.name gender, gender.id, furr.*, color.name color, color.id, breed.name breed, breed.id
+        FROM " . self::TABLE .
+        "   LEFT JOIN gender ON gender.id = cat.gender_id
+            LEFT JOIN furr ON furr.id = cat.furr_id
             LEFT JOIN breed ON breed.id = cat.breed_id 
             LEFT JOIN color ON color.id = cat.color_id 
         WHERE cat.id=:id");
@@ -36,8 +35,7 @@ class CatManager extends AbstractManager
     public function selectAllCats(): array
     {
         $query = "SELECT cat.name as name, image, birth_date, gender.name as gender, cat.id as id FROM " .
-            self::TABLE . " 
-            LEFT JOIN gender ON gender.id = cat.gender_id";
+        self::TABLE . " JOIN gender ON gender.id = cat.gender_id";
 
         return $this->pdo->query($query)->fetchAll();
     }

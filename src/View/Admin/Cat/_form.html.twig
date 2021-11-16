@@ -1,0 +1,72 @@
+{% if errors is not empty %}
+	<div class="alert alert-danger">
+		{% for error in errors %}
+			<div>{{error}}</div>
+		{% endfor %}
+	</div>
+{% endif %}
+
+<div class="container justify-content-center d-flex mb-4 mt-5">
+
+	<form method="post">
+
+		<div class="form-group mb-3 pt-3">
+			<label for="name" class="form-label">Nom</label>
+			<input type="text" value="{{ cat.name }}" name="name" id="name" class="form-control" required>
+		</div>
+		<div class="form-group mb-3">
+			<label for="birth_date" class="form-label">Date de naissance</label>
+			<input type="date" value="{{ cat.birth_date }}" name="birth_date" id="birth_date" class="form-control">
+		</div>
+		<div class="form-group mb-3">
+			<label for="gender" class="form-label">Genre</label>
+			<select name="gender_id" id="gender" class="form-control">
+				{% for gender in genders %}
+					<option value="{{ gender.id }}" {{ gender.id == cat.gender_id ? 'selected' : ''}}>{{ gender.name }}</option>
+				{% endfor %}
+			</select>
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="color" class="form-label">Couleur</label>
+			<select name="color_id" id="color" class="form-control">
+				{% for color in colors %}
+					<option value="{{ color.id }}" {{ color.id == cat.color_id ? 'selected' : ''}}>{{ color.name }}</option>
+				{% endfor %}
+			</select>
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="breed" class="form-label">Race</label>
+			<select name="breed_id" id="breed" class="form-control">
+				{% for breed in breeds %}					
+						<option value="{{ breed.id }}" {{ breed.id == cat.breed_id ? 'selected' : ''}}>{{ breed.name }}</option>					
+				{% endfor %}
+			</select>
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="furr" class="form-label">Poil</label>
+			<select name="furr_id" id="furr" class="form-control">
+				{% for furr in furrs %}
+						<option value="{{ furr.id }}" {{ furr.id == cat.furr_id ? 'selected' : ''}}>{{ furr.length }}</option>
+				{% endfor %}
+			</select>
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="adoption_date" class="form-label">Date d'adoption (le cas échéant)</label>
+			<input type="date" value="{{ cat.adoption_date }}" name="adoption_date" id="adoption_date" class="form-control">
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="description" class="form-label"></label>
+			<textarea name="description" id="description" class="form-control">{{ cat.description }}</textarea>
+		</div>
+
+		<div class="d-flex justify-content-center m-5">
+			<a href="/admin/chats" class="link-secondary"><img src="/assets/images/return.svg" alt="return">Retour</a>
+			<button class="btn btn-lg btn-success button-form mx-5 px-5">{{ button_name|default('Ajouter')}}</button>
+		</div>
+	</form>
+</div>

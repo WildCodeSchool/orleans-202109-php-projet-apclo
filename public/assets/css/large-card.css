@@ -51,4 +51,10 @@ img {
 
 .text-column {
     height: auto;
-}  
+}
+
+.btn-adopt {
+    background-color: var(--light-color);
+    font-family: var(--title-font);
+    font-size: var(--text-size);
+}

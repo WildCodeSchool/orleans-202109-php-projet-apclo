@@ -1,0 +1,54 @@
+.card-cat{    
+    height: auto;
+}
+
+.card-body {
+    width: 100%;
+    height: 100%;
+    flex: none;
+    padding-block: var(--spacing4);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+  }
+
+ul.d-flex {
+    width: 100%;
+    margin-block:var(--spacing2);  
+}
+
+li {
+   font-size: var(--text-size); 
+   font-weight: bold;
+}
+
+
+h3 {
+    font-size: 36px;
+}
+
+.paw {
+    height: 40px;
+}
+
+p {
+    margin-block: var(--spacing3);
+    font-size: 22px;
+    line-height: 40px;
+    font-style: italic;
+    width: 90%;
+}
+
+img {
+    border-radius: var(--border-radius);
+}
+
+.row {
+    height: 100%;
+}
+
+.text-column {
+    height: auto;
+}  

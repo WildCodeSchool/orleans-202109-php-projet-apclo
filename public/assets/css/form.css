@@ -15,6 +15,7 @@
 .form_subject {
     background-color: var(--primary-color);
     padding: var(--spacing);
+    font-family: var(--text-font);
 }
 
 .separator {

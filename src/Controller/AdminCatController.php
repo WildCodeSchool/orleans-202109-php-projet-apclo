@@ -156,7 +156,7 @@ class AdminCatController extends AbstractController
             }
 
             $catManager->delete((int)$id);
-            header('Location:/admin/chats/index');
+            header('Location:/admin/chats');
         }
     }
 }

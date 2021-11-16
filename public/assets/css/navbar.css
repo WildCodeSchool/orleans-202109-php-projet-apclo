@@ -12,6 +12,8 @@ nav {
     width: 100%;
 }
 
+nav.navbar
+
 nav .logo {
     --logo-size: 100px;
     width: var(--logo-size);

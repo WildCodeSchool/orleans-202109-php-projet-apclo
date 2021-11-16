@@ -1,5 +1,6 @@
-.banner {
+.banner_asso {
     font-family: var(--text-font);
+    color: var(--third-color);
 }
 
 .form_coordinates_title {

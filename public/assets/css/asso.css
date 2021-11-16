@@ -1,0 +1,18 @@
+body{
+    background-color: var(--background);
+}
+
+.banner_asso{
+    color: var(--third-color);
+    background-color: var(--secondary-color);
+    opacity: .9;
+    box-shadow: var(--border-shadow);
+}
+
+.title {
+    font-family: var(--title-font);
+}
+
+.asso_text{
+    font-family: var(--text-font);
+}

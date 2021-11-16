@@ -32,7 +32,7 @@ class AdminCatController extends AbstractController
             $cat = array_map('trim', $_POST);
             $cat['id'] = $id;
 
-            /*$errors = $this->catValidate($cat, $genders, $colors, $furrs, $breeds);*/
+            $errors = $this->catValidate($cat, $genders, $colors, $furrs, $breeds);
 
             if (empty($errors)) {
                 $catManager->update($cat);
@@ -46,9 +46,13 @@ class AdminCatController extends AbstractController
         ]);
     }
 
-    /*private function catValidate(array $cat, array $genders, array $colors, array $furrs, array $breeds): array
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
+    private function catValidate(array $cat, array $genders, array $colors, array $furrs, array $breeds): array
     {
-        /*$errors = [];
+        $errors = [];
         if (empty($cat['name'])) {
             $errors[] = "Le champ nom est obligatoire";
         }
@@ -100,9 +104,10 @@ class AdminCatController extends AbstractController
 
         $date = explode('-', $cat['birth_date']);
 
-        if (!checkdate($date[1], $date[2], $date[0])) {
+        if (!checkdate((int)$date[1], (int)$date[2], (int)$date[0])) {
             $errors[] = 'Le champ date n\'est pas valide';
         }
+
         return $errors;
-    }*/
+    }
 }

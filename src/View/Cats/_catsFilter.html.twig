@@ -2,17 +2,19 @@
 	<h3 class="filterTitle">Filtrer votre recherche</h3>
 	<div class="row d-flex justify-content-around">
 		<div class="col-lg-5 col-md-6 col-11 my-2">
-			<select class="catGender form-select form-select-mb px-4" id="catGender" name="catGender">
-				<option value="selectGender" disabled selected>Choisir un sexe</option>
-				<option value="Femelle">Femelle</option>
-				<option value="Mâle">Mâle</option>
+			<select class="catGender form-select form-select-mb px-4" id="floatingSelect" name="catGender">
+				<option value="" disabled>Choisir un genre</option>
+				{% for gender in genders %}
+					<option value="{{ gender.id }}">{{ gender.name }}</option>
+				{% endfor %}
 			</select>
 		</div>
 		<div class="col-lg-5 col-md-6 col-11 my-2">
 			<select class="catAge form-select form-select-mb px-4" id="catAge" name="catAge">
-				<option value="selectAge" disabled selected>Choisir un âge</option>
-				<option value=">">Adulte</option>
-				<option value="<=">Chaton</option>
+				<option value="" disabled>Choisir un âge</option>
+				{% for age in ages %}
+					<option value="{{ age.age }}">{{ age.age }}</option>
+				{% endfor %}
 			</select>
 		</div>
 		<button class="catsFilterBtn btn col-lg-1 col-md-2 col-2 my-2">Filtrer</button>

@@ -8,12 +8,10 @@ class CatManager extends AbstractManager
 
     public function selectOneById(int $id)
     {
-        $statement = $this->pdo->prepare("SELECT cat.name, image, birth_date,
-        TIMESTAMPDIFF(YEAR, birth_date, NOW()) as age,
-        digital_chip, description, adoption_date, gender.name gender, furr.length,
-        color.name color, breed.name breed
+        $statement = $this->pdo->prepare("SELECT cat.*, TIMESTAMPDIFF(YEAR, birth_date, NOW()) as age,
+        gender.name gender, gender.id, furr.*, color.name color, color.id, breed.name breed, breed.id
         FROM " . self::TABLE .
-        "   LEFT JOIN gender ON gender.id = cat.gender_id 
+        "   LEFT JOIN gender ON gender.id = cat.gender_id
             LEFT JOIN furr ON furr.id = cat.furr_id
             LEFT JOIN breed ON breed.id = cat.breed_id 
             LEFT JOIN color ON color.id = cat.color_id 
@@ -26,7 +24,10 @@ class CatManager extends AbstractManager
 
     public function toAdopt()
     {
-        $query = "SELECT * FROM " . self::TABLE . " WHERE adoption_date IS NULL ORDER BY id DESC LIMIT 3";
+        $query = "SELECT c.*, g.name gender FROM " . self::TABLE . " c
+        LEFT JOIN gender g ON g.id=c.gender_id
+        WHERE adoption_date IS NULL 
+        ORDER BY c.id DESC LIMIT 3";
 
         return $this->pdo->query($query)->fetchAll();
     }
@@ -41,9 +42,10 @@ class CatManager extends AbstractManager
 
     public function latestAdopted()
     {
-        $query = "SELECT * FROM " . self::TABLE .
-            " WHERE adoption_date IS NOT NULL 
-            ORDER BY adoption_date DESC LIMIT 3";
+        $query = "SELECT c.*, g.name gender FROM " . self::TABLE . " c
+        LEFT JOIN gender g ON g.id=c.gender_id
+        WHERE adoption_date IS NOT NULL 
+        ORDER BY adoption_date DESC LIMIT 3";
 
         return $this->pdo->query($query)->fetchAll();
     }
@@ -51,14 +53,19 @@ class CatManager extends AbstractManager
     public function update(array $cat): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
-        " SET `name` = :name, `birth_date` = :birth_date,`adoption_date` = :adoption_date,
+            " SET `name` = :name, `birth_date` = :birth_date,`adoption_date` = :adoption_date,
         `description` = :description, `gender_id` = :gender_id, `color_id` = :color_id,
         `furr_id` = :furr_id, `breed_id` = :breed_id, `image` =:image WHERE id=:id");
 
         $statement->bindValue('id', $cat['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $cat['name'], \PDO::PARAM_STR);
         $statement->bindValue('birth_date', $cat['birth_date'], \PDO::PARAM_STR);
-        $statement->bindValue('adoption_date', $cat['adoption_date']);
+
+        if ($cat['adoption_date'] != '') {
+            $statement->bindValue('adoption_date', $cat['adoption_date'], \PDO::PARAM_STR);
+        } else {
+            $statement->bindValue('adoption_date', null);
+        }
         $statement->bindValue('description', $cat['description'], \PDO::PARAM_STR);
         $statement->bindValue('gender_id', $cat['gender_id'], \PDO::PARAM_INT);
         $statement->bindValue('color_id', $cat['color_id'], \PDO::PARAM_INT);
@@ -67,5 +74,18 @@ class CatManager extends AbstractManager
         $statement->bindValue('image', $cat['image'], \PDO::PARAM_STR);
 
         return $statement->execute();
+    }
+
+    public function insert(array $contact): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (lastname, firstname, tel, email, subject) 
+        VALUES (:lastname, :firstname, :tel, :email, :subject)");
+        $statement->bindValue('lastname', $contact['lastname'], \PDO::PARAM_STR);
+        $statement->bindValue('firstname', $contact['firstname'], \PDO::PARAM_STR);
+        $statement->bindValue('tel', $contact['tel'], \PDO::PARAM_STR);
+        $statement->bindValue('email', $contact['email'], \PDO::PARAM_STR);
+        $statement->bindValue('subject', $contact['subject'], \PDO::PARAM_STR);
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
     }
 }

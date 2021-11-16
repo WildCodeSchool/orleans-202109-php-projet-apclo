@@ -18,6 +18,18 @@ class AdminCatController extends AbstractController
         $cat = $catManager->selectOneById($id);
         $previousImage = $cat['image'];
 
+        $adminBreedManager = new AdminBreedManager();
+        $breeds = $adminBreedManager->selectAll();
+
+        $adminColorManager = new AdminColorManager();
+        $colors = $adminColorManager->selectAll();
+
+        $adminFurrManager = new AdminFurrManager();
+        $furrs = $adminFurrManager->selectAll();
+
+        $adminGenderManager = new AdminGenderManager();
+        $genders = $adminGenderManager->selectAll();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadedErrors = $this->uploadValidate($cat);
 
@@ -31,25 +43,13 @@ class AdminCatController extends AbstractController
                 $cat['image'] = $fileName;
             }
 
-            $errors = $this->catValidate($cat);
+            $errors = $this->catValidate($cat, $genders, $colors, $furrs, $breeds);
 
             if (empty($errors) && empty($uploadedErrors)) {
                 $catManager->update($cat);
-                header('Location: /chats/show?id=' . $id);
+                header('Location: /admin/chats');
             }
         }
-
-        $adminBreedManager = new AdminBreedManager();
-        $breeds = $adminBreedManager->selectAll();
-
-        $adminColorManager = new AdminColorManager();
-        $colors = $adminColorManager->selectAll();
-
-        $adminFurrManager = new AdminFurrManager();
-        $furrs = $adminFurrManager->selectAll();
-
-        $adminGenderManager = new AdminGenderManager();
-        $genders = $adminGenderManager->selectAll();
 
         return $this->twig->render('Admin/Cat/edit.html.twig', [
             'uploadedErrors' => $uploadedErrors,
@@ -58,7 +58,11 @@ class AdminCatController extends AbstractController
         ]);
     }
 
-    private function catValidate(array $cat): array
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
+    private function catValidate(array $cat, array $genders, array $colors, array $furrs, array $breeds): array
     {
         $errors = [];
         if (empty($cat['name'])) {
@@ -77,6 +81,45 @@ class AdminCatController extends AbstractController
         if (empty($cat['description'])) {
             $errors[] = "Le champ description est obligatoire";
         }
+
+        if (empty($cat['gender_id'])) {
+            $errors[] = "Le champ genre est obligatoire";
+        }
+
+        if (!in_array($cat['gender_id'], array_column($genders, 'id'))) {
+            $errors[] = "Merci de choisir un genre correct";
+        }
+
+        if (empty($cat['color_id'])) {
+            $errors[] = "Le champ couleur est obligatoire";
+        }
+
+        if (!in_array($cat['color_id'], array_column($colors, 'id'))) {
+            $errors[] = "Merci de choisir une couleur correcte";
+        }
+
+        if (empty($cat['furr_id'])) {
+            $errors[] = "Le champ poil est obligatoire";
+        }
+
+        if (!in_array($cat['furr_id'], array_column($furrs, 'id'))) {
+            $errors[] = "Merci de choisir un poil correct";
+        }
+
+        if (empty($cat['breed_id'])) {
+            $errors[] = "Le champ race est obligatoire";
+        }
+
+        if (!in_array($cat['breed_id'], array_column($breeds, 'id'))) {
+            $errors[] = "Merci de choisir une race correcte";
+        }
+
+        $date = explode('-', $cat['birth_date']);
+
+        if (!checkdate((int)$date[1], (int)$date[2], (int)$date[0])) {
+            $errors[] = 'Le champ date n\'est pas valide';
+        }
+
         return $errors;
     }
 

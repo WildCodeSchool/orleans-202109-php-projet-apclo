@@ -23,10 +23,10 @@ class AdminActualityController extends AbstractController
 
             $errors = $this->actualityValidate($actuality);
 
-        if (empty($errors)) {
-            $actualityManager = new ActualityManager();
-            $actualityManager->insert($actuality);
-            header('Location:/admin/actualités/index');
+            if (empty($errors)) {
+                $actualityManager = new ActualityManager();
+                $actualityManager->insert($actuality);
+                header('Location:/admin/actualités/index');
             }
         }
 

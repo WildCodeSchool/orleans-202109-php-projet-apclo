@@ -3,6 +3,7 @@ body{
 }
 
 .banner_asso{
+    color: var(--third-color);
     background-color: var(--secondary-color);
     opacity: .9;
     box-shadow: var(--border-shadow);

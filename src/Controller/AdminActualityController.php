@@ -23,10 +23,10 @@ class AdminActualityController extends AbstractController
 
             $errors = $this->actualityValidate($actuality);
 
-            if (empty($errors)) {
-                $actualityManager = new ActualityManager();
-                $actualityManager->insert($actuality);
-                header('Location:/admin/actualités/index');
+        if (empty($errors)) {
+            $actualityManager = new ActualityManager();
+            $actualityManager->insert($actuality);
+            header('Location:/admin/actualités/index');
             }
         }
 
@@ -68,6 +68,10 @@ class AdminActualityController extends AbstractController
         }
         if (empty($actuality['date'])) {
             $errors[] = 'Le champ date est obligatoire';
+        }
+        $dateInfos = explode("-", $actuality['date']);
+        if (!checkdate((int)$dateInfos[1], (int)$dateInfos[2], (int)$dateInfos[0])) {
+            $errors[] = 'Le format date n\'est pas valide';
         }
         if (empty($actuality['description'])) {
             $errors[] = 'La description est obligatoire';

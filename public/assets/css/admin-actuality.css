@@ -22,36 +22,36 @@
     color: var(--light-color);
     font-size: 40px;
 }
-    
+
 .card-entity {
     background-color: var(--secondary-color);
 }
-    
+
 .card-actuality {
     background-color: var(--primary-color);
 }
-    
+
 .card-title-actuality, .card-date {
     color: var(--light-color);
     font-size: var(--text-size);
 }
-    
+
 .btn-entity {
-    height: var(--height-button);
-    width: var(--width-button);
+    height: var(--height-button-icon);
+    width: var(--width-button-icon);
     border-radius: var(--radius-button-circle);
     background-color: var(--primary-color);
     color: var(--light-color);
     font-weight: bold;
 }
-    
+
 .btn:hover {
     background-color: var(--third-color);
     color: var(--primary-color);
 }
     
 .btn-close {
-    height: var(--spacing1);
+    height: var(--spacing);
 }
 
 .btn-edit {

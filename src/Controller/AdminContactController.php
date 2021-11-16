@@ -22,6 +22,7 @@ class ContactManagerAdmin extends AbstractController
 
     /**
      * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
     private function validate(array $contact): array
     {
@@ -50,9 +51,12 @@ class ContactManagerAdmin extends AbstractController
         if (empty($contact['email'])) {
             $errors[] = "L'adresse mail est obligatoire";
         }
-        $maxEmailNumberLength = 255;
         if (!filter_var($contact['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Le champ doit faire moins de " . $maxEmailNumberLength;
+            $errors[] = "Le format d'email est incorrect";
+        }
+        $maxEmailNumberLength = 255;
+        if (strlen($contact['email'])) {
+            $errors[] = "L'adresse mail doit faire moins de " . $maxEmailNumberLength;
         }
         return $errors;
     }

@@ -1,6 +1,7 @@
 .member {
     background-color: var(--secondary-color);
     border-radius: var(--border-radius);
+    box-shadow: var(--border-shadow);
     margin: var(--spacing);
 }
 

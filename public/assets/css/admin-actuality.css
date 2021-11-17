@@ -1,5 +1,5 @@
 .icon-newspaper {
-    width: 80px;
+    width: 60px;
 }
     
 .container-sm, .alert-danger {
@@ -13,12 +13,11 @@
 }
     
 .title h1 {
-    margin-bottom: 150px;
+    margin-bottom: 50px;
 }
     
 .card-entity, .btn-entity {
     color: var(--light-color);
-    font-size: 40px;
 }
 
 .card-entity {
@@ -31,7 +30,6 @@
 
 .card-title-actuality, .card-date {
     color: var(--light-color);
-    font-size: var(--text-size);
 }
 
 .btn-entity {

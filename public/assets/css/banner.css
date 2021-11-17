@@ -20,16 +20,16 @@
     width: var(--width-banner-title);
     max-width: 1100px;
     margin: auto;
-    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing1))));
-    border-radius: 8px;    
+    margin-top: calc(-1 * (var(--main-title-size) + (var(--spacing2))));
+    border-radius: var(--border-radius);
+    margin-bottom: 70px;  
 }
 
 .title h1 {
-    margin: var(--spacing1);
+    margin: 34px;
 }
 
 .title p {
-    text-indent: 10%;
     font-size: var(--text-size);
     font-family: var(--text-font);
     margin: var(--spacing1);
@@ -41,7 +41,6 @@
     --spacing2: 40px;
     font-size: var(--spacing1);
     margin: var(--spacing2);
-    text-indent: 10%;
 }
 
 .container-actuality {

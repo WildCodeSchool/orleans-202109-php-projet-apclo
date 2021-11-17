@@ -49,7 +49,7 @@
 		<div class="form-group mb-3">
 			<label for="breed" class="form-label">Race</label>
 			<select name="breed_id" id="breed" class="form-control">
-			<option value="defaultValue" disabled selected>Choisir une race</option>
+				<option value="defaultValue" disabled selected>Choisir une race</option>
 				{% for breed in breeds %}
 					<option value="{{ breed.id }}" {{ breed.id == cat.breed_id ? 'selected' : ''}}>{{ breed.name }}</option>
 				{% endfor %}
@@ -59,7 +59,7 @@
 		<div class="form-group mb-3">
 			<label for="furr" class="form-label">Poil</label>
 			<select name="furr_id" id="furr" class="form-control">
-			<option value="defaultValue" disabled selected>Choisir un poil</option>
+				<option value="defaultValue" disabled selected>Choisir un poil</option>
 				{% for furr in furrs %}
 					<option value="{{ furr.id }}" {{ furr.id == cat.furr_id ? 'selected' : ''}}>{{ furr.length }}</option>
 				{% endfor %}

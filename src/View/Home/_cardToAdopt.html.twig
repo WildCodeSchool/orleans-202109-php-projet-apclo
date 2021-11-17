@@ -3,7 +3,7 @@
 		{% for adoption in adoptions %}
 			<div class="col-sm-6 col-lg-4 column">
 				<div class="card card-cat mb-3">
-					<img class="card-img-top float-top" src='uploads/{{adoption.image}}' alt="Card image cap">
+					<img class="card-img-top float-top" src={% if adoption.image is not empty %} "uploads/{{adoption.image}}" {% else %} "assets/images/cat-profil.svg" {% endif %} alt="Card image cap">
 					<div class="card-body">
 						<h3 class="card-title text-center">{{adoption.name}}</h3>
 						<div class="card-text description">

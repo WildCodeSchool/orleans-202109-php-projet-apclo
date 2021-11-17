@@ -3,7 +3,7 @@
 	<div class="card card-cat mb-3">
 		<div class="row">
 			<div class="col-md-6 d-flex justify-content-center align-items-center">
-				<img class="card-img-top" src="/uploads/{{cat.image}}" alt="Card image cap">
+				<img class="card-img-top" src={% if cat.image is not empty %} "/uploads/{{cat.image}}" {% else %} "/assets/images/cat-profil.svg" {% endif %} alt="Card image cap">
 			</div>
 			<div class="col-md-6 text-column">
 				<div class="card-body">

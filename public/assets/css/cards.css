@@ -70,3 +70,7 @@
 .separator {
     height: 250px;
 }
+
+.adopted {
+    transform: rotate(30deg);
+}

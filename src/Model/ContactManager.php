@@ -4,7 +4,7 @@ namespace App\Model;
 
 class ContactManager extends AbstractManager
 {
-    public const TABLE = 'cat';
+    public const TABLE = 'contact';
     public function insert(array $contact): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (lastname, firstname, tel, email, subject)

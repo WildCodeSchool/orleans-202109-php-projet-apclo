@@ -23,7 +23,25 @@ class AdminActualityController extends AbstractController
 
             $errors = $this->actualityValidate($actuality);
 
+            if (is_uploaded_file($_FILES['image']['tmp_name'])) {
+                $maxFileSize = '2000000';
+                if ($_FILES['image']['size'] > $maxFileSize) {
+                    $errors[] = 'Le fichier doit faire moins de '. $maxFileSize / 1000000 . 'M';
+                }
+
+                $authorizedMimes = ['image/jpeg', 'image/png'];
+                $fileMime = mime_content_type($_FILES['image']['tmp_name']);
+                if (!in_array($fileMime, $authorizedMimes)) {
+                    $errors[] = 'Le type mime doit être parmi '. implode(', ', $authorizedMimes);
+                }
+            } else {
+                $errors[] = 'Problème d\'upload';
+            }
+            
             if (empty($errors)) {
+                $fileName = uniqid() . '_' . $_FILES['image']['name'];
+                move_uploaded_file($_FILES ['image']['tmp_name'], 'uploads/'. $fileName);
+                $actuality['image'] = $fileName;
                 $actualityManager = new ActualityManager();
                 $actualityManager->insert($actuality);
                 header('Location:/admin/actualites/index');

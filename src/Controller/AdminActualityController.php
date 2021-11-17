@@ -102,6 +102,11 @@ class AdminActualityController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $actualityManager = new ActualityManager();
+            $actuality = $actualityManager->selectOneById($id);
+            if (file_exists('uploads/' . $actuality['image'])) {
+                unlink('uploads/' . $actuality['image']);
+            }
+
             $actualityManager->delete((int)$id);
             header('Location:/admin/actualites/index');
         }

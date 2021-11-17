@@ -3,6 +3,7 @@
 {% block stylesheet %}
 	<link rel="stylesheet" href="/assets/css/banner.css">
 	<link rel="stylesheet" href="/assets/css/style-admin.css">
+	<link rel="stylesheet" href="/assets/css/admin-cat-index.css">
 {% endblock %}
 {# 
 {% block content %}
@@ -67,27 +68,33 @@
 	<div class="title">
 		<h1>Admin / Chats</h1>
 	</div>
-
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col">
-					<a href="/admin/chats/ajouter" class="btn btn-entity btn-circle d-flex justify-content-center align-items-center align-self-center ms-4 btn-lg fs-3">+</a>
-				</th>
-				<th scope="col">Nom</th>
-				<th scope="col">Genre</th>
-				<th scope="col">Date de naissance</th>
-			</tr>
-			{% for cat in cats %}
-				<tr>
-				<td class="">{{ cat.image }}</td>
-				<td class="">{{ cat.name }}</td>
-				<td class="">{{ cat.gender }}</td>
-				<td class="">{{ cat.birth_date }}</td>
+	<div class="container-sm">
+		<table class="table table-hover d-flex flex-column">
+			<thead class="tableHead">
+				<tr class="d-flex flex-row justify-content-around">
+					<th class="d-flex align-self-end" scope="col">
+						<a href="/admin/chats/ajouter" class="btn btn-entity btn-circle d-flex justify-content-center align-items-center align-self-center ms-4 btn-lg fs-3">+</a>
+					</th>
+					<th class="d-flex align-self-end" scope="col">Nom</th>
+					<th class="d-flex align-self-end" scope="col">Genre</th>
+					<th class="d-flex align-self-end" scope="col">Date de naissance</th>
+					<th></th>
+					<th></th>
 				</tr>
-			{% endfor %}
-		</thead>
-	</table>
-
+			</thead>
+			<tbody class="d-flex flex-column ">
+				{% for cat in cats %}
+					<tr class="tableRow d-flex justify-content-around">
+						<td class="d-flex ">{{ cat.image }}</td>
+						<td class="d-flex ">{{ cat.name }}</td>
+						<td class="d-flex ">{{ cat.gender }}</td>
+						<td class="d-flex ">{{ cat.birth_date }}</td>
+						<td class="d-flex "><a href="/admin/chat/editer?id={{ cat.id }}">Editer</a></td>	
+						<td class="d-flex "><a href="/admin/chat/supprimer?id={{ cat.id }}">Supprimer</a></td> 
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
 
 {% endblock %}

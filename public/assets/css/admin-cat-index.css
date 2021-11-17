@@ -1,0 +1,7 @@
+.tableHead{
+    background-color: var(--secondary-color);
+}
+
+.tableRow{
+    background-color: var(--primary-color);
+}

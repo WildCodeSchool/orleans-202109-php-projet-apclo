@@ -25,7 +25,7 @@
                             </div>
                                 <div class="card-body d-flex flex-row justify-content-end align-items-center flex-column flex-sm-row">
                                     <div class="card-date me-3 pr-3 fs-5">{{ actuality.date }}</div>
-                                    <a href = "/admin/actualites/éditer?id= {{ actuality.id }}" class="btn btn-edit d-flex align-items-center me-3 btn-primary">Éditer</a>
+                                    <a href = "/admin/actualites/editer?id= {{ actuality.id }}" class="btn btn-edit d-flex align-items-center me-3 btn-primary">Éditer</a>
                                     <form method="POST" action="/admin/actualités/supprimer">
                                         <input type="hidden" name="id" value="{{ actuality.id }}">
                                         <button class ="btn btn-delete btn-primary mt-4">Supprimer</button>

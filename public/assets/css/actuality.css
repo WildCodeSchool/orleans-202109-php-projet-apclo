@@ -6,12 +6,11 @@
 .actuality-title {
     --spacing1: 10px;
     --spacing2: 24px;
-    margin-bottom: 0;
+    margin-bottom: 70px;
 }
 
 .actuality-title p {
     margin: var(--spacing2);
-    color: var(--dark-color);
 }
 
 .actuality-title h2 {

@@ -78,7 +78,10 @@ class CatManager extends AbstractManager
 
     public function insert(array $cat): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `birth_date`, `adoption_date`, `description`, `gender_id`, `color_id`, `furr_id`, `breed_id`, `image` ) VALUES (:name, :birth_date, :adoption_date, :description, :gender_id, :color_id, :furr_id, :breed_id, :image)");
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
+        " (`name`, `birth_date`, `adoption_date`, `description`,
+        `gender_id`, `color_id`, `furr_id`, `breed_id`, `image`) 
+        VALUES (:name, :birth_date, :adoption_date, :description, :gender_id, :color_id, :furr_id, :breed_id, :image)");
 
         $statement->bindValue('name', $cat['name'], \PDO::PARAM_STR);
         $statement->bindValue('birth_date', $cat['birth_date'], \PDO::PARAM_STR);

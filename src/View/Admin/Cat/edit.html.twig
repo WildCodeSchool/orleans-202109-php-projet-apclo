@@ -1,0 +1,11 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/style-admin.css">
+	<link rel="stylesheet" href="/assets/css/edit-admin.css">
+{% endblock %}
+
+{% block content %}
+	{% include 'Admin/Cat/_bannerAdmin.html.twig' %}
+	{% include 'Admin/Cat/_form.html.twig' with {'button_name' : 'Éditer'} %}
+{% endblock %}

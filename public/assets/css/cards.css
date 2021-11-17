@@ -37,7 +37,7 @@
     font-size       : 30px;
     box-shadow      : var(--border-shadow);
     font-weight     : bold;
-    border-radius   : 50%;
+    border-radius   : var(--radius-button-circle);
     width           : 50px;
     aspect-ratio    : 1 / 1;
     padding         : 0;
@@ -65,4 +65,8 @@
 
 .cat-card-body {
     height: 33%;
+}
+
+.separator {
+    height: 250px;
 }

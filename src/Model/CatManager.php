@@ -96,4 +96,30 @@ class CatManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function insert(array $cat): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
+        " (`name`, `birth_date`, `adoption_date`, `description`,
+        `gender_id`, `color_id`, `furr_id`, `breed_id`, `image`) 
+        VALUES (:name, :birth_date, :adoption_date, :description, :gender_id, :color_id, :furr_id, :breed_id, :image)");
+
+        $statement->bindValue('name', $cat['name'], \PDO::PARAM_STR);
+        $statement->bindValue('birth_date', $cat['birth_date'], \PDO::PARAM_STR);
+
+        if ($cat['adoption_date'] != '') {
+            $statement->bindValue('adoption_date', $cat['adoption_date'], \PDO::PARAM_STR);
+        } else {
+            $statement->bindValue('adoption_date', null);
+        }
+        $statement->bindValue('description', $cat['description'], \PDO::PARAM_STR);
+        $statement->bindValue('gender_id', $cat['gender_id'], \PDO::PARAM_INT);
+        $statement->bindValue('color_id', $cat['color_id'], \PDO::PARAM_INT);
+        $statement->bindValue('furr_id', $cat['furr_id'], \PDO::PARAM_INT);
+        $statement->bindValue('breed_id', $cat['breed_id'], \PDO::PARAM_INT);
+        $statement->bindValue('image', $cat['image'], \PDO::PARAM_STR);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
 }

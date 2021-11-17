@@ -10,6 +10,48 @@ use App\Model\AdminGenderManager;
 
 class AdminCatController extends AbstractController
 {
+    public function add()
+    {
+        $errors = $uploadedErrors = $cat = [];
+
+        $adminBreedManager = new AdminBreedManager();
+        $breeds = $adminBreedManager->selectAll();
+
+        $adminColorManager = new AdminColorManager();
+        $colors = $adminColorManager->selectAll();
+
+        $adminFurrManager = new AdminFurrManager();
+        $furrs = $adminFurrManager->selectAll();
+
+        $adminGenderManager = new AdminGenderManager();
+        $genders = $adminGenderManager->selectAll();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $uploadedErrors = $this->uploadValidate($cat);
+
+            $cat = array_map('trim', $_POST);
+
+            if (!empty($_FILES['image']) && empty($uploadedErrors)) {
+                $fileName = uniqid() . '_' . $_FILES['image']['name'];
+                move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
+                $cat['image'] = $fileName;
+            }
+
+            $errors = $this->catValidate($cat, $genders, $colors, $furrs, $breeds);
+
+            if (empty($errors) && empty($uploadedErrors)) {
+                $catManager = new CatManager();
+                $catManager->insert($cat);
+                header('Location: /admin/chats');
+            }
+        }
+        return $this->twig->render('Admin/Cat/add.html.twig', [
+            'uploadedErrors' => $uploadedErrors,
+            'errors' => $errors, 'cat' => $cat,
+            'breeds' => $breeds, 'colors' => $colors, 'furrs' => $furrs, 'genders' => $genders,
+        ]);
+    }
+
     public function edit(int $id): string
     {
         $errors = $uploadedErrors = $cat = [];
@@ -114,10 +156,12 @@ class AdminCatController extends AbstractController
             $errors[] = "Merci de choisir une race correcte";
         }
 
-        $date = explode('-', $cat['birth_date']);
+        if (!empty($cat['birth_date'])) {
+            $date = explode('-', $cat['birth_date']);
 
-        if (!checkdate((int)$date[1], (int)$date[2], (int)$date[0])) {
-            $errors[] = 'Le champ date n\'est pas valide';
+            if (!checkdate((int)$date[1], (int)$date[2], (int)$date[0])) {
+                $errors[] = 'Le champ date n\'est pas valide';
+            }
         }
 
         return $errors;

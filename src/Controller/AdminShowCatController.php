@@ -8,7 +8,7 @@ use App\Model\AdminColorManager;
 use App\Model\AdminFurrManager;
 use App\Model\AdminGenderManager;
 
-class AdminShowCatController extends AbstractController
+/*class AdminShowCatController extends AbstractController
 {
     public function index(): string
     {
@@ -16,5 +16,5 @@ class AdminShowCatController extends AbstractController
 
     }
 
-    private function
-}
+    private function;
+}*/

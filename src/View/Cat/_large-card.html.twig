@@ -10,14 +10,20 @@
 					<h3 class="card-title text-center">{{cat.name}}</h3>
 					<div class="card-text description d-flex flex-column justify-content-start align-items-center">
 						<ul class="d-flex flex-row flex-wrap justify-content-around">
-							<li>{{cat.age}} ans</li>
+							<li>{{cat.age}}ans</li>
 							<li>{{cat.gender}}</li>
 							<li>{{cat.color}}</li>
 							<li>{{cat.breed}}</li>
 							<li>{{cat.length}}</li>
 						</ul>
 						<p>{{cat.description}}</p>
+						<form method="GET" action="/contact" class="align-self-end">
+							<input type="hidden" name="name" value="{{ cat.name }}" id="name">
+							<input type="hidden" name="digital_chip" value="{{ cat.digital_chip }}" id="digital_chip">
+							<button class="btn btn-adopt">Adoptez-moi!</button>
+						</form>
 					</div>
+
 				</div>
 			</div>
 		</div>

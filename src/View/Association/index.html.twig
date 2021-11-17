@@ -1,13 +1,10 @@
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/banner.css">
+	<link rel="stylesheet" href="/assets/css/asso.css">
+{% endblock %}
 
 
 {% block content %}
-	<div class="banner"></div>
-	<div class="title">
-		<h1 class="association p-1">Association</h1>
-		<p class="ban-accueil fs-4">L'APCLO (Association pour la Protection des Chats Libres d'Orléans)</p>
-		<p>D'une année sur l'autre notre association compte en moyenne 500 membres à jour de leur cotisation.
-		Le bureau est constitué d'un président, d'une vice-présidente, d'un secrétaire et d'un trésorier.
-		Le conseil d'administration compte 9 membres renouvelables par tiers.</p>
-	</div>
+	{% include 'Association/_banner-association.html.twig' %}
 {% endblock %}

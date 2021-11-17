@@ -1,6 +1,21 @@
 nav {
     background-color: var(--third-color);
     font-family: var(--text-font);
+    font-size: var(--navbar-title-size);
+}
+
+.container {
+    max-width: 1100px;
+}
+
+.navbar {
+    width: 100%;
+}
+
+nav.navbar {
+    position: fixed;
+    z-index: 2;
+    top:0;
 }
 
 nav .logo {
@@ -17,17 +32,9 @@ nav .logo {
 }
 
 .catSvg {
-    height: 18px;
+    height: 26px;
 }
 
-.mailSvg {
-    height: 14px;
-}
-
-.pawSvg {
-    height: 14px;
-}
-
-.catHouseSvg {
-    height: 14px;
+.mailSvg, .pawSvg, .catHouseSvg {
+    height: 22px;
 }

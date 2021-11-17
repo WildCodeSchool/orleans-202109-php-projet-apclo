@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row g-0 justify-content-between text-center ">
+		{% for member in members %}
+			<div class="member col-sm-2">
+				<div class="member-image">
+					<img class="card-img-top" src= {% if member.image is not empty %} "uploads/{{ member.image }}" {% else %} "assets/images/silhouette.png" {% endif %} 
+					alt="member-image">
+				</div>
+				<div class="member-name">
+					<p>{{ member.gender }} {{ member.firstname }} {{ member.lastname }}</p>
+				</div>
+				<div class="member-job text-light">
+					<p> {{ member.job }} </p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

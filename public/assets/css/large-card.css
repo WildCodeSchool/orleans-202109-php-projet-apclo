@@ -12,7 +12,7 @@
 .card-img-top {
     width: 100%;
     height: 100%;
-  }
+}
 
 ul.d-flex {
     width: 100%;
@@ -20,8 +20,8 @@ ul.d-flex {
 }
 
 li {
-   font-size: var(--text-size); 
-   font-weight: bold;
+    font-size: var(--text-size); 
+    font-weight: bold;
 }
 
 
@@ -51,4 +51,10 @@ img {
 
 .text-column {
     height: auto;
-}  
+}
+
+.btn-adopt {
+    background-color: var(--light-color);
+    font-family: var(--title-font);
+    font-size: var(--text-size);
+}

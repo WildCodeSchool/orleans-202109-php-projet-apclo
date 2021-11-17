@@ -1,16 +1,14 @@
 <div class="container">
-	<div class="row justify-content-between text-center ">
-		{% for member in members %}
-			<div class="member col-sm-2">
+	<div class="row justify-content-between text-center">
+		{% for cat in cats %}
+			<div class="cat col-sm-2">
 				<div class="member-image">
-					<img class="card-img-top" src= {% if member.image is not empty %} "assets/uploads/{{ member.image }}" {% else %} "assets/images/silhouette.png" {% endif %} 
-					alt="member-image">
+					<img class="card-img-top" src={% if cat.image is not empty %} "assets/uploads/{{ cat.image}}" {% else %} "assets/images/silhouette.png" {% endif %} alt="cat-image">
 				</div>
-				<div class="member-name">
-					<p>{{ member.gender }} {{ member.firstname }} {{ member.lastname }}</p>
-				</div>
-				<div class="member-job text-light">
-					<p>{{ member.job }}</p>
+				<div class="cat-name">
+					<p>{{ cat.gender }}
+						{{ cat.name }}
+						{{ cat.age }}</p>
 				</div>
 			</div>
 		{% endfor %}

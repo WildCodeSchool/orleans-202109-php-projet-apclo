@@ -1,0 +1,31 @@
+.container-sm {
+    --spacing2: 150px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    font-size: var(--text-size);
+    max-width: 1100px;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing2);
+}
+
+form {
+    width: 75%;
+}
+
+.button-actuality-form {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    width: var(--width-button);
+    border: none;
+    border-radius: 30px;
+    box-shadow: var(--border-shadow);
+}
+
+.btn-link {
+    width: var(--width-button);
+    
+}
+
+textarea {
+    height: var(--spacing2);
+}

@@ -5,7 +5,8 @@
 
 .actuality-title {
     --spacing1: 10px;
-    --spacing2: 24px;  
+    --spacing2: 24px;
+    margin-bottom: 70px;
 }
 
 .actuality-title p {
@@ -19,6 +20,7 @@
 .actuality-title .text-light {
     text-indent: 0;
     padding-bottom: 0;
+    margin-top: 40px;
 }
 
 .actuality-title .date {

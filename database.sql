@@ -46,6 +46,49 @@ CREATE TABLE article (
     `date` DATE,
     `image` CHAR(255)
   );
+CREATE TABLE member (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `gender` VARCHAR(4) NOT NULL,
+    `firstname` VARCHAR(100) NOT NULL,
+    `lastname` VARCHAR(100) NOT NULL,
+    `job` VARCHAR(100) NOT NULL,
+    `image` CHAR(255)
+  );
+INSERT INTO
+  member (
+    `gender`,
+    `firstname`,
+    `lastname`,
+    `job`,
+    `image`
+  ) 
+VALUES
+  ( "M.",
+    "Frodon",
+    "Sacquet",
+    "Directeur de l\'APCLO",
+    "Frodon.jpg"),
+  ( "M.",
+    "Sam",
+    "Gamegie",
+    "Trésorier de l\'APCLO",
+    "Sam.jpg"),
+  ( "M.",
+    "Gandalf",
+    "Legris",
+    "Vétérinaire de l\'APCLO",
+    "Gandalf.jpg"),
+  ( "M.",
+    "Peregrin",
+    "Touque",
+    "Bénévole de l\'APCLO",
+    "Peregrin.jpg"),
+  ( "Mme.",
+    "Gala",
+    "Driel",
+    "Secrétaire de l\'APCLO",
+    "Galadriel.jpg");
+
 INSERT INTO
   gender (`name`)
 VALUES

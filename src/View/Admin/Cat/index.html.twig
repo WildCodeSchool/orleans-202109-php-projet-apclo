@@ -1,16 +1,32 @@
-<div class="container">
-	<div class="row justify-content-between text-center">
-		{% for cat in cats %}
-			<div class="cat col-sm-2">
-				<div class="member-image">
-					<img class="card-img-top" src={% if cat.image is not empty %} "assets/uploads/{{ cat.image}}" {% else %} "assets/images/silhouette.png" {% endif %} alt="cat-image">
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/banner.css">
+	<link rel="stylesheet" href="/assets/css/style-admin.css">
+	<link rel="stylesheet" href="/assets/css/admin-actuality.css">
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="row justify-content-between text-center">
+			{% for cat in cats %}
+				<div class="cat col-sm-2">
+					<div class="member-image">
+						<img class="card-img-top" src={% if cat.image is not empty %} "assets/uploads/{{ cat.image}}" {% else %} "assets/images/silhouette.png" {% endif %} alt="cat-image">
+					</div>
+					<div class="cat-name">
+						<p>
+							{{ cat.name }}
+							{{ cat.birth_date }}
+							{{ gender.id }}
+							{{ color.id }}
+							{{ breed.id }}
+							{{ furr.id }}
+							{{ cat.adoption_date }}
+						</p>
+					</div>
 				</div>
-				<div class="cat-name">
-					<p>{{ cat.gender }}
-						{{ cat.name }}
-						{{ cat.age }}</p>
-				</div>
-			</div>
-		{% endfor %}
+			{% endfor %}
+		</div>
 	</div>
-</div>
+{% endblock %}

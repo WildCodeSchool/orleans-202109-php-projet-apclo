@@ -1,19 +1,20 @@
-:root{
-    --card-height   : 400px;
+:root {
+    --card-height: 400px;
 }
 
 
-.card-cat {    
+.card-cat {
     height          : var(--card-height);
-    border-radius   : 8px;
+    border-radius   : var(--spacing);
     background-color: var(--primary-color);
     border          : none;
     box-shadow      : var(--border-shadow);
 }
 
 .card-img-top {
-    object-fit: cover;
-    height: calc( 100% * 2 / 3);
+    border-radius: var(--spacing);
+    object-fit   : cover;
+    height       : calc(100% * 2 / 3);
 }
 
 .card-cat ul {
@@ -36,7 +37,7 @@
     font-size       : 30px;
     box-shadow      : var(--border-shadow);
     font-weight     : bold;
-    border-radius   : 50%;
+    border-radius   : var(--radius-button-circle);
     width           : 50px;
     aspect-ratio    : 1 / 1;
     padding         : 0;
@@ -64,5 +65,8 @@
 
 .cat-card-body {
     height: 33%;
-    
+}
+
+.separator {
+    height: 250px;
 }

@@ -68,11 +68,11 @@
 												<option value="subject" disabled selected>-- Choisir un champ --</option>
 												<option value="une question">Une question</option>
 												<option value="un renseignement">Un renseignement</option>
-												<option value="une adoption" {{ cat.name is defined ? 'selected' : ''}}>Une adoption</option>
+												<option value="une adoption" {{cat.name is defined ? 'selected' : ''}}>Une adoption</option>
 												<option value="une visite">Une visite</option>
 											</select>
 											<label for="message" class="col-form form-group">Message :</label>
-											<textarea id="message" name="message" class="col-10 mt-3 pr-2 pl-2 form-control" placeholder="Insérer votre message :" required>{% if cat.name is defined %}Bonjour, je suis intéréssé par {{cat.name}}, numéro de puce : {{ cat.digital_chip}} et j'aimerais être recontacté pour connaître les démarches à suivre pour son adoption. Merci d'avance. {% endif %} </textarea>
+											<textarea id="message" name="message" class="col-10 mt-3 pr-2 pl-2 form-control" placeholder="Insérer votre message :" required>{% if cat.name is defined %}Bonjour, je suis intéréssé par {{cat.name}}, numéro de puce : {{cat.digital_chip}} et j'aimerais être recontacté pour connaître les démarches à suivre pour son adoption. Merci d'avance. {% endif %} </textarea>
 											<div class="button d-flex align-items-end flex-column mx-4">
 												<button type="submit" class="btn btn-light mb-2 mt-4">Envoyer</button>
 											</div>

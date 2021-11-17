@@ -110,4 +110,11 @@ class AdminCatController extends AbstractController
 
         return $errors;
     }
+
+    public function index(): string
+    {
+        $catManager = new CatManager();
+        $cats = $catManager->selectAllCats();
+        return $this->twig->render('Admin/Cat/index.html.twig', ['cats' => $cats]);
+    }
 }

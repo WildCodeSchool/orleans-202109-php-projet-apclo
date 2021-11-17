@@ -1,22 +1,15 @@
-<<<<<<< HEAD
-.cat {
-=======
 .member {
->>>>>>> 186d3f54ab6be97629ef29aa520fe142793abe6c
     background-color: var(--secondary-color);
     border-radius: var(--border-radius);
     box-shadow: var(--border-shadow);
     margin: var(--spacing);
 }
 
-<<<<<<< HEAD
 .cat-name {
     font-size: var(--text-size) / 2;
 }
 
 .cat-job {
-=======
-.card-img-top {
     border-radius: var(--border-radius);
 }
 
@@ -25,7 +18,6 @@
 }
 
 .member-job {
->>>>>>> 186d3f54ab6be97629ef29aa520fe142793abe6c
     font-size: 12px;
 }
 
@@ -46,9 +38,5 @@ body{
 
 .asso_text{
     font-family: var(--text-font);
-<<<<<<< HEAD
-}
-=======
 }
 
->>>>>>> 186d3f54ab6be97629ef29aa520fe142793abe6c

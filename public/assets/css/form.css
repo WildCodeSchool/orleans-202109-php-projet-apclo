@@ -1,0 +1,34 @@
+.banner_asso {
+    font-family: var(--text-font);
+    color: var(--third-color);
+}
+
+.form_coordinates_title {
+    font-family: var(--title-font);
+}
+
+.form_box {
+    background-color: var(--primary-color);
+    padding: var(--spacing);
+}
+
+.form_subject {
+    background-color: var(--primary-color);
+    padding: var(--spacing);
+    font-family: var(--text-font);
+}
+
+.separator {
+    height: 750px;
+}
+
+.apclo_coordinates {
+    background-color: var(--primary-color);
+    padding: var(--spacing);
+}
+
+@media (max-width: 766px) {
+    .separator {
+    display: none;
+    }
+}

@@ -10,3 +10,15 @@
 .banner {
     background-color: var(--primary-color);
 }
+
+nav {
+    background-color: var(--secondary-color);  
+}
+
+.container {
+    background-color: var(--secondary-color);
+    color:var(--light-color);
+    font-size: var(--text-size);
+    max-width: 1100px;
+    border-radius: var(--border-radius);
+}

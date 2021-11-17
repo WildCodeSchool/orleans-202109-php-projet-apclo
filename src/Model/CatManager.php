@@ -6,6 +6,11 @@ class CatManager extends AbstractManager
 {
     public const TABLE = 'cat';
 
+    public const CAT_AGES = [
+        '>' => 'Adulte',
+        '<=' => 'Chaton'
+    ];
+
     public function selectOneById(int $id)
     {
         $statement = $this->pdo->prepare("SELECT cat.name name, image, TIMESTAMPDIFF(YEAR, birth_date, NOW()) as age,
@@ -35,22 +40,26 @@ class CatManager extends AbstractManager
 
     public function selectAllCats(array $filters): array
     {
-        $sharedQuery = "SELECT c.*, g.name gender FROM " . self::TABLE . " c
-        LEFT JOIN gender g ON g.id=c.gender_id ";
-
-        if (isset($filters['catGender']) && isset($filters['catAge'])) {
-            $query = $sharedQuery . " WHERE g.name='" . $filters['catGender'] . "'
-            AND TIMESTAMPDIFF(YEAR, birth_date, NOW()) " . $filters['catAge'] .  1;
-        } elseif (isset($filters['catGender'])) {
-            $query = $sharedQuery . " WHERE g.name='" . $filters['catGender'] . "'";
-        } elseif (isset($filters['catAge'])) {
-            $query = $sharedQuery . " WHERE TIMESTAMPDIFF(YEAR, birth_date, NOW()) " . $filters['catAge'] .  1;
-        } else {
-            $query = "SELECT c.name name, image, birth_date, g.name gender, c.id as id FROM " .
-                self::TABLE . " c
-            LEFT JOIN gender g ON g.id = c.gender_id";
+        $queryParts = [];
+        $query = "SELECT c.*, g.name gender, g.id genderId 
+        FROM " . self::TABLE . " c LEFT JOIN gender g ON g.id=c.gender_id ";
+        if (!empty($filters['catGender'])) {
+            $queryParts[] = "g.id=:catGender";
         }
-        return $this->pdo->query($query)->fetchAll();
+        if (!empty($filters['catAge']) && key_exists($filters['catAge'], self::CAT_AGES)) {
+            $queryParts[] = "TIMESTAMPDIFF(YEAR, birth_date, NOW()) " . $filters['catAge']  . "1";
+        }
+        if (!empty($queryParts)) {
+            $query .= "WHERE " . implode(" AND ", $queryParts);
+        }
+        $statement = $this->pdo->prepare($query);
+
+        if (!empty($filters['catGender'])) {
+            $statement->bindValue('catGender', $filters['catGender'], \PDO::PARAM_INT);
+        }
+        $statement->execute();
+
+        return $statement->fetchAll();
     }
 
     public function latestAdopted()
@@ -59,22 +68,6 @@ class CatManager extends AbstractManager
         LEFT JOIN gender g ON g.id=c.gender_id
         WHERE adoption_date IS NOT NULL 
         ORDER BY adoption_date DESC LIMIT 3";
-
-        return $this->pdo->query($query)->fetchAll();
-    }
-
-    public function selectAllGenders(): array
-    {
-        $query = "SELECT DISTINCT g.name gender FROM " .
-            self::TABLE . " c
-            LEFT JOIN gender g ON g.id = c.gender_id";
-
-        return $this->pdo->query($query)->fetchAll();
-    }
-
-    public function selectAllAges(): array
-    {
-        $query = "SELECT DISTINCT TIMESTAMPDIFF(YEAR, birth_date, NOW()) age FROM " . self::TABLE;
 
         return $this->pdo->query($query)->fetchAll();
     }

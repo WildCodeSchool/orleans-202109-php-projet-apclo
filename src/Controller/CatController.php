@@ -13,8 +13,7 @@ class CatController extends AbstractController
         $catManager = new CatManager();
         $genderManager = new GenderManager();
         $cats = $catManager->selectAllCats($filters);
-        $genders = $genderManager->selectAllGenders();
-        $ages = $catManager->selectAllAges();
+        $genders = $genderManager->selectAll();
 
         return $this->twig->render(
             'Cats/index.html.twig',
@@ -23,7 +22,7 @@ class CatController extends AbstractController
                 'catGender' => $filters['catGender'] ?? '',
                 'catAge' => $filters['catAge'] ?? '',
                 'genders' => $genders,
-                'ages' => $ages
+                'ages' => CatManager::CAT_AGES
             ]
         );
     }

@@ -6,6 +6,11 @@ class CatManager extends AbstractManager
 {
     public const TABLE = 'cat';
 
+    public const CAT_AGES = [
+        '>' => 'Adulte',
+        '<=' => 'Chaton'
+    ];
+
     public function selectOneById(int $id)
     {
         $statement = $this->pdo->prepare("SELECT cat.*, TIMESTAMPDIFF(YEAR, birth_date, NOW()) as age,
@@ -32,12 +37,28 @@ class CatManager extends AbstractManager
         return $this->pdo->query($query)->fetchAll();
     }
 
-    public function selectAllCats(): array
+    public function selectAllCats(array $filters): array
     {
-        $query = "SELECT cat.name as name, image, birth_date, gender.name as gender, cat.id as id FROM " .
-            self::TABLE . " JOIN gender ON gender.id = cat.gender_id";
+        $queryParts = [];
+        $query = "SELECT c.*, g.name gender, g.id genderId 
+        FROM " . self::TABLE . " c LEFT JOIN gender g ON g.id=c.gender_id ";
+        if (!empty($filters['catGender'])) {
+            $queryParts[] = "g.id=:catGender";
+        }
+        if (!empty($filters['catAge']) && key_exists($filters['catAge'], self::CAT_AGES)) {
+            $queryParts[] = "TIMESTAMPDIFF(YEAR, birth_date, NOW()) " . $filters['catAge']  . "1";
+        }
+        if (!empty($queryParts)) {
+            $query .= "WHERE " . implode(" AND ", $queryParts);
+        }
+        $statement = $this->pdo->prepare($query);
 
-        return $this->pdo->query($query)->fetchAll();
+        if (!empty($filters['catGender'])) {
+            $statement->bindValue('catGender', $filters['catGender'], \PDO::PARAM_INT);
+        }
+        $statement->execute();
+
+        return $statement->fetchAll();
     }
 
     public function latestAdopted()

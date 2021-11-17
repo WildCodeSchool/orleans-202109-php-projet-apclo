@@ -6,12 +6,18 @@
     border-radius: var(--border-radius);
 }
 
-form {
+.edit {
     width:75%;
 }
 
 .button-form {
     background-color: var(--primary-color);
+    border:none;
+    border-radius: 30px;
+    box-shadow: var(--border-shadow);
+}
+
+.delete-button {
     border:none;
     border-radius: 30px;
     box-shadow: var(--border-shadow);

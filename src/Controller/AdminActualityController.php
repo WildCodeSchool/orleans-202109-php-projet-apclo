@@ -26,7 +26,7 @@ class AdminActualityController extends AbstractController
             if (empty($errors)) {
                 $actualityManager = new ActualityManager();
                 $actualityManager->insert($actuality);
-                header('Location:/admin/actualités/index');
+                header('Location:/admin/actualites/index');
             }
         }
 
@@ -48,7 +48,7 @@ class AdminActualityController extends AbstractController
 
             if (empty($errors)) {
                 $actualityManager->update($actuality);
-                header('Location: /admin/actualités/index');
+                header('Location: /admin/actualites/index');
             }
         }
 
@@ -78,5 +78,15 @@ class AdminActualityController extends AbstractController
         }
 
         return $errors;
+    }
+
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $actualityManager = new ActualityManager();
+            $actualityManager->delete((int)$id);
+            header('Location:/admin/actualites/index');
+        }
     }
 }

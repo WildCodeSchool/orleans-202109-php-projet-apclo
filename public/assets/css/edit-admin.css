@@ -1,17 +1,15 @@
-.container {
-    background-color: var(--secondary-color);
-    color:var(--light-color);
-    font-size: var(--text-size);
-    max-width: 1100px;
-    border-radius: var(--border-radius);
-}
-
-form {
+.edit {
     width:75%;
 }
 
 .button-form {
     background-color: var(--primary-color);
+    border:none;
+    border-radius: 30px;
+    box-shadow: var(--border-shadow);
+}
+
+.delete-button {
     border:none;
     border-radius: 30px;
     box-shadow: var(--border-shadow);

@@ -2,11 +2,23 @@
     --primary-color: #BCE5A9;
     --secondary-color: #7DCEBF;
     --radius-button-circle: 50%;
-    --height-button-icon: 70px;
-    --width-button-icon: 70px;
+    --height-button-icon: 60px;
+    --width-button-icon: 60px;
     --width-button: 200px;
 }
 
 .banner {
     background-color: var(--primary-color);
+}
+
+nav {
+    background-color: var(--secondary-color);  
+}
+
+.container {
+    background-color: var(--secondary-color);
+    color:var(--light-color);
+    font-size: var(--text-size);
+    max-width: 1100px;
+    border-radius: var(--border-radius);
 }

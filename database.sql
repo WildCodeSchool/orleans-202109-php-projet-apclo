@@ -299,6 +299,7 @@ VALUES
     2,
     7
   );
+  
 INSERT INTO
   article (title, `description`, `date`, `image`)
 VALUES

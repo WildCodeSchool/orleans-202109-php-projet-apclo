@@ -8,6 +8,8 @@ use App\Model\AdminColorManager;
 use App\Model\AdminFurrManager;
 use App\Model\AdminGenderManager;
 
+use function Amp\Iterator\filter;
+
 class AdminCatController extends AbstractController
 {
     public function edit(int $id): string
@@ -125,8 +127,9 @@ class AdminCatController extends AbstractController
 
     public function index(): string
     {
+        $filters = array_map('trim', $_GET);
         $catManager = new CatManager();
-        $cats = $catManager->selectAllCats();
+        $cats = $catManager->selectAllCats($filters);
         return $this->twig->render('Admin/Cat/index.html.twig', ['cats' => $cats]);
     }
     private function uploadValidate(array $cat): array

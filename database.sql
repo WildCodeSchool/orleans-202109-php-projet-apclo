@@ -330,6 +330,16 @@ VALUES
     ou la fenêtre ouverte et davantage à l’intérieur.",
     '2021-11-03'
   );
+
+
+  INSERT INTO
+  article (`image`)
+  VALUES
+  ('cat_garden.jpg'),
+  ('donate.jpg'),
+  ('stray-cat.jpg'),
+  ('apclo.jpg');
+  
 ALTER TABLE
   cat
 ADD

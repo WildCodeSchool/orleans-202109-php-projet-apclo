@@ -14,7 +14,7 @@ return [
     'admin/actualites/éditer' => ['AdminActualityController', 'edit', ['id']],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'admin/chat/editer' => ['AdminCatController', 'index', ['id']],
-    'admin/chat/index' => ['AdminShowCatController', 'index'],
+    'admin/chat/show' => ['AdminCatController', 'index', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],

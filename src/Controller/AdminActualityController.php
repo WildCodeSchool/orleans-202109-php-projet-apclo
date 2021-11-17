@@ -86,7 +86,7 @@ class AdminActualityController extends AbstractController
             $id = trim($_POST['id']);
             $actualityManager = new ActualityManager();
             $actualityManager->delete((int)$id);
-            header('Location:/admin/actualités/index');
+            header('Location:/admin/actualites/index');
         }
     }
 }

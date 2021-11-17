@@ -29,6 +29,7 @@
 		<div class="form-group mb-3">
 			<label for="gender" class="form-label">Genre</label>
 			<select name="gender_id" id="gender" class="form-control">
+				<option value="defaultValue" disabled selected>Choisir un genre</option>
 				{% for gender in genders %}
 					<option value="{{ gender.id }}" {{ gender.id == cat.gender_id ? 'selected' : ''}}>{{ gender.name }}</option>
 				{% endfor %}
@@ -38,6 +39,7 @@
 		<div class="form-group mb-3">
 			<label for="color" class="form-label">Couleur</label>
 			<select name="color_id" id="color" class="form-control">
+				<option value="defaultValue" disabled selected>Choisir une couleur</option>
 				{% for color in colors %}
 					<option value="{{ color.id }}" {{ color.id == cat.color_id ? 'selected' : ''}}>{{ color.name }}</option>
 				{% endfor %}
@@ -47,8 +49,9 @@
 		<div class="form-group mb-3">
 			<label for="breed" class="form-label">Race</label>
 			<select name="breed_id" id="breed" class="form-control">
-				{% for breed in breeds %}					
-						<option value="{{ breed.id }}" {{ breed.id == cat.breed_id ? 'selected' : ''}}>{{ breed.name }}</option>					
+			<option value="defaultValue" disabled selected>Choisir une race</option>
+				{% for breed in breeds %}
+					<option value="{{ breed.id }}" {{ breed.id == cat.breed_id ? 'selected' : ''}}>{{ breed.name }}</option>
 				{% endfor %}
 			</select>
 		</div>
@@ -56,8 +59,9 @@
 		<div class="form-group mb-3">
 			<label for="furr" class="form-label">Poil</label>
 			<select name="furr_id" id="furr" class="form-control">
+			<option value="defaultValue" disabled selected>Choisir un poil</option>
 				{% for furr in furrs %}
-						<option value="{{ furr.id }}" {{ furr.id == cat.furr_id ? 'selected' : ''}}>{{ furr.length }}</option>
+					<option value="{{ furr.id }}" {{ furr.id == cat.furr_id ? 'selected' : ''}}>{{ furr.length }}</option>
 				{% endfor %}
 			</select>
 		</div>

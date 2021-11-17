@@ -299,14 +299,15 @@ VALUES
     2,
     7
   );
+  
 INSERT INTO
-  article (title, `description`, `date`)
+  article (title, `description`, `date`, `image`)
 VALUES
   (
     "Adhésion",
     "La cotisation annuelle, d'un minimum de 10€, donne droit à une déduction fiscale : 
     66% des sommes versée, dans la limite de 20% du revenu imposable.",
-    '2021-11-01'
+    '2021-11-01', 'donate.jpg'
   ),
   (
     "Reprise d'activité",
@@ -315,21 +316,22 @@ VALUES
     ces communes ayant passé un accord avec l\'association. 
     Seront ensuite privilégiées les personnes s\'engageant à régler la totalité des frais. 
     En cette fin d\'année, nous devons tenir compte, plus que jamais, de nos possibilités financières.',
-    '2021-10-23'
+    '2021-10-23', 'stray-cat.jpg'
   ),
   (
     "Fondation de l'APCLO",
     "L'Association pour la Protection des Chats Libres d'Orléans est fondée, 
     en accord avec la Direction de l'Environnement et de la Santé de la commune d'Orléans.",
-    '1999-08-03'
+    '1999-08-03', 'apclo.jpg'
   ),
   (
     "Quelle conduite tenir si un chat qui n’a pas l’habitude de sortir s’échappe de votre logement ?",
     "Si vous habitez en pavillon ou en rez de jardin, laissez ouvert toute la nuit par là où le chat est sorti 
     et réitérez plusieurs nuits de suite si nécessaire. Mettez un tout petit peu de nourriture devant la porte 
     ou la fenêtre ouverte et davantage à l’intérieur.",
-    '2021-11-03'
+    '2021-11-03', 'cat_garden.jpg'
   );
+  
 ALTER TABLE
   cat
 ADD

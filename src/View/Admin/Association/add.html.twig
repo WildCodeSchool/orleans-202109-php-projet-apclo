@@ -1,0 +1,14 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/style-admin.css">
+	<link rel="stylesheet" href="/assets/css/edit-admin.css">
+{% endblock %}
+
+{% block content %}
+	<div class="banner"></div>
+	<div class="title">
+		<h1>Ajouter un membre</h1>
+	</div>
+	{% include 'Admin/Association/_form.html.twig' %}
+{% endblock %}

@@ -59,11 +59,7 @@
 										</select>
 										<label for="message" class="col-form form-group mt-3 mb-0">Message :</label>
 										<textarea id="message" name="message" class="col-10 pr-2 pl-2 form-control mb-0" placeholder="Insérer votre message :" required>
-											{% if cat.name is defined %}Bonjour, je suis intéréssé par
-												{{cat.name}}, numéro de puce :
-												{{cat.digital_chip}}
-												et j'aimerais être recontacté pour connaître les démarches à suivre pour son adoption. Merci d'avance.
-											{% endif %}
+											{% if cat.name is defined %}Bonjour, je suis intéréssé par {{cat.name}}, numéro de puce : {{cat.digital_chip}} et j'aimerais être recontacté pour connaître les démarches à suivre pour son adoption. Merci d'avance. {% endif %}
 										</textarea>
 										<div class="button d-flex align-items-end flex-column mx-4">
 											<button type="submit" class="btn btn-light mb-2 mt-4">Envoyer</button>
@@ -88,7 +84,7 @@
 						<p class="phone"><img src="/assets/images/phone.png" class="icon-phone me-3" alt="icon-phone">06 72 56 18 41</p>
 					</div>
 					<div class="row">
-						<div class="col-md-5 mb-5 ratio ratio-1x1">
+						<div class="col-md-5 my-5 mx-3 ratio ratio-1x1">
 							<iframe class="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8927571177482607%2C47.889078791342345%2C1.897043287754059%2C47.890720890423225&amp;layer=mapnik&amp;marker=47.889898948103585%2C1.8949002027511597"></iframe>
 							<br/>
 						</small>

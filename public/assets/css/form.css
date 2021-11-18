@@ -35,6 +35,11 @@
     color: var(--primary-color);
 }
 
+.map {
+    max-width: 450px;
+    max-height: 400px;
+}
+
 textarea {
     height: 100px;
 }

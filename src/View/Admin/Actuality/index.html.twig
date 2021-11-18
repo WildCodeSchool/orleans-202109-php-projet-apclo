@@ -36,8 +36,8 @@
 				</div>
 				<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">
 					<a href="/admin/actualites/editer?id= {{ actuality.id }}" class="btn btn-edit d-flex align-items-center fw-bold me-3">Éditer</a>
-					<form method="POST" action="/admin/chat/supprimer">
-						<input type="hidden" name="id" value="{{ cat.id }}">
+					<form method="POST" action="/admin/actualites/supprimer">
+						<input type="hidden" name="id" value="{{ actuality.id }}">
 						<button class="btn btn-delete fw-bold">Supprimer</button>
 					</form>
 				</div>

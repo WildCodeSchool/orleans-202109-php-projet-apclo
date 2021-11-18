@@ -6,6 +6,9 @@
 {% endblock %}
 
 {% block content %}
-	{% include 'Admin/Cat/_banner.html.twig' %}
-	{% include 'Admin/Cat/_form.html.twig' with {'button_name' : 'Éditer'} %}
+	<div class="banner"></div>
+	<div class="title">
+		<h1>Ajouter un membre</h1>
+	</div>
+	{% include 'Admin/Association/_form.html.twig' %}
 {% endblock %}

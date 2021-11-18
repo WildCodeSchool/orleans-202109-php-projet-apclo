@@ -10,6 +10,7 @@
 .form_box {
     background-color: var(--primary-color);
     padding: var(--spacing);
+    margin-bottom: 50px;
 }
 
 .form_subject {
@@ -24,5 +25,39 @@
 
 .apclo_coordinates {
     background-color: var(--primary-color);
-    padding: var(--spacing);
+    padding: 20px;
+    margin-top: 90px;
+    margin-bottom: 100px;
+}
+
+.btn:hover {
+    background-color: var(--third-color);
+    color: var(--primary-color);
+}
+
+.map {
+    width: 450px;
+    height: 400px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.icon-adress {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-phone {
+    width: 40px;
+    height: 40px;
+}
+
+.phone, .adress {
+    margin-left: 60px;
+}
+
+.postal {
+    margin-left: 120px;
 }

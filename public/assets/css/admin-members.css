@@ -1,0 +1,56 @@
+.icon-newspaper {
+    width: 60px;
+}
+    
+.container-sm{
+    max-width: 1100px;
+    padding: 0;
+}
+
+.header {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    color: var(--light-color);
+    width: 100%;
+    --bs-gutter-x:0;
+}
+
+.member{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    box-shadow: none;
+}
+
+.btn-entity {
+    height: var(--height-button-icon);
+    width: var(--width-button-icon);
+    border-radius: var(--radius-button-circle);
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-weight: bold;
+    box-shadow: var(--border-shadow);
+}
+
+.btn:hover {
+    background-color: var(--third-color);
+    color: var(--primary-color);
+}
+
+.btn-edit {
+    border-radius: var(--radius-button-circle);
+    height: var(--height-button-icon);
+    width: var(--width-button-icon);
+}
+
+.btn-edit, .btn-delete {
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+    border: none;
+    box-shadow: var(--border-shadow);
+    font-family: var(--text-font);
+}
+
+.btn-delete {
+    border-radius: var(--border-radius);
+    font-size: 14px;
+}

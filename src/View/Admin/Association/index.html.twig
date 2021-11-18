@@ -1,0 +1,48 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/style-admin.css">
+	<link rel="stylesheet" href="/assets/css/admin-members.css">
+{% endblock %}
+
+{% block content %}
+	<div class="banner"></div>
+	<div class="title">
+		<h1>Membres</h1>
+	</div>
+	<div class="container-sm">
+
+		<div class="row my-4 py-2 text-center header">
+			<div class="col-md-1">
+				<a href="/admin/membres/ajouter" class="btn btn-entity btn-circle d-flex justify-content-center align-items-center align-self-center ms-4 btn-lg fs-3">+</a>
+			</div>
+			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Nom</div>
+			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Rôle</div>
+			<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">Modifier/Supprimer</div>
+		</div>
+
+		{% for member in members %}
+			<div class="row my-4 mx-0 py-2 text-center member">
+
+				<div class="col-md-1">
+					<img src="/assets/images/newspaper.svg" class="icon-newspaper mt-2" alt="icon-newspaper">
+				</div>
+
+				<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">
+					{{ member.gender }}
+					{{ member. lastname}}
+				</div>
+				<div class="col-md-3 d-flex justify-content-center align-items-center fs-3">
+					{{ member.job }}
+				</div>
+				<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">
+					<a href="/admin/membre/editer?id= {{ member.id }}" class="btn btn-edit d-flex align-items-center fw-bold me-3">Éditer</a>
+					<form method="POST" action="/admin/member/supprimer">
+						<input type="hidden" name="id" value="{{ member.id }}">
+						<button class="btn btn-delete fw-bold">Supprimer</button>
+					</form>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

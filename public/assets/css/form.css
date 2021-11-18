@@ -21,12 +21,10 @@
 
 .separator {
     height: 750px;
-    /*padding-top: 150px;*/
 }
 
 .apclo_coordinates {
     background-color: var(--primary-color);
-    /*padding: var(--spacing);*/
     padding: 20px;
     margin-top: 90px;
     margin-bottom: 100px;

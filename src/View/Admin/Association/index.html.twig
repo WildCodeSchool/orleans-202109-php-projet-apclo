@@ -16,7 +16,7 @@
 			<div class="col-md-1">
 				<a href="/admin/membres/ajouter" class="btn btn-entity btn-circle d-flex justify-content-center align-items-center align-self-center ms-4 btn-lg fs-3">+</a>
 			</div>
-			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Nom</div>
+			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Prénom/Nom</div>
 			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Rôle</div>
 			<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">Modifier/Supprimer</div>
 		</div>
@@ -30,6 +30,7 @@
 
 				<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">
 					{{ member.gender }}
+          {{ member.firstname }}
 					{{ member. lastname}}
 				</div>
 				<div class="col-md-3 d-flex justify-content-center align-items-center fs-3">

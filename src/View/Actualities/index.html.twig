@@ -19,11 +19,11 @@
 		<div class="card card-actuality mb-5 mx-auto">
 			<div class="row g-0">
 				<div class="col-md-4">
-					<img class="img-fluid img-actuality rounded-start" src={% if actuality.image is not empty %} "assets/uploads/{{ actuality.image }}" {% else %} "assets/images/silhouette.png" {% endif %} alt="image actualite">
+					<img class="img-fluid img-actuality rounded-start" src={% if actuality.image is not empty %} "/uploads/{{ actuality.image }}" {% else %} "/assets/images/newspaper-mini.svg" {% endif %} alt="image actualite">
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">
-						<h3 class="card-title text-light fw-bold p-0 mt-3 fs-4">{{ actuality.title }}</h3>
+						<h3 class="card-title text-light fw-bold p-0 mt-3 fs-4">{{ actuality.title}}</h3>
 						<p class="card-text mb-0 mt-4 fs-5">{{ actuality.description|nl2br }}</p>
 						<p class="date text-light d-flex justify-content-end fs-5 fw-bold p-4 mb-0">{{ actuality.date }}</p>
 					</div>

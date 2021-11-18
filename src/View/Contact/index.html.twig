@@ -59,11 +59,7 @@
 										</select>
 										<label for="message" class="col-form form-group mt-3 mb-0">Message :</label>
 										<textarea id="message" name="message" class="col-10 pr-2 pl-2 form-control mb-0" placeholder="Insérer votre message :" required>
-											{% if cat.name is defined %}Bonjour, je suis intéréssé par
-												{{cat.name}}, numéro de puce :
-												{{cat.digital_chip}}
-												et j'aimerais être recontacté pour connaître les démarches à suivre pour son adoption. Merci d'avance.
-											{% endif %}
+											{% if cat.name is defined %}Bonjour, je suis intéréssé par {{cat.name}}, numéro de puce : {{cat.digital_chip}} et j'aimerais être recontacté pour connaître les démarches à suivre pour son adoption. Merci d'avance. {% endif %}
 										</textarea>
 										<div class="button d-flex align-items-end flex-column mx-4">
 											<button type="submit" class="btn btn-light mb-2 mt-4">Envoyer</button>
@@ -89,9 +85,9 @@
 					</div>
 					<div class="row">
 						<div class="col-md-5 ratio ratio-1x1">
-							<iframe class="mb-5 map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
-								<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N"></a>
-						</div>
+							<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933042883872986%2C47.889215485037845%2C1.896496117115021%2C47.890582402149725&amp;layer=mapnik&amp;marker=47.889898948103585%2C1.8949002027511597"></iframe>
+							<br/>
+						</small>
 					</div>
 				</div>
 			</div>

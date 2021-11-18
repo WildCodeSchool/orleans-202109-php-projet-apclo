@@ -1,60 +1,44 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/form.css" type="text/css">
+{% endblock %}
+
 {% block content %}
-	<head>
-		<link rel="stylesheet" href="/assets/css/form.css" type="text/css">
-	</head>
+	{% include 'Contact/_banner-contact.html.twig' %}
 	<body>
-		<header class="banner" role="banner">
-			<div class="container">
-				<div class="row">
-					<div class="col-12"></header>
-					<div class="title">
-						<h1>Contactez-nous</h1>
-						<p>Sur rendez-vous en semaine. Nous ne faisons pas d'adoptions le dimanche.
-						Sans rendez-vous tous les samedis de 15h00 à 18h00 (sauf pour les problèmes de chats errants).
-						Pour les chats en famille d'accueil, merci d'appeler les numéros de téléphone affichés dans les coordonnées</p>
+		<div class="container">
+			{% if errors is not empty %}
+				<div class="alert alert-danger">
+					{% for error in errors %}
+						<div>{{error}}</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form_coordinates_title mt-5 rounded-3">
+						<h2>Formulaire</h2>
 					</div>
-				</body>
-			</div>
-			<div class="container">
-				{% if errors is not empty %}
-					<div class="alert alert-danger">
-						{% for error in errors %}
-							<div>{{error}}</div>
-						{% endfor %}
-					</div>
-				{% endif %}
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form_coordinates_title mt-5 rounded-3">
-							<h2>Formulaire</h2>
-						</div>
-						<div class="form_coordinates_title">
-							<p>Vos coordonnées :</p>
-							<div class="form_box rounded-3 d-print-inline-block col-md-10 ">
-								<form method="POST">
-									<div class="form-group">
-										<label for="lastname" class="form-label">Nom :</label>
-										<input type="text" id="lastname" class="form-control" name="lastname" value="{{ cat.lastname }}" placeholder="Dupont" required/>
-									</div>
-									<div class="form-group">
-										<label for="firstname" class="form-label mt-3">Prénom :</label>
-										<input type="text" id="firstname" class="form-control" name="firstname" value="{{ cat.firstname }}" placeholder="Eric" required/>
-									</div>
-									<div class="form-group">
-										<label for="phone" class="form-label mt-3">Numéro de Téléphone :</label>
-										<input type="tel" id="tel" class="form-control" type="tel" name="tel" value="{{ cat.tel }}" placeholder="02 38 52 77 82" required/>
-									</div>
-									<div class="form-group">
-										<label for="e-mail" class="form-label mt-3">Mail :</label>
-										<input type="email" id="email" class="form-control mb-3" name="e-mail" value="{{ cat.email }}" placeholder="eric.dupont@gmail.com" required/>
-									</div>
+					<div class="form_coordinates_title">
+						<p>Vos coordonnées :</p>
+						<div class="form_box rounded-3 d-print-inline-block col-md-10 ">
+							<form method="POST">
+								<div class="form-group">
+									<label for="lastname" class="form-label">Nom :</label>
+									<input type="text" id="lastname" class="form-control" name="lastname" value="{{ cat.lastname }}" placeholder="Dupont" required/>
 								</div>
-							</div>
-							<div class="form-group_message">
-								<div class="form_coordinates_title col mt-4">
-									<p>Votre message :</p>
+								<div class="form-group">
+									<label for="firstname" class="form-label mt-3">Prénom :</label>
+									<input type="text" id="firstname" class="form-control" name="firstname" value="{{ cat.firstname }}" placeholder="Eric" required/>
+								</div>
+								<div class="form-group">
+									<label for="phone" class="form-label mt-3">Numéro de Téléphone :</label>
+									<input type="tel" id="tel" class="form-control" type="tel" name="tel" value="{{ cat.tel }}" placeholder="02 38 52 77 82" required/>
+								</div>
+								<div class="form-group">
+									<label for="e-mail" class="form-label mt-3">Mail :</label>
+									<input type="email" id="email" class="form-control mb-3" name="e-mail" value="{{ cat.email }}" placeholder="eric.dupont@gmail.com" required/>
 								</div>
 								<div class="form_subject rounded-3 d-print-inline-block col-md-10 mb-5">
 									<div class="card_02">
@@ -75,32 +59,32 @@
 										</div>
 									</div>
 								</div>
-							</form>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<img class="separator mt-5" src="/assets/images/separator2.svg" alt="separator">
-					</div>
-					<div class="coordinates col-md-4">
-						<div class="form_coordinates_title mt-5 mb-5">
-							<h2>Nos coordonnées</h2>
-						</div>
-						<div class="apclo_coordinates rounded-3 mb-5">
-							<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
-							<p>44 Av. Roger Secrétain</p>
-							<p>45100 Orléans</p>
-							<p>06 72 56 18 41</p>
-						</div>
-						<div class="row">
-							<div class="col-md-5 ratio ratio-1x1">
-								<iframe class="mb-5 map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
-									<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N"></a>
-								</small>
 							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<img class="separator mt-5" src="/assets/images/separator2.svg" alt="separator">
+				</div>
+				<div class="coordinates col-md-4">
+					<div class="form_coordinates_title mt-5 mb-5">
+						<h2>Nos coordonnées</h2>
+					</div>
+					<div class="apclo_coordinates rounded-3 mb-5">
+						<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
+						<p>44 Av. Roger Secrétain</p>
+						<p>45100 Orléans</p>
+						<p>06 72 56 18 41</p>
+					</div>
+					<div class="row">
+						<div class="col-md-5 ratio ratio-1x1">
+							<iframe class="mb-5 map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.8933203816413882%2C47.888859361234644%2C1.8971478939056399%2C47.89050146727297&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
+								<a href="https://www.openstreetmap.org/#map=19/47.88968/1.89523&amp;layers=N"></a>
+							</small>
 						</div>
 					</div>
 				</div>
 			</div>
-		</body>
+		</div>
 	</body>
-</html>{% endblock %}
+{% endblock %}

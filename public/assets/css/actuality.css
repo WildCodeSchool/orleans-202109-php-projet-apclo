@@ -1,3 +1,11 @@
+.card{
+    background-color: var(--primary-color);
+    max-width: 1100px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--border-shadow);
+    padding: 0;
+}
+
 .actuality-banner {
     background-image: url('../images/cat_banner_actuality.jpg');
     background-position: center;
@@ -26,4 +34,26 @@
 .actuality-title .date {
     padding-bottom: var(--spacing2);
     text-indent: 0;
+}
+
+.text p {
+    --spacing1: 24px;
+    --spacing2: 40px;
+    font-size: var(--spacing1);
+    margin: var(--spacing2);
+}
+
+.description {
+    height: auto;
+}
+
+.card-actuality {
+    width: 100%;
+}
+
+.img-actuality {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    min-height: 100%;
 }

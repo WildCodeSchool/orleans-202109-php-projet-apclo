@@ -1,3 +1,18 @@
+.banner_asso {
+    font-family: var(--text-font);
+    color: var(--third-color);
+}
+
+.form_coordinates_title {
+    font-family: var(--title-font);
+}
+
+.form_box {
+    background-color: var(--primary-color);
+    padding: var(--spacing);
+    margin-bottom: 50px;
+}
+
 .form_subject {
     background-color: var(--primary-color);
     padding: var(--spacing);
@@ -18,11 +33,6 @@
 .btn:hover {
     background-color: var(--third-color);
     color: var(--primary-color);
-}
-
-.map {
-    width: 450px;
-    height: 400px;
 }
 
 textarea {
@@ -46,4 +56,3 @@ textarea {
 .postal {
     margin-left: 120px;
 }
-

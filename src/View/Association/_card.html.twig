@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row g-0 justify-content-between text-center ">
 		{% for member in members %}
-			<div class="member col-sm-2">
+			<div class="member mb-5 col-sm-2">
 				<div class="member-image">
 					<img class="card-img-top" src= {% if member.image is not empty %} "uploads/{{ member.image }}" {% else %} "assets/images/silhouette.png" {% endif %} 
 					alt="member-image">

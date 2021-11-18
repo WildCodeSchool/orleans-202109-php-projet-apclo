@@ -66,7 +66,7 @@ class AdminAssociationController extends AbstractController
         }
 
         if (empty($member['gender'])) {
-            $errors[] = "Le champ date civilité est obligatoire";
+            $errors[] = "Le champ civilité est obligatoire";
         }
 
         if (empty($member['job'])) {

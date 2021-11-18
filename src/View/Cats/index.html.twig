@@ -6,6 +6,10 @@
 	<link rel="stylesheet" href="/assets/css/catsFilter.css">
 {% endblock %}
 
+{% block title %}
+	Chats - {{ parent() }}
+{% endblock %}
+
 {% block content %}	
 	{% include 'Cats/_cats-banner.html.twig' %}
 	{% include 'Cats/_catsFilter.html.twig' %}

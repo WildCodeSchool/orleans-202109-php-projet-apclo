@@ -16,40 +16,40 @@
 				</div>
 			{% endif %}
 			<div class="row">
-				<div class="col-md-6">
-					<div class="form_coordinates_title mt-5 rounded-3">
+				<div class="col-md-5 fs-5">
+					<div class="form_coordinates_title mt-5 mb-5 rounded-3">
 						<h2>Formulaire</h2>
 					</div>
-					<div class="form_coordinates_title">
+					<div class="form_coordinates_title mt-2">
 						<p>Vos coordonnées :</p>
 						<div class="form_box rounded-3 d-print-inline-block col-md-10 ">
 							<form method="POST">
 								<div class="form-group">
-									<label for="lastname" class="form-label">Nom :</label>
+									<label for="lastname" class="form-label pt-2 mb-0">Nom :</label>
 									<input type="text" id="lastname" class="form-control" name="lastname" value="{{ cat.lastname }}" placeholder="Dupont" required/>
 								</div>
 								<div class="form-group">
-									<label for="firstname" class="form-label mt-3">Prénom :</label>
+									<label for="firstname" class="form-label mt-3 mb-0">Prénom :</label>
 									<input type="text" id="firstname" class="form-control" name="firstname" value="{{ cat.firstname }}" placeholder="Eric" required/>
 								</div>
 								<div class="form-group">
-									<label for="phone" class="form-label mt-3">Numéro de Téléphone :</label>
+									<label for="phone" class="form-label mt-3 mb-0">Numéro de Téléphone :</label>
 									<input type="tel" id="tel" class="form-control" type="tel" name="tel" value="{{ cat.tel }}" placeholder="02 38 52 77 82" required/>
 								</div>
 								<div class="form-group">
-									<label for="e-mail" class="form-label mt-3">Mail :</label>
+									<label for="e-mail" class="form-label mt-3 mb-0">Mail :</label>
 									<input type="email" id="email" class="form-control mb-3" name="e-mail" value="{{ cat.email }}" placeholder="eric.dupont@gmail.com" required/>
 								</div>
 							</div>
 						</div>
-						<div class="form-group_message">
-							<div class="form_coordinates_title col mt-4">
+						<div class="form-group_message mb-5">
+							<div class="form_coordinates_title col mt-4 mb-0">
 								<p>Votre message :</p>
 							</div>
-							<div class="form_subject rounded-3 d-print-inline-block col-md-10 mb-5">
+							<div class="form_subject rounded-3 d-print-inline-block col-md-10">
 								<div class="card_02">
 									<div form="form-group subject">
-										<label class="col-form mt-2 mb-2 form-group" for="subject">Sujet :</label>
+										<label class="col-form mt-2 mb-0 form-group" for="subject">Sujet :</label>
 										<select id="subject" name="subject" class="form-control form-group" required>
 											<option value="subject" disabled selected>-- Choisir un champ --</option>
 											<option value="une question">Une question</option>
@@ -57,8 +57,8 @@
 											<option value="une adoption" {{cat.name is defined ? 'selected' : ''}}>Une adoption</option>
 											<option value="une visite">Une visite</option>
 										</select>
-										<label for="message" class="col-form form-group">Message :</label>
-										<textarea id="message" name="message" class="col-10 mt-3 pr-2 pl-2 form-control" placeholder="Insérer votre message :" required>
+										<label for="message" class="col-form form-group mt-3 mb-0">Message :</label>
+										<textarea id="message" name="message" class="col-10 pr-2 pl-2 form-control mb-0" placeholder="Insérer votre message :" required>
 											{% if cat.name is defined %}Bonjour, je suis intéréssé par
 												{{cat.name}}, numéro de puce :
 												{{cat.digital_chip}}
@@ -75,14 +75,14 @@
 					</div>
 				</div>
 				<div class="col-md-2">
-					<img class="separator mt-5" src="/assets/images/separator2.svg" alt="separator">
+					<img class="separator mt-5 d-none d-sm-block" src="/assets/images/separator2.svg" alt="separator">
 				</div>
-				<div class="coordinates col-md-4">
+				<div class="coordinates col-md-5 fs-5">
 					<div class="form_coordinates_title mt-5 mb-5">
 						<h2>Nos coordonnées</h2>
 					</div>
-					<div class="apclo_coordinates rounded-3 mb-5">
-						<p>APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
+					<div class="apclo_coordinates rounded-3">
+						<p class="fw-bold">APCLO - Association pour la Protection des Chats Libres d'Orléans</p>
 						<p>44 Av. Roger Secrétain</p>
 						<p>45100 Orléans</p>
 						<p>06 72 56 18 41</p>

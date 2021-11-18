@@ -5,7 +5,8 @@
 		{% for cat in cats %}
 			<div class="col-sm-6 col-lg-4 column">
 				<div class="card card-cat mb-3">
-					<img class="card-img-top float-top" src="/uploads/{{cat.image}}" alt="Card image cap">
+					<img class="card-img-top float-top position-relative" src={% if cat.image is not empty %}"/uploads/{{cat.image}}"{% else %} "assets/images/cat-profil.svg" {% endif %} alt="Card image cap">
+					{% if cat.adoption_date is not null %} <img src="/assets/images/adopted.png" class="adopted position-absolute top-0 end-0 mt-4" alt="adopted">{% endif%}
 					<div class="card-body cat-card-body">
 						<h3 class="card-title text-center">{{cat.name}}</h3>
 						<div class="card-text description">

@@ -16,9 +16,8 @@
 			<div class="col-md-1">
 				<a href="/admin/membres/ajouter" class="btn btn-entity btn-circle d-flex justify-content-center align-items-center align-self-center ms-4 btn-lg fs-3">+</a>
 			</div>
-			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Prénom/Nom</div>
-			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Rôle</div>
-			<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">Modifier/Supprimer</div>
+			<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">Prénom/Nom</div>
+			<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">Rôle</div>
 		</div>
 
 		{% for member in members %}
@@ -28,20 +27,13 @@
 					<img src="/assets/images/newspaper.svg" class="icon-newspaper mt-2" alt="icon-newspaper">
 				</div>
 
-				<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">
+				<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">
 					{{ member.gender }}
-          {{ member.firstname }}
+					{{ member.firstname }}
 					{{ member. lastname}}
 				</div>
-				<div class="col-md-3 d-flex justify-content-center align-items-center fs-3">
+				<div class="col-md-5 d-flex justify-content-center align-items-center fs-3">
 					{{ member.job }}
-				</div>
-				<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">
-					<a href="/admin/membre/editer?id= {{ member.id }}" class="btn btn-edit d-flex align-items-center fw-bold me-3">Éditer</a>
-					<form method="POST" action="/admin/member/supprimer">
-						<input type="hidden" name="id" value="{{ member.id }}">
-						<button class="btn btn-delete fw-bold">Supprimer</button>
-					</form>
 				</div>
 			</div>
 		{% endfor %}

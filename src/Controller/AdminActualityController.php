@@ -80,11 +80,14 @@ class AdminActualityController extends AbstractController
 
             $errors = $this->actualityValidate($actuality);
 
-            if (empty($errors)) {
+            if (empty($errors) && !empty($_FILES['image']['name'])) {
+                unlink('uploads/' . $previousImage);
                 $fileName = uniqid() . '_' . $_FILES['image']['name'];
                 move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
                 $actuality['image'] = $fileName;
+            }
 
+            if (empty($errors)) {
                 $actualityManager = new ActualityManager();
                 $actualityManager->update($actuality);
                 header('Location:/admin/actualites/index');

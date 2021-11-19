@@ -3,13 +3,15 @@
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/banner.css">
     <link rel="stylesheet" href="/assets/css/style-admin.css">
-    <link rel="stylesheet" href="/assets/css/admin-actuality.css">
     <link rel="stylesheet" href="/assets/css/admin-actuality-form.css">
 {% endblock %}
 
-{% block content %}        
-            <main class="container-fluid">
-                {% include 'Admin/Actuality/_form.html.twig' %}
-            </main>
+{% block content %}
+    <div class="banner"></div>
+    <div class="title">
+        <h1>Ajouter une actualité</h1>
+    </div>
+    <main class="container-fluid">
+        {% include 'Admin/Actuality/_form.html.twig' %}
+    </main>
 {% endblock %}
-

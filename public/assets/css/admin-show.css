@@ -37,21 +37,12 @@
     color: var(--primary-color);
 }
 
-.btn-edit {
-    border-radius: var(--radius-button-circle);
-    height: var(--height-button-icon);
-    width: var(--width-button-icon);
-}
-
-.btn-edit, .btn-delete {
+.btn-edit, .btn-delete, .btn-add {
     background-color: var(--light-color);
     color: var(--secondary-color);
     border: none;
     box-shadow: var(--border-shadow);
     font-family: var(--text-font);
-}
-
-.btn-delete {
     border-radius: var(--border-radius);
     font-size: 14px;
 }

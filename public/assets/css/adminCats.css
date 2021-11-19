@@ -53,11 +53,11 @@
     height: var(--spacing);
 }
 
-.btn-edit {
+/* .btn-edit {
     border-radius: var(--radius-button-circle);
     height       : var(--height-button-icon);
     width        : var(--width-button-icon);
-}
+} */
 
 .btn-edit,
 .btn-delete {

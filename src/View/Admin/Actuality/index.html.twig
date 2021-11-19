@@ -39,10 +39,10 @@
 					{{ actuality.date }}
 				</div>
 				<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">
-					<a href="/admin/actualites/editer?id= {{ actuality.id }}" class="btn btn-edit d-flex align-items-center fw-bold me-3">Éditer</a>
+					<a href="/admin/actualites/editer?id= {{ actuality.id }}" class="btn btn-lg btn-edit d-flex fw-bold me-3 fs-6">Éditer</a>
 					<form method="POST" action="/admin/actualites/supprimer">
 						<input type="hidden" name="id" value="{{ actuality.id }}">
-						<button class="btn btn-delete fw-bold">Supprimer</button>
+						<button class="btn btn-lg btn-delete fw-bold fs-6">Supprimer</button>
 					</form>
 				</div>
 			</div>

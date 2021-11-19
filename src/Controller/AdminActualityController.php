@@ -80,11 +80,16 @@ class AdminActualityController extends AbstractController
 
             $errors = $this->actualityValidate($actuality);
 
-            if (empty($errors)) {
+            if (empty($errors) && !empty($_FILES['image']['name'])) {
+                if (file_exists('uploads/' . $previousImage)) {
+                    unlink('uploads/' . $previousImage);
+                }
                 $fileName = uniqid() . '_' . $_FILES['image']['name'];
                 move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
                 $actuality['image'] = $fileName;
+            }
 
+            if (empty($errors)) {
                 $actualityManager = new ActualityManager();
                 $actualityManager->update($actuality);
                 header('Location:/admin/actualites/index');
@@ -108,12 +113,15 @@ class AdminActualityController extends AbstractController
         if (empty($actuality['date'])) {
             $errors[] = 'Le champ date est obligatoire';
         }
-        $dateInfos = explode("-", $actuality['date']);
-        if (!checkdate((int)$dateInfos[1], (int)$dateInfos[2], (int)$dateInfos[0])) {
-            $errors[] = 'Le format date n\'est pas valide';
-        }
-        if (empty($actuality['description'])) {
-            $errors[] = 'La description est obligatoire';
+        if (!empty($actuality['date'])) {
+            $dateInfos = explode("-", $actuality['date']);
+
+            if (!checkdate((int)$dateInfos[1], (int)$dateInfos[2], (int)$dateInfos[0])) {
+                $errors[] = 'Le format date n\'est pas valide';
+            }
+            if (empty($actuality['description'])) {
+                $errors[] = 'La description est obligatoire';
+            }
         }
 
         return $errors;

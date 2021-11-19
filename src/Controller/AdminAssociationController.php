@@ -35,7 +35,7 @@ class AdminAssociationController extends AbstractController
             if (empty($errors) && empty($uploadedErrors)) {
                 $memberManager = new MemberManager();
                 $memberManager->insert($member);
-                header('Location: /admin/members');
+                header('Location: /admin/membres');
             }
         }
         return $this->twig->render('Admin/Association/add.html.twig', [

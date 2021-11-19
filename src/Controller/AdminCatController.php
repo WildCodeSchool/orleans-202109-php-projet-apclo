@@ -14,18 +14,21 @@ class AdminCatController extends AbstractController
     public function add()
     {
         $errors = $uploadedErrors = $cat = [];
+        $direction = 'ASC';
+        $orderBy = 'name';
+        $orderByFurr = 'length';
 
         $adminBreedManager = new AdminBreedManager();
-        $breeds = $adminBreedManager->selectAll();
+        $breeds = $adminBreedManager->selectAll($orderBy, $direction);
 
         $adminColorManager = new AdminColorManager();
-        $colors = $adminColorManager->selectAll();
+        $colors = $adminColorManager->selectAll($orderBy, $direction);
 
         $adminFurrManager = new AdminFurrManager();
-        $furrs = $adminFurrManager->selectAll();
+        $furrs = $adminFurrManager->selectAll($orderByFurr, $direction);
 
         $adminGenderManager = new AdminGenderManager();
-        $genders = $adminGenderManager->selectAll();
+        $genders = $adminGenderManager->selectAll($orderBy, $direction);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadedErrors = $this->uploadValidate($cat);
@@ -80,7 +83,11 @@ class AdminCatController extends AbstractController
             $cat['id'] = $id;
             $cat['image'] = $previousImage;
 
-            if (!empty($_FILES['image']) && empty($uploadedErrors)) {
+
+            if (!empty($_FILES['image']['name']) && empty($uploadedErrors)) {
+                if (file_exists('uploads/' . $previousImage)) {
+                    unlink('uploads/' . $previousImage);
+                }
                 $fileName = uniqid() . '_' . $_FILES['image']['name'];
                 move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
                 $cat['image'] = $fileName;
@@ -128,33 +135,40 @@ class AdminCatController extends AbstractController
         if (empty($cat['gender_id'])) {
             $errors[] = "Le champ genre est obligatoire";
         }
-
-        if (!in_array($cat['gender_id'], array_column($genders, 'id'))) {
-            $errors[] = "Merci de choisir un genre correct";
+        if (!empty($cat['gender_id'])) {
+            if (!in_array($cat['gender_id'], array_column($genders, 'id'))) {
+                $errors[] = "Merci de choisir un genre correct";
+            }
         }
 
         if (empty($cat['color_id'])) {
             $errors[] = "Le champ couleur est obligatoire";
         }
 
-        if (!in_array($cat['color_id'], array_column($colors, 'id'))) {
-            $errors[] = "Merci de choisir une couleur correcte";
+        if (!empty($cat['color_id'])) {
+            if (!in_array($cat['color_id'], array_column($colors, 'id'))) {
+                $errors[] = "Merci de choisir une couleur correcte";
+            }
         }
 
         if (empty($cat['furr_id'])) {
             $errors[] = "Le champ poil est obligatoire";
         }
 
-        if (!in_array($cat['furr_id'], array_column($furrs, 'id'))) {
-            $errors[] = "Merci de choisir un poil correct";
+        if (!empty($cat['furr_id'])) {
+            if (!in_array($cat['furr_id'], array_column($furrs, 'id'))) {
+                $errors[] = "Merci de choisir un poil correct";
+            }
         }
 
         if (empty($cat['breed_id'])) {
             $errors[] = "Le champ race est obligatoire";
         }
 
-        if (!in_array($cat['breed_id'], array_column($breeds, 'id'))) {
-            $errors[] = "Merci de choisir une race correcte";
+        if (!empty($cat['breed_id'])) {
+            if (!in_array($cat['breed_id'], array_column($breeds, 'id'))) {
+                $errors[] = "Merci de choisir une race correcte";
+            }
         }
 
         if (!empty($cat['birth_date'])) {
@@ -194,7 +208,7 @@ class AdminCatController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
-            $catManager = new catManager();
+            $catManager = new CatManager();
             $cat = $catManager->selectOneById((int) $id);
             if (file_exists('uploads/' . $cat['image'])) {
                 unlink('uploads/' . $cat['image']);

@@ -29,7 +29,7 @@
 
 		<div class="form-group mb-3 pt-3">
 			<label for="lastname" class="form-label">Nom</label>
-			<input type="text" value="{{ member.name }}" name="lastname" id="lastname" class="form-control" required>
+			<input type="text" value="{{ member.lastname }}" name="lastname" id="lastname" class="form-control" required>
 		</div>
 
 		<div class="form-group mb-3 pt-3">
@@ -47,13 +47,9 @@
 			<input type="file" name="image" id="image" class="form-control">
 		</div>
 
-		<div class="d-flex justify-content-center m-5">
-			<a href="/admin/chats" class="link-secondary"><img src="/assets/images/return.svg" alt="return">Retour</a>
+		<div class="d-flex justify-content-center align-items-center align-self-center m-5 flex-column flex-sm-row">
+			<a href="/admin/membres" class="btn-lg link-secondary text-secondary"> < Retour</a>
 			<button class="btn btn-lg btn-success button-form mx-5 px-5">{{ button_name|default('Ajouter')}}</button>
 		</div>
-	</form>
-	<form method="POST" action="/admin/chat/supprimer">
-		<input type="hidden" name="id" value="{{member.id }}">
-		<button class="btn btn-sm btn-danger px-3 delete-button mb-5">Supprimer</button>
 	</form>
 </div>

@@ -1,18 +1,25 @@
-<div class="container">
-	<div class="row g-0 justify-content-between text-center ">
+<div class="container-sm">
+	<div class="row g-0 justify-content-center text-center ">
 		{% for member in members %}
 			<div class="member mb-5 col-sm-2">
 				<div class="member-image">
-					<img class="card-img-top" src= {% if member.image is not empty %} "uploads/{{ member.image }}" {% else %} "/assets/images/silhouette.png" {% endif %} 
+					<img class="card-img-top" src= {% if member.image is not empty %} "uploads/{{ member.image }}" {% else %} "/assets/images/profil.svg" {% endif %} 
 					alt="member-image">
 				</div>
 				<div class="member-name">
-					<p>{{ member.gender }} {{ member.firstname }} {{ member.lastname }}</p>
+					<p>{{ member.gender }}
+						{{ member.firstname }}
+						{{ member.lastname }}</p>
 				</div>
 				<div class="member-job text-light">
-					<p> {{ member.job }} </p>
+					<p>
+						{{ member.job }}
+					</p>
 				</div>
 			</div>
 		{% endfor %}
 	</div>
+</div>
+<div class="d-flex justify-content-center align-items-center">
+	<img src="assets/images/separator.svg" alt="line-break" class="d-inline-block mx-auto">
 </div>

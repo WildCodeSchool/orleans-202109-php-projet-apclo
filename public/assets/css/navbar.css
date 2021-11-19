@@ -31,10 +31,10 @@ nav .logo {
     width: 100%;
 }
 
-.catSvg {
+.catSvg, .profilSvg {
     height: 26px;
 }
 
-.mailSvg, .pawSvg, .catHouseSvg {
+.mailSvg, .pawSvg, .newsSvg {
     height: 22px;
 }

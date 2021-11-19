@@ -3,7 +3,10 @@
 		{% for adoptedCat in adoptedCats %}
 			<div class="col-sm-6 col-lg-4 column">
 				<div class="card card-cat mb-3">
-					<img class="card-img-top float-top" src={% if adoptedCat.image is not empty %} "/uploads/{{adoptedCat.image}}" {% else %} "assets/images/cat-profil.svg" {% endif %} alt="Card image cap">
+					<img class="card-img-top float-top position-relative" src={% if adoptedCat.image is not empty %} "/uploads/{{adoptedCat.image}}" {% else %} "assets/images/cat-profil.svg" {% endif %} alt="Card image cap">
+					{% if adoptedCat.adoption_date is not null %}
+						<img src="/assets/images/adopted.png" class="adopted position-absolute top-0 end-0 mt-4" alt="adopted">
+					{% endif %}
 					<div class="card-body">
 						<h3 class="card-title text-center">{{adoptedCat.name}}</h3>
 						<div class="card-text description">
@@ -18,4 +21,5 @@
 			</div>
 		{% endfor %}
 	</div>
+	<img src="assets/images/separator.svg" alt="separator cat paws" class="mt-2">
 </div>

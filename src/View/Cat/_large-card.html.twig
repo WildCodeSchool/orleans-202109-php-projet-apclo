@@ -7,15 +7,15 @@
 			</div>
 			<div class="col-md-6 text-column">
 				<div class="card-body">
-					<h3 class="card-title text-center">{{cat.name}}</h3>
+					<h2 class="card-title text-center">{{cat.name}}</h2>
 					<div class="card-text description d-flex flex-column justify-content-start align-items-center">
-						<ul class="d-flex flex-row flex-wrap justify-content-around">
-							<li>{{cat.age}}ans</li>
-							<li>{{cat.gender}}</li>
-							<li>{{cat.color}}</li>
-							<li>{{cat.breed}}</li>
-							<li>{{cat.length}}</li>
-						</ul>
+						<div class="d-flex flex-row flex-wrap justify-content-around">
+							<div>{{cat.age}}ans</div>
+							<div>{{cat.gender}}</div>
+							<div>{{cat.color}}</div>
+							<div>{{cat.breed}}</div>
+							<div>{{cat.length}}</div>
+						</div>
 						<p>{{cat.description}}</p>
 						<form method="GET" action="/contact" class="align-self-end">
 							<input type="hidden" name="name" value="{{ cat.name }}" id="name">

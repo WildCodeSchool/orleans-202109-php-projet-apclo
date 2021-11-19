@@ -6,6 +6,10 @@
 {% endblock %}
 
 {% block content %}
-	{% include 'Admin/Cat/_banner.html.twig' %}
+	<div class="banner"></div>
+            <div class="title">
+                <h1>Éditer un chat</h1>
+        </div>
+            <main class="container-fluid">
 	{% include 'Admin/Cat/_form.html.twig' with {'button_name' : 'Éditer'} %}
 {% endblock %}

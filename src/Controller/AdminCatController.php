@@ -14,18 +14,21 @@ class AdminCatController extends AbstractController
     public function add()
     {
         $errors = $uploadedErrors = $cat = [];
+        $direction = 'ASC';
+        $orderBy = 'name';
+        $orderByFurr = 'length';
 
         $adminBreedManager = new AdminBreedManager();
-        $breeds = $adminBreedManager->selectAll();
+        $breeds = $adminBreedManager->selectAll($orderBy, $direction);
 
         $adminColorManager = new AdminColorManager();
-        $colors = $adminColorManager->selectAll();
+        $colors = $adminColorManager->selectAll($orderBy, $direction);
 
         $adminFurrManager = new AdminFurrManager();
-        $furrs = $adminFurrManager->selectAll();
+        $furrs = $adminFurrManager->selectAll($orderByFurr, $direction);
 
         $adminGenderManager = new AdminGenderManager();
-        $genders = $adminGenderManager->selectAll();
+        $genders = $adminGenderManager->selectAll($orderBy, $direction);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadedErrors = $this->uploadValidate($cat);
@@ -82,7 +85,9 @@ class AdminCatController extends AbstractController
 
 
             if (!empty($_FILES['image']['name']) && empty($uploadedErrors)) {
-                unlink('uploads/' . $previousImage);
+                if (file_exists('uploads/' . $previousImage)) {
+                    unlink('uploads/' . $previousImage);
+                }
                 $fileName = uniqid() . '_' . $_FILES['image']['name'];
                 move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
                 $cat['image'] = $fileName;

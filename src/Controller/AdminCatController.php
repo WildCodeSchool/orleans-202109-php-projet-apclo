@@ -130,33 +130,40 @@ class AdminCatController extends AbstractController
         if (empty($cat['gender_id'])) {
             $errors[] = "Le champ genre est obligatoire";
         }
-
-        if (!in_array($cat['gender_id'], array_column($genders, 'id'))) {
-            $errors[] = "Merci de choisir un genre correct";
+        if (!empty($cat['gender_id'])) {
+            if (!in_array($cat['gender_id'], array_column($genders, 'id'))) {
+                $errors[] = "Merci de choisir un genre correct";
+            }
         }
 
         if (empty($cat['color_id'])) {
             $errors[] = "Le champ couleur est obligatoire";
         }
 
-        if (!in_array($cat['color_id'], array_column($colors, 'id'))) {
-            $errors[] = "Merci de choisir une couleur correcte";
+        if (!empty($cat['color_id'])) {
+            if (!in_array($cat['color_id'], array_column($colors, 'id'))) {
+                $errors[] = "Merci de choisir une couleur correcte";
+            }
         }
 
         if (empty($cat['furr_id'])) {
             $errors[] = "Le champ poil est obligatoire";
         }
 
-        if (!in_array($cat['furr_id'], array_column($furrs, 'id'))) {
-            $errors[] = "Merci de choisir un poil correct";
+        if (!empty($cat['furr_id'])) {
+            if (!in_array($cat['furr_id'], array_column($furrs, 'id'))) {
+                $errors[] = "Merci de choisir un poil correct";
+            }
         }
 
         if (empty($cat['breed_id'])) {
             $errors[] = "Le champ race est obligatoire";
         }
 
-        if (!in_array($cat['breed_id'], array_column($breeds, 'id'))) {
-            $errors[] = "Merci de choisir une race correcte";
+        if (!empty($cat['breed_id'])) {
+            if (!in_array($cat['breed_id'], array_column($breeds, 'id'))) {
+                $errors[] = "Merci de choisir une race correcte";
+            }
         }
 
         if (!empty($cat['birth_date'])) {

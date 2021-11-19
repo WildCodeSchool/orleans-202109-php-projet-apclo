@@ -5,6 +5,10 @@
 	<link rel="stylesheet" href="/assets/css/asso.css">
 {% endblock %}
 
+{% block title %}
+	Association - {{ parent() }}
+{% endblock %}
+
 {% block content %}
 	{% include 'Association/_banner-association.html.twig' %}
 {% endblock %}

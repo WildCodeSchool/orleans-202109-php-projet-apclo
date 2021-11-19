@@ -1,5 +1,4 @@
-<div class="container-sm">
-	<img src="/assets/images/separator.svg" alt="break-line">
+<div class="container-sm pt-4">
 	<div class="card card-cat mb-3">
 		<div class="row">
 			<div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -17,11 +16,15 @@
 							<div>{{cat.length}}</div>
 						</div>
 						<p>{{cat.description}}</p>
-						<form method="GET" action="/contact" class="align-self-end">
-							<input type="hidden" name="name" value="{{ cat.name }}" id="name">
-							<input type="hidden" name="digital_chip" value="{{ cat.digital_chip }}" id="digital_chip">
-							<button class="btn btn-adopt">Adoptez-moi!</button>
-						</form>
+						{% if cat.adoption_date is null %}
+							<form method="GET" action="/contact" class="align-self-end">
+								<input type="hidden" name="name" value="{{ cat.name }}" id="name">
+								<input type="hidden" name="digital_chip" value="{{ cat.digital_chip }}" id="digital_chip">
+								<button class="btn btn-adopt">Adoptez-moi!</button>
+							</form>
+						{% else %}
+						<button class="btn btn-adopt align-self-end disabled">Déjà adopté</button>
+						{% endif %}
 					</div>
 
 				</div>

@@ -5,22 +5,23 @@
 				<div class="card card-cat mb-3">
 					<img class="card-img-top float-top position-relative" src={% if cat.image is not empty %} "/uploads/{{cat.image}}" {% else %} "assets/images/cat-profil.svg" {% endif %} alt="Card image cap">
 					{% if cat.adoption_date is not null %}
-						<img src="/assets/images/adopted.png" class="adopted position-absolute top-0 end-0 mt-4" alt="adopted">{% endif%}
-						<div class="card-body cat-card-body">
-							<h2 class="card-title text-center">{{cat.name}}</h2>
-							<div class="card-text description">
-								<ul>
-									<li><img class="logo calendar" src="/assets/images/birth-day-logo.svg" alt="calendar">{{cat.birth_date}}</li>
-									<li><img class="logo" src="/assets/images/gender-logo.svg" alt="gender">{{cat.gender}}</li>
-								</ul>
-								<a href="/chats/show?id={{cat.id}}" class="btn btn-circle btn-lg">+</a>
-							</div>
+						<img src="/assets/images/adopted.png" class="adopted position-absolute top-0 end-0 mt-4" alt="adopted">
+					{% endif %}
+					<div class="card-body cat-card-body">
+						<h2 class="card-title text-center fs-3">{{cat.name}}</h2>
+						<div class="card-text description">
+							<ul>
+								<li><img class="logo calendar" src="/assets/images/birth-day-logo.svg" alt="calendar">{{cat.birth_date}}</li>
+								<li><img class="logo" src="/assets/images/gender-logo.svg" alt="gender">{{cat.gender}}</li>
+							</ul>
+							<a href="/chats/show?id={{cat.id}}" class="btn btn-circle btn-lg">+</a>
 						</div>
 					</div>
 				</div>
-			{% endfor %}
-		</div>
+			</div>
+		{% endfor %}
 	</div>
-	<div class="d-flex justify-content-center align-items-center">
-		<img src="assets/images/separator.svg" alt="line-break" class="d-inline-block mx-auto">
-	</div>
+</div>
+<div class="d-flex justify-content-center align-items-center">
+	<img src="assets/images/separator.svg" alt="line-break" class="d-inline-block mx-auto">
+</div>

@@ -35,6 +35,7 @@ body {
 
 h1 {
     font-size: var(--main-title-size);
+    padding-block-start: var(--spacing);
 }
 
 h2 {

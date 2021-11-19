@@ -85,7 +85,6 @@ class AdminCatController extends AbstractController
                 if (file_exists('uploads/' . $previousImage)) {
                     unlink('uploads/' . $previousImage);
                 }
-                unlink('uploads/' . $previousImage);
                 $fileName = uniqid() . '_' . $_FILES['image']['name'];
                 move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
                 $cat['image'] = $fileName;

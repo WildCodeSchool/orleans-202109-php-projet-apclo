@@ -81,7 +81,9 @@ class AdminActualityController extends AbstractController
             $errors = $this->actualityValidate($actuality);
 
             if (empty($errors) && !empty($_FILES['image']['name'])) {
-                unlink('uploads/' . $previousImage);
+                if (file_exists('uploads/' . $previousImage)) {
+                    unlink('uploads/' . $previousImage);
+                }
                 $fileName = uniqid() . '_' . $_FILES['image']['name'];
                 move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $fileName);
                 $actuality['image'] = $fileName;

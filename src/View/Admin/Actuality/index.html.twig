@@ -12,13 +12,13 @@
 {% block content %}
 	<div class="banner"></div>
 	<div class="title">
-		<h1>Admin / Actualités</h1>
+		<h1 class="pt-3">Admin / Actualités</h1>
 	</div>
 	<div class="container-sm">
 
 		<div class="row my-4 py-2 text-center header">
 			<div class="col-md-1">
-				<a href="/admin/actulites/ajouter" class="btn btn-entity btn-circle d-flex justify-content-center align-items-center align-self-center ms-4 btn-lg fs-3">+</a>
+				<a href="/admin/actualites/ajouter" class="btn btn-entity btn-circle d-flex justify-content-center align-items-center align-self-center ms-4 btn-lg fs-3">+</a>
 			</div>
 			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Titre</div>
 			<div class="col-md-3 fs-3 d-flex justify-content-center align-items-center">Date</div>
@@ -39,9 +39,9 @@
 					{{ actuality.date }}
 				</div>
 				<div class="col-md-5 fs-3 d-flex justify-content-center align-items-center">
-					<a href="/admin/actualites/editer?id= {{ actuality.id }}" class="btn btn-edit d-flex align-items-center justify-content-center fw-bold me-3">Éditer</a>
-					<form method="POST" action="/admin/chat/supprimer">
-						<input type="hidden" name="id" value="{{ cat.id }}">
+					<a href="/admin/actualites/editer?id= {{ actuality.id }}" class="btn btn-edit d-flex align-items-center fw-bold me-3">Éditer</a>
+					<form method="POST" action="/admin/actualites/supprimer">
+						<input type="hidden" name="id" value="{{ actuality.id }}">
 						<button class="btn btn-delete fw-bold">Supprimer</button>
 					</form>
 				</div>
